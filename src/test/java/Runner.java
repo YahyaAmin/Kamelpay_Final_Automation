@@ -11,8 +11,10 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/Reports/HtmlReport/report.html",
                   "pretty", "json:target/Reports/JSONReport/report.json",
                   "pretty", "junit:target/Reports/XMLReports/report.xml" },
-        tags = "@smoketest or @regression"
+        tags = "@Logintest"
 )
+
+//Example of logical tags:     tags = "@smoketest or @regression"
 
 public class Runner  {
 

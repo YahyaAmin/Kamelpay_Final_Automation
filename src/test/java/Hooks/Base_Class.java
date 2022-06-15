@@ -56,7 +56,7 @@ public class Base_Class {
                 System.out.println("Message is: " + exp.getMessage());
                 exp.printStackTrace();
         }
-        System.out.println("Before");
+
 
     }
 
