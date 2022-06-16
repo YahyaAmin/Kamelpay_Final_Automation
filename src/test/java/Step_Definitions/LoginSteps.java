@@ -129,4 +129,57 @@ public class LoginSteps {
         Thread.sleep(5000);
 
     }
+
+    @And("User clicks on Forgot password")
+    public void userClicksOnForgotPassword() {
+        LoginPage.getforgotpassword_loginscreen().click();
+    }
+
+    @When("User enters a valid E-id")
+    public void userEntersAValidEId() {
+        LoginPage.getEIDField_forgotpasswordflow().sendKeys("784197848020307");
+    }
+
+    @And("User enters a valid phone number")
+    public void userEntersAValidPhoneNumber() {
+        LoginPage.getphonenumberfield_forgotpassword().sendKeys("123456789");
+    }
+
+    @When("User clicks on next button at forgot password page")
+    public void userClicksOnNextButtonAtForgotPasswordPage() {
+        LoginPage.getnextbutton_forgotpasswordfield().click();
+    }
+
+    @And("User enters valid OTP")
+    public void userEntersValidOTP() {
+        LoginPage.getotp1stdigit_forgotpasswordflow().sendKeys("666666");
+    }
+
+    @And("User clicks on next button at OTP screen")
+    public void userClicksOnNextButtonAtOTPScreen() {
+        LoginPage.getnextbutton_otpscreen().click();
+    }
+
+    @When("User enters valid new password")
+    public void userEntersNewPassword() {
+        LoginPage.getenternewpassword_forgotpassword().sendKeys("Password123!");
+    }
+
+
+    @And("User enters valid confirm new password")
+    public void userEntersValidConfirmNewPassword() {
+        LoginPage.getconfirmnewpassword_forgotpassword().sendKeys("Password123!");
+    }
+
+
+    @Then("User clicks on confirm button at forgot password page")
+    public void userClicksOnConfirmButtonAtForgotPasswordPage() throws InterruptedException {
+        LoginPage.getchangebutton_forgotpasswordflow().click();
+        Thread.sleep(2000);
+    }
+
+    @And("User enters correct new password")
+    public void userEntersCorrectNewPassword() {
+        LoginPage.getpassword_mainscreen().sendKeys("Password123!");
+    }
 }

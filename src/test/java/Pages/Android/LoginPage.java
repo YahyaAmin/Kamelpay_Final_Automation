@@ -107,5 +107,23 @@ public class LoginPage{
 
     public static AndroidElement enterpintologin(String digit) {return driver.findElement(By.xpath("//android.inputmethodservice.Keyboard.Key[@content-desc='"+digit+"']/android.view.ViewGroup/android.widget.TextView"));}
 
+    public static AndroidElement getforgotpassword_loginscreen(){return driver.findElement(By.xpath(forgot_password_at_login_screen));}
+
+    public static AndroidElement getEIDField_forgotpasswordflow(){return driver.findElement(By.xpath(e_id_field_at_forgot_password_screen));}
+
+    public static AndroidElement getphonenumberfield_forgotpassword(){return driver.findElement(By.xpath(phone_number_field_at_forgot_password_screen));}
+
+    public static AndroidElement getnextbutton_forgotpasswordfield(){return driver.findElement(By.xpath(next_button_at_forgot_password_screen));}
+
+
+    public static AndroidElement getotp1stdigit_forgotpasswordflow() {return driver.findElement(By.xpath(otp_1st_digit_at_forgot_password_flow));}
+
+    public static AndroidElement getnextbutton_otpscreen() {return driver.findElement(By.xpath(next_button_otp_verification_screen_forgot_password_flow));}
+
+    public static AndroidElement getenternewpassword_forgotpassword() {return driver.findElement(By.xpath(enter_new_password_forgot_password_flow));}
+
+    public static AndroidElement getconfirmnewpassword_forgotpassword() {return driver.findElement(By.xpath(confirm_new_password_forgot_password_flow));}
+
+    public static AndroidElement getchangebutton_forgotpasswordflow() {return driver.findElement(By.xpath(change_button_forgot_password_flow));}
 
 }
