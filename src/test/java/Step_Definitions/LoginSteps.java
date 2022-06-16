@@ -50,7 +50,7 @@ public class LoginSteps {
     }
 
     @And("User clicks on login button")
-    public void userClicksOnLoginButton() {
+    public void userClicksOnLoginButton() throws InterruptedException {
         LoginPage.getlogin_button_mainscreen().click();
     }
 
@@ -181,5 +181,49 @@ public class LoginSteps {
     @And("User enters correct new password")
     public void userEntersCorrectNewPassword() {
         LoginPage.getpassword_mainscreen().sendKeys("Password123!");
+    }
+
+
+    @When("User enters incorrect phone number")
+    public void userEntersIncorrectPhoneNumber() {
+
+        LoginPage.getphone_no_mainscreen().sendKeys(getRandomNumberLowerAndUpperBound(5,10));
+
+    }
+
+    @Then("User shouldn't be able to login")
+    public void userShouldnTBeAbleToLogin() throws InterruptedException {
+        Thread.sleep(4000);
+    }
+
+    @And("User enters incorrect password")
+    public void userEntersIncorrectPassword() throws InterruptedException {
+
+        LoginPage.getpassword_mainscreen().sendKeys(getRandomString(true, true, true,true,false,10));
+        LoginPage.get_viewpassword_mainscreen().click();
+        Thread.sleep(3000);
+        LoginPage.get_viewpassword_mainscreen().click();
+
+    }
+
+    @And("User enters incorrect pin for login")
+    public void userEntersIncorrectPinForLogin() throws InterruptedException {
+        LoginPage.enterpintologin(getRandomNumberLowerAndUpperBound(1,2)).click();
+        LoginPage.enterpintologin(getRandomNumberLowerAndUpperBound(1,2)).click();
+        LoginPage.enterpintologin((getRandomNumberLowerAndUpperBound(1,2))).click();
+        LoginPage.enterpintologin(getRandomNumberLowerAndUpperBound(1,2)).click();
+        Thread.sleep(5000);
+
+    }
+
+    @Then("User shouldn't be able to change password")
+    public void userShouldnTBeAbleToChangePassword() throws InterruptedException {
+        Thread.sleep(3000);
+    }
+
+    @Then("User clicks on cant login button")
+    public void userClicksOnCantLoginButton() throws InterruptedException {
+        LoginPage.getcantloginbutton_enterpinscreen().click();
+        Thread.sleep(1000);
     }
 }

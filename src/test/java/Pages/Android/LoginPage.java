@@ -126,4 +126,6 @@ public class LoginPage{
 
     public static AndroidElement getchangebutton_forgotpasswordflow() {return driver.findElement(By.xpath(change_button_forgot_password_flow));}
 
+    public static AndroidElement getcantloginbutton_enterpinscreen()  {return driver.findElement(By.xpath(cant_login_button_on_pin_login_screen));}
+
 }
