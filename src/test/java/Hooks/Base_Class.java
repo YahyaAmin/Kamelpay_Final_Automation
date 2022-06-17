@@ -48,7 +48,7 @@ public class Base_Class {
         driver = new AndroidDriver<AndroidElement>(url, caps);
 
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
     }
         catch(Exception exp){

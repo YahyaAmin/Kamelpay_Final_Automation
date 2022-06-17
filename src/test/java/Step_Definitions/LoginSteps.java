@@ -55,13 +55,15 @@ public class LoginSteps {
     }
 
     @And("User clicks on dont allow biometric button")
-    public void userClicksOnDontAllowBiometricButton() {
+    public void userClicksOnDontAllowBiometricButton() throws InterruptedException {
+        Thread.sleep(2000);
         LoginPage.get_dontallow_biometric_button().click();
+        Thread.sleep(2000);
     }
 
     @Then("User should successfully login")
     public void userShouldSuccessfullyLogin() throws InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
 
 
@@ -156,8 +158,9 @@ public class LoginSteps {
     }
 
     @And("User clicks on next button at OTP screen")
-    public void userClicksOnNextButtonAtOTPScreen() {
+    public void userClicksOnNextButtonAtOTPScreen() throws InterruptedException {
         LoginPage.getnextbutton_otpscreen().click();
+        Thread.sleep(2000);
     }
 
     @When("User enters valid new password")
@@ -226,4 +229,7 @@ public class LoginSteps {
         LoginPage.getcantloginbutton_enterpinscreen().click();
         Thread.sleep(1000);
     }
+
+
+
 }

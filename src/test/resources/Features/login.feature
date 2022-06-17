@@ -1,7 +1,7 @@
 @Loginfeature
 Feature: Login Tests
 
-  @Logintest @Logintest1
+  @Logintest @Logintest01
   Scenario: Login with correct username and correct password
 
     Given User is on Login Page
@@ -12,7 +12,7 @@ Feature: Login Tests
     Then User should successfully login
 
 
-    @Logintest @Logintest2
+    @Logintest @Logintest02
     Scenario: Login with correct pin after setting pin
 
       Given User is on Login Page
@@ -33,7 +33,7 @@ Feature: Login Tests
       And User enters their correct pin
 
 
-      @Logintest @Logintest4
+      @Logintest @Logintest04
       Scenario: User Forgot Password, Sets new password and logs in with new password
 
         Given User is on Login Page
@@ -54,7 +54,7 @@ Feature: Login Tests
         Then User should successfully login
 
 
-      @Logintest @Logintest5
+      @Logintest @Logintest05
       Scenario: Login with incorrect phone number and correct password
 
         Given User is on Login Page
@@ -64,7 +64,7 @@ Feature: Login Tests
         Then User shouldn't be able to login
 
 
-      @Logintest @Logintest6
+      @Logintest @Logintest06
       Scenario: Login with correct phone number and incorrect password
 
         Given User is on Login Page
@@ -74,7 +74,7 @@ Feature: Login Tests
         Then User shouldn't be able to login
 
 
-      @Logintest @Logintest7
+      @Logintest @Logintest07
       Scenario: Login with incorrect pin and user is unable to login
 
         Given User is on Login Page
@@ -95,7 +95,7 @@ Feature: Login Tests
         And User enters incorrect pin for login
 
 
-      @Logintest @Logintest9
+      @Logintest @Logintest09
       Scenario: User forgets password and enters invalid phone number at forgot password
 
         Given User is on Login Page
