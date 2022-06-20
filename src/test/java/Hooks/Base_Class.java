@@ -7,9 +7,10 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
+import org.testng.annotations.Test;
 
 
 import java.net.URL;
@@ -48,7 +49,8 @@ public class Base_Class {
         driver = new AndroidDriver<AndroidElement>(url, caps);
 
 
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
+        //driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
     }
         catch(Exception exp){
@@ -63,7 +65,9 @@ public class Base_Class {
 
 //    @Test
 //    public void SampleTest(){
-//
+//        File f = new File("apps");
+//        File fs = new File(f,"KamelPay.apk");
+//        System.out.println(fs);
 //    }
 
 

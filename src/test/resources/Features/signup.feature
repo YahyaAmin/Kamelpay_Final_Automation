@@ -108,6 +108,50 @@ Feature: Sign Up Tests
     Then User shouldn't be able to sign in
 
 
+  @Signuptest @Signuptest08
+  Scenario: User signup but user enters username with special characters
+
+    Given User is on Login Page
+    And User clicks on Don't have an account? signup button
+    When User selects PayD card
+    And User clicks on I am ready button
+    And User enters their valid phone number for registration
+    When User enters username with special characters
+    When User enters their valid password
+    And User enters a valid confirm password
+    And User clicks on sign up button
+    Then User shouldn't be able to sign in
+
+
+  @Signuptest @Signuptest09
+  Scenario: User signup but user enters username with spaces
+
+    Given User is on Login Page
+    And User clicks on Don't have an account? signup button
+    When User selects PayD card
+    And User clicks on I am ready button
+    And User enters their valid phone number for registration
+    When User enters username with spaces
+    When User enters their valid password
+    And User enters a valid confirm password
+    And User clicks on sign up button
+    Then User shouldn't be able to sign in
+
+
+  @Signuptest @Signuptest10
+  Scenario: User signup but user enters a different confirm password
+
+    Given User is on Login Page
+    And User clicks on Don't have an account? signup button
+    When User selects PayD card
+    And User clicks on I am ready button
+    And User enters their valid phone number for registration
+    When User enters their valid username for registration
+    And User enters their valid password
+    When User enters a different confirm password
+    And User clicks on sign up button
+    Then User shouldn't be able to sign in
+
 
 
 

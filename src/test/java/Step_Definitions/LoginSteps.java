@@ -2,15 +2,23 @@ package Step_Definitions;
 
 import Pages.Android.LoginPage;
 import Tests.Password_Builder;
+import io.appium.java_client.functions.ExpectedCondition;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static Hooks.Base_Class.driver;
+import static Pages.Android.LoginPage.*;
 import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
 
 
 public class LoginSteps {
+
+    public WebDriverWait wait = new WebDriverWait(driver, 30);
 
     public String getRandomString(boolean Digits, boolean Lower, boolean Upper, boolean Punctuation, boolean Spaces, int length) {
 
@@ -29,14 +37,15 @@ public class LoginSteps {
 
     @Given("User is on Login Page")
     public void user_is_on_login_page() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_no_on_mainscreen)));
         LoginPage.getphone_no_mainscreen().clear();
 
     }
 
     @When("User enters correct phone number")
     public void userEntersUsernameAndPassword() {
-
+         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_no_on_mainscreen)));
          LoginPage.getphone_no_mainscreen().sendKeys("123456789");
     }
 
@@ -45,7 +54,7 @@ public class LoginSteps {
     public void userEntersCorrectPassword() throws InterruptedException {
         LoginPage.getpassword_mainscreen().sendKeys("Password123!");
         LoginPage.get_viewpassword_mainscreen().click();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         LoginPage.get_viewpassword_mainscreen().click();
     }
 
@@ -56,7 +65,7 @@ public class LoginSteps {
 
     @And("User clicks on dont allow biometric button")
     public void userClicksOnDontAllowBiometricButton() throws InterruptedException {
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dont_allow_biometric_button_xpath)));
         LoginPage.get_dontallow_biometric_button().click();
         Thread.sleep(2000);
     }
@@ -69,6 +78,7 @@ public class LoginSteps {
 
     @And("User clicks on sidebar menu")
     public void userClicksOnSidebarMenu() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(three_lines_home_button_at_homescreen)));
         LoginPage.get_sidebar_button().click();
 
     }
@@ -76,13 +86,15 @@ public class LoginSteps {
 
     @When("User clicks on settings from sidebar menu")
     public void userClicksOnSettingsFromSidebarMenu() throws InterruptedException {
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(settings_button_sidebar)));
         LoginPage.get_settingsbutton_sidebar().click();
         Thread.sleep(2000);
     }
 
     @And("User clicks on setup pin login button")
-    public void userClicksOnSetupPinLoginButton() {
+    public void userClicksOnSetupPinLoginButton() throws InterruptedException {
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(setup_pin_button_sidebar)));
         LoginPage.get_setuppinbutton_sidebar().click();
 
     }
@@ -94,6 +106,7 @@ public class LoginSteps {
 
     @When("User enters pin to setup pin")
     public void userEntersPinToSetupPin() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_1st)));
         LoginPage.get_enternewpin_pinlogin().sendKeys(pin_1st+pin_2nd+pin_3rd+pin_4th);
     }
 
@@ -106,7 +119,7 @@ public class LoginSteps {
     @When("User clicks on submit button at pin setup screen")
     public void userClicksOnSubmitButtonAtPinSetupScreen() throws InterruptedException {
         LoginPage.get_submitbutton_pinlogin().click();
-        Thread.sleep(8000);
+        Thread.sleep(9000);
     }
 
     @And("User clicks on back button at the top left")
@@ -118,12 +131,13 @@ public class LoginSteps {
 
     @And("User clicks on logout button from settings panel")
     public void userClicksOnLogoutButtonFromSettingsPanel() throws InterruptedException {
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(logout_button_settings_panel)));
         LoginPage.get_logoutbutton_settingspanel().click();
     }
 
     @And("User enters their correct pin")
     public void userEntersTheirCorrectPin() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(wait_for_entering_correct_pin_screen)));
         LoginPage.enterpintologin(pin_1st).click();
         LoginPage.enterpintologin(pin_2nd).click();
         LoginPage.enterpintologin((pin_3rd)).click();
@@ -138,7 +152,8 @@ public class LoginSteps {
     }
 
     @When("User enters a valid E-id")
-    public void userEntersAValidEId() {
+    public void userEntersAValidEId() throws InterruptedException {
+        Thread.sleep(2000);
         LoginPage.getEIDField_forgotpasswordflow().sendKeys("784197848020307");
     }
 
@@ -154,6 +169,7 @@ public class LoginSteps {
 
     @And("User enters valid OTP")
     public void userEntersValidOTP() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(otp_1st_digit_at_forgot_password_flow)));
         LoginPage.getotp1stdigit_forgotpasswordflow().sendKeys("666666");
     }
 
@@ -211,6 +227,7 @@ public class LoginSteps {
 
     @And("User enters incorrect pin for login")
     public void userEntersIncorrectPinForLogin() throws InterruptedException {
+        Thread.sleep(2000);
         LoginPage.enterpintologin(getRandomNumberLowerAndUpperBound(1,2)).click();
         LoginPage.enterpintologin(getRandomNumberLowerAndUpperBound(1,2)).click();
         LoginPage.enterpintologin((getRandomNumberLowerAndUpperBound(1,2))).click();
@@ -226,6 +243,7 @@ public class LoginSteps {
 
     @Then("User clicks on cant login button")
     public void userClicksOnCantLoginButton() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cant_login_button_on_pin_login_screen)));
         LoginPage.getcantloginbutton_enterpinscreen().click();
         Thread.sleep(1000);
     }
