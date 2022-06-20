@@ -32,8 +32,10 @@ public class Base_Class {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
+        String projectpath = System.getProperty("user.dir");
         File f = new File("apps");
         File fs = new File(f,"KamelPay.apk");
+        String finalpath = projectpath+'\\'+fs;
 
 
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "ANDROID");
@@ -41,7 +43,7 @@ public class Base_Class {
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi");
         caps.setCapability(MobileCapabilityType.UDID, "7664beac0820");
         caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "60");
-        caps.setCapability(MobileCapabilityType.APP,"C:/Users/abc/Desktop/apk/KamelPay.apk");
+        caps.setCapability(MobileCapabilityType.APP,finalpath);
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 
         URL url = new URL("http://127.0.0.1:4723/wd/hub");
@@ -65,9 +67,10 @@ public class Base_Class {
 
 //    @Test
 //    public void SampleTest(){
+//        String projectpath = System.getProperty("user.dir");
 //        File f = new File("apps");
 //        File fs = new File(f,"KamelPay.apk");
-//        System.out.println(fs);
+//        String finalpath = projectpath+'\\'+fs;
 //    }
 
 
