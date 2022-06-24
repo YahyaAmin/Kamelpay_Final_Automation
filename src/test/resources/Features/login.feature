@@ -21,16 +21,16 @@ Feature: Login Tests
       And User clicks on login button
       And User clicks on dont allow biometric button
       Then User should successfully login
-      And User clicks on sidebar menu
-      When User clicks on settings from sidebar menu
+      And User clicks on My Profile button
+      When User clicks on passwords & biometrics
       And User clicks on setup pin login button
-      When User enters pin to setup pin
+      And User enters their new pin
       And User enters the same confirm pin
       When User clicks on submit button at pin setup screen
       And User clicks on back button at the top left
-      And User clicks on sidebar menu
-      And User clicks on logout button from settings panel
-      And User enters their correct pin
+      And User clicks on logout button
+      When User enters valid pin to login
+      Then User should successfully login
 
 
       @Logintest @Logintest04
