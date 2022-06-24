@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static Hooks.Base_Class.driver;
 import static Pages.Android.LoginPage.phone_no_on_mainscreen;
 import static Pages.Android.SignupPage.*;
+import static Tests.Useful_functions.getRandomDigit;
 import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
 
 
@@ -141,4 +142,82 @@ public class SignupSteps {
         Thread.sleep(2000);
         SignupPage.get_view_password_eye_button().click();
     }
+
+    String password_without_uppercase = getRandomString(true,true,false,true,false,20);
+
+    @And("User enters their password without uppercase letters")
+    public void userEntersTheirAPasswordWithoutUppercaseLetters() {
+        SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(password_without_uppercase);
+    }
+
+    @When("User enters a confirm password without uppercase letters")
+    public void userEntersAConfirmPasswordWithoutUppercaseLetters() throws InterruptedException {
+        SignupPage.get_confirm_your_password_at_register_yourself_page().sendKeys(password_without_uppercase);
+        SignupPage.get_view_password_eye_button().click();
+        Thread.sleep(2000);
+        SignupPage.get_view_password_eye_button().click();
+    }
+
+    String password_without_number = getRandomString(false,true,true,true,false,20);
+
+    @And("User enters their password without a number")
+    public void userEntersTheirPasswordWithoutANumber() {
+        SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(password_without_number);
+    }
+
+    @When("User enters a confirm password without a number")
+    public void userEntersAConfirmPasswordWithoutANumber() throws InterruptedException {
+        SignupPage.get_confirm_your_password_at_register_yourself_page().sendKeys(password_without_number);
+        SignupPage.get_view_password_eye_button().click();
+        Thread.sleep(2000);
+        SignupPage.get_view_password_eye_button().click();
+    }
+
+    String password_without_lowercase = getRandomString(true,false,true,true,false,20);
+
+    @And("User enters their password without a lowercase letter")
+    public void userEntersTheirPasswordWithoutALowercaseLetter() {
+        SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(password_without_lowercase);
+
+    }
+
+    @When("User enters a confirm password without a lowercase letter")
+    public void userEntersAConfirmPasswordWithoutALowercaseLetter() throws InterruptedException {
+        SignupPage.get_confirm_your_password_at_register_yourself_page().sendKeys(password_without_lowercase);
+        SignupPage.get_view_password_eye_button().click();
+        Thread.sleep(2000);
+        SignupPage.get_view_password_eye_button().click();
+    }
+
+    String password_without_special_character = getRandomString(true,true,true,false,false,20);
+
+    @And("User enters their password without a special character")
+    public void userEntersTheirPasswordWithoutASpecialCharacter() {
+        SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(password_without_special_character);
+    }
+
+    @When("User enters a confirm password without a special character")
+    public void userEntersAConfirmPasswordWithoutASpecialCharacter() throws InterruptedException {
+        SignupPage.get_confirm_your_password_at_register_yourself_page().sendKeys(password_without_special_character);
+        SignupPage.get_view_password_eye_button().click();
+        Thread.sleep(2000);
+        SignupPage.get_view_password_eye_button().click();
+    }
+
+    int random_pw_length = getRandomDigit(5);
+    String short_password = getRandomString(true,true,true,true,false,random_pw_length);
+
+    @And("User enters their password but password is too short")
+    public void userEntersTheirPasswordButPasswordIsTooShort() {
+        SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(short_password);
+    }
+
+    @When("User enters a confirm password but password is too short")
+    public void userEntersAConfirmPasswordButPasswordIsTooShort() throws InterruptedException {
+        SignupPage.get_confirm_your_password_at_register_yourself_page().sendKeys(short_password);
+        SignupPage.get_view_password_eye_button().click();
+        Thread.sleep(2000);
+        SignupPage.get_view_password_eye_button().click();
+    }
+
 }

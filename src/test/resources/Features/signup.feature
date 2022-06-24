@@ -153,6 +153,79 @@ Feature: Sign Up Tests
     Then User shouldn't be able to sign in
 
 
+  @Signuptest @Signuptest11
+  Scenario: User sign up but password does not have uppercase letters
+
+    Given User is on Login Page
+    And User clicks on Don't have an account? signup button
+    When User selects PayD card
+    And User clicks on I am ready button
+    And User enters their valid phone number for registration
+    When User enters their valid username for registration
+    And User enters their password without uppercase letters
+    When User enters a confirm password without uppercase letters
+    And User clicks on sign up button
+
+
+  @Signuptest @Signuptest12
+  Scenario: User sign up but password does not have a number
+
+    Given User is on Login Page
+    And User clicks on Don't have an account? signup button
+    When User selects PayD card
+    And User clicks on I am ready button
+    And User enters their valid phone number for registration
+    When User enters their valid username for registration
+    And User enters their password without a number
+    When User enters a confirm password without a number
+    And User clicks on sign up button
+
+
+  @Signuptest @Signuptest13
+  Scenario: User sign up but password does not have a lowercase letter
+
+    Given User is on Login Page
+    And User clicks on Don't have an account? signup button
+    When User selects PayD card
+    And User clicks on I am ready button
+    And User enters their valid phone number for registration
+    When User enters their valid username for registration
+    And User enters their password without a lowercase letter
+    When User enters a confirm password without a lowercase letter
+    And User clicks on sign up button
+
+
+  @Signuptest @Signuptest14
+  Scenario: User sign up but password does not have a special character
+
+    Given User is on Login Page
+    And User clicks on Don't have an account? signup button
+    When User selects PayD card
+    And User clicks on I am ready button
+    And User enters their valid phone number for registration
+    When User enters their valid username for registration
+    And User enters their password without a special character
+    When User enters a confirm password without a special character
+    And User clicks on sign up button
+
+
+  @Signuptest @Signuptest15
+  Scenario: User sign up but password is too short
+
+    Given User is on Login Page
+    And User clicks on Don't have an account? signup button
+    When User selects PayD card
+    And User clicks on I am ready button
+    And User enters their valid phone number for registration
+    When User enters their valid username for registration
+    And User enters their password but password is too short
+    When User enters a confirm password but password is too short
+    And User clicks on sign up button
+
+
+
+
+
 
 
 

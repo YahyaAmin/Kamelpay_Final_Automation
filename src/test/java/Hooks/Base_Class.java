@@ -18,6 +18,8 @@ import java.util.concurrent.TimeUnit;
 
 import java.io.File;
 
+import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
+
 public class Base_Class {
 
     //AppiumDriver driver;
@@ -67,10 +69,7 @@ public class Base_Class {
 
 //    @Test
 //    public void SampleTest(){
-//        String projectpath = System.getProperty("user.dir");
-//        File f = new File("apps");
-//        File fs = new File(f,"KamelPay.apk");
-//        String finalpath = projectpath+'\\'+fs;
+//
 //    }
 
 

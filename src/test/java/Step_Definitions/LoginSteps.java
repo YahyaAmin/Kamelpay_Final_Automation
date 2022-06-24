@@ -1,14 +1,12 @@
 package Step_Definitions;
 
 import Pages.Android.LoginPage;
-import Pages.Android.SignupPage;
 import Tests.Password_Builder;
 import io.appium.java_client.functions.ExpectedCondition;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.commons.logging.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -40,8 +38,6 @@ public class LoginSteps {
     @Given("User is on Login Page")
     public void user_is_on_login_page() throws InterruptedException {
         Thread.sleep(2000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(skip_button)));
-        LoginPage.getskipbutton().click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_no_on_mainscreen)));
         LoginPage.getphone_no_mainscreen().clear();
 
@@ -253,37 +249,5 @@ public class LoginSteps {
     }
 
 
-    @And("User clicks on My Profile button")
-    public void userClicksOnMyProfileButton() {
-        LoginPage.get_my_profile_button().click();
-    }
 
-    @When("User clicks on passwords & biometrics")
-    public void userClicksOnPasswordsBiometrics() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(passwords_and_biometrics_button)));
-        LoginPage.get_passwords_and_biometrics_button().click();
-    }
-
-    @And("User enters their new pin")
-    public void userEntersTheirNewPin() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_1st)));
-        LoginPage.get_enternewpin_pinlogin().sendKeys(pin_1st+pin_2nd+pin_3rd+pin_4th);
-    }
-
-
-    @And("User clicks on logout button")
-    public void userClicksOnLogoutButton() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(logout_button)));
-        LoginPage.get_logout_button().click();
-    }
-
-    @When("User enters valid pin to login")
-    public void userEntersValidPinToLogin() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(wait_pin_screen)));
-        LoginPage.enterpintologin(pin_1st).click();
-        LoginPage.enterpintologin(pin_2nd).click();
-        LoginPage.enterpintologin(pin_3rd).click();
-        LoginPage.enterpintologin(pin_4th).click();
-
-    }
 }
