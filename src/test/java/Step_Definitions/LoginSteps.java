@@ -37,7 +37,7 @@ public class LoginSteps {
 
     @Given("User is on Login Page")
     public void user_is_on_login_page() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(4000);
     }
 
     @When("User enters correct phone number")
@@ -57,7 +57,7 @@ public class LoginSteps {
 
     @And("User clicks on login button")
     public void userClicksOnLoginButton() throws InterruptedException {
-        LoginPage.getlogin_button_mainscreen().click();
+        Thread.sleep(2000);
         LoginPage.getlogin_button_mainscreen().click();
     }
 
@@ -158,6 +158,7 @@ public class LoginSteps {
 
     @And("User enters a valid phone number")
     public void userEntersAValidPhoneNumber() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_forgot_password_screen)));
         LoginPage.getphonenumberfield_forgotpassword().clear();
         LoginPage.getphonenumberfield_forgotpassword().sendKeys("123456789");
     }
@@ -209,6 +210,7 @@ public class LoginSteps {
 
     @When("User enters incorrect phone number")
     public void userEntersIncorrectPhoneNumber() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_no_on_mainscreen)));
         LoginPage.getphonenumberfield_forgotpassword().clear();
         LoginPage.getphonenumberfield_forgotpassword().sendKeys(getRandomNumberLowerAndUpperBound(5,10));
     }

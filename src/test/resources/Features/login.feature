@@ -29,7 +29,6 @@ Feature: Login Tests
       When User enters pin to setup pin
       And User enters the same confirm pin
       And User clicks on submit button at pin setup screen
-      When User clicks on back button at the top left
       And User clicks on logout button
       When User enters their correct pin
       Then User should successfully login
@@ -41,7 +40,6 @@ Feature: Login Tests
         Given User is on Login Page
         And User clicks on skip button
         And User clicks on Forgot password
-        When User enters a valid E-id
         And User enters a valid phone number
         When User clicks on next button at forgot password page
         And User enters valid OTP
@@ -96,7 +94,6 @@ Feature: Login Tests
         When User enters pin to setup pin
         And User enters the same confirm pin
         And User clicks on submit button at pin setup screen
-        When User clicks on back button at the top left
         And User clicks on logout button
         When User enters incorrect pin for login
         Then User shouldn't be able to login
@@ -108,7 +105,6 @@ Feature: Login Tests
         Given User is on Login Page
         And User clicks on skip button
         And User clicks on Forgot password
-        When User enters a valid E-id
         And User enters incorrect phone number
         When User clicks on next button at forgot password page
         Then User shouldn't be able to change password
@@ -130,7 +126,6 @@ Feature: Login Tests
         When User enters pin to setup pin
         And User enters the same confirm pin
         And User clicks on submit button at pin setup screen
-        When User clicks on back button at the top left
         And User clicks on logout button
         When User clicks on cant login button
         Given User is on Login Page
