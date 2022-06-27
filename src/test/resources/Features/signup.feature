@@ -2,16 +2,17 @@
 Feature: Sign Up Tests
 
   @Signuptest @Signuptest01
-    Scenario: User signs up successfully with Payd card
+    Scenario: User signs up successfully with last four card digits
 
       Given User is on Login Page
+      And User clicks on skip button
       And User clicks on Don't have an account? signup button
-      When User selects PayD card
+      When User enters last four digits of their card
       And User clicks on I am ready button
       And User enters their valid phone number for registration
-      When User enters their valid username for registration
       And User enters their valid password
       When User enters a valid confirm password
+      And User clicks on I agree terms and conditions checkbox
       And User clicks on sign up button
       And User enters valid OTP at register yourself
       And User clicks on next button at OTP screen
@@ -20,16 +21,16 @@ Feature: Sign Up Tests
 
 
     @Signuptest @Signuptest02
-      Scenario: User signup successfully with Centiv card
+      Scenario: User signup successfully with new card
 
       Given User is on Login Page
+      And User clicks on skip button
       And User clicks on Don't have an account? signup button
-      When User selects Centiv card
-      And User clicks on I am ready button
+      When User clicks Get Your New Card button
       And User enters their valid phone number for registration
-      When User enters their valid username for registration
       And User enters their valid password
       When User enters a valid confirm password
+      And User clicks on I agree terms and conditions checkbox
       And User clicks on sign up button
       And User enters valid OTP at register yourself
       And User clicks on next button at OTP screen
@@ -41,26 +42,28 @@ Feature: Sign Up Tests
       Scenario: User signup but user forgets to enter phone number
 
       Given User is on Login Page
+      And User clicks on skip button
       And User clicks on Don't have an account? signup button
-      When User selects PayD card
-      And User clicks on I am ready button
-      When User enters their valid username for registration
+      When User clicks Get Your New Card button
       And User enters their valid password
       When User enters a valid confirm password
+      And User clicks on I agree terms and conditions checkbox
       And User clicks on sign up button
       Then User shouldn't be able to sign in
 
 
     @Signuptest @Signuptest04
-      Scenario: User signup but user forgets to enter username
+      Scenario: User signup but user enters invalid email
 
       Given User is on Login Page
+      And User clicks on skip button
       And User clicks on Don't have an account? signup button
-      When User selects PayD card
-      And User clicks on I am ready button
+      When User clicks Get Your New Card button
       And User enters their valid phone number for registration
+      When User enters an invalid email
       And User enters their valid password
       When User enters a valid confirm password
+      And User clicks on I agree terms and conditions checkbox
       And User clicks on sign up button
       Then User shouldn't be able to sign in
 
@@ -68,17 +71,17 @@ Feature: Sign Up Tests
     @Signuptest @Signuptest05
       Scenario: User signup but user forgets to enter password
 
-    Given User is on Login Page
-    And User clicks on Don't have an account? signup button
-    When User selects PayD card
-    And User clicks on I am ready button
-    And User enters their valid phone number for registration
-      When User enters their valid username for registration
-    When User enters a valid confirm password
-    And User clicks on sign up button
-    Then User shouldn't be able to sign in
+      Given User is on Login Page
+      And User clicks on skip button
+      And User clicks on Don't have an account? signup button
+      When User clicks Get Your New Card button
+      And User enters their valid phone number for registration
+      When User enters a valid confirm password
+      And User clicks on I agree terms and conditions checkbox
+      And User clicks on sign up button
+      Then User shouldn't be able to sign in
 
-
+#start from here
   @Signuptest @Signuptest06
   Scenario: User signup but user forgets to enter confirm password
 

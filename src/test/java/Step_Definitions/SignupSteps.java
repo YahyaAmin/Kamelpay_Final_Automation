@@ -36,6 +36,7 @@ public class SignupSteps {
 
     @And("User clicks on Don't have an account? signup button")
     public void userClicksOnDonTHaveAnAccountSignupButton() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dont_have_an_account_signup_button)));
         SignupPage.get_dont_have_an_account_signup_button().click();
         Thread.sleep(1000);
     }
@@ -50,7 +51,6 @@ public class SignupSteps {
 
     @And("User clicks on I am ready button")
     public void userClicksOnIAmReadyButton() throws InterruptedException {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(i_am_ready_button_at_signup)));
         SignupPage.get_i_am_ready_button_at_signup().click();
         Thread.sleep(1000);
     }
@@ -59,7 +59,7 @@ public class SignupSteps {
     @And("User enters their valid phone number for registration")
     public void userEntersTheirValidPhoneNumberForRegistration() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_register_yourself_page)));
-        SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(12,14));
+        SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
     }
 
     @When("User enters their valid username for registration")
@@ -72,6 +72,7 @@ public class SignupSteps {
 
     @And("User enters their valid password")
     public void userEntersTheirValidPassword() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_your_password_at_register_yourself_page)));
         SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(valid_password);
     }
 
@@ -93,7 +94,7 @@ public class SignupSteps {
 
     @Then("User should be able to sign up successfully")
     public void userShouldBeAbleToSignUpSuccessfully() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
 
     @And("User enters valid OTP at register yourself")
@@ -220,4 +221,25 @@ public class SignupSteps {
         SignupPage.get_view_password_eye_button().click();
     }
 
+    @When("User enters last four digits of their card")
+    public void userEntersLastFourDigitsOfTheirCard() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(card_last_four_digits_sigunp)));
+        SignupPage.get_card_last_four_digits_sigunp().sendKeys(getRandomNumberLowerAndUpperBound(4,5));
+    }
+
+    @And("User clicks on I agree terms and conditions checkbox")
+    public void userClicksOnIAgreeTermsAndConditionsCheckbox() {
+        SignupPage.get_i_agree_termsandcondition().click();
+    }
+
+    @When("User clicks Get Your New Card button")
+    public void userClicksGetYourNewCardButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(get_new_card_button)));
+        SignupPage.getGetNewCard().click();
+    }
+
+    @When("User enters an invalid email")
+    public void userEntersAnInvalidEmail() {
+        SignupPage.get_email_field_at_signup().sendKeys(getRandomString(true,true,true,true,false,10));
+    }
 }
