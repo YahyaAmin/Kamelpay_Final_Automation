@@ -5,6 +5,7 @@ Feature: Login Tests
   Scenario: Login with correct username and correct password
 
     Given User is on Login Page
+    And User clicks on skip button
     When User enters correct phone number
     And User enters correct password
     And User clicks on login button
@@ -16,27 +17,29 @@ Feature: Login Tests
     Scenario: Login with correct pin after setting pin
 
       Given User is on Login Page
+      And User clicks on skip button
       When User enters correct phone number
       And User enters correct password
       And User clicks on login button
       And User clicks on dont allow biometric button
       Then User should successfully login
-      And User clicks on sidebar menu
-      When User clicks on settings from sidebar menu
+      And User clicks on My Profile button
+      When User clicks on Passwords and Biometrics Button
       And User clicks on setup pin login button
       When User enters pin to setup pin
       And User enters the same confirm pin
-      When User clicks on submit button at pin setup screen
-      And User clicks on back button at the top left
-      And User clicks on sidebar menu
-      And User clicks on logout button from settings panel
-      And User enters their correct pin
+      And User clicks on submit button at pin setup screen
+      When User clicks on back button at the top left
+      And User clicks on logout button
+      When User enters their correct pin
+      Then User should successfully login
 
 
       @Logintest @Logintest04
       Scenario: User Forgot Password, Sets new password and logs in with new password
 
         Given User is on Login Page
+        And User clicks on skip button
         And User clicks on Forgot password
         When User enters a valid E-id
         And User enters a valid phone number
@@ -52,6 +55,7 @@ Feature: Login Tests
         And User clicks on login button
         And User clicks on dont allow biometric button
         Then User should successfully login
+        Then User resets password to original password
 
 
       @Logintest @Logintest05

@@ -37,10 +37,7 @@ public class LoginSteps {
 
     @Given("User is on Login Page")
     public void user_is_on_login_page() throws InterruptedException {
-        Thread.sleep(2000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_no_on_mainscreen)));
-        LoginPage.getphone_no_mainscreen().clear();
-
+        Thread.sleep(3000);
     }
 
     @When("User enters correct phone number")
@@ -72,7 +69,7 @@ public class LoginSteps {
 
     @Then("User should successfully login")
     public void userShouldSuccessfullyLogin() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(4000);
     }
 
 
@@ -94,8 +91,8 @@ public class LoginSteps {
     @And("User clicks on setup pin login button")
     public void userClicksOnSetupPinLoginButton() throws InterruptedException {
         Thread.sleep(2000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(setup_pin_button_sidebar)));
-        LoginPage.get_setuppinbutton_sidebar().click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(setup_pin_login_button)));
+        LoginPage.getsetuppinloginbutton().click();
 
     }
 
@@ -125,7 +122,6 @@ public class LoginSteps {
     @And("User clicks on back button at the top left")
     public void userClicksOnBackButtonAtTheTopLeft() throws InterruptedException {
         LoginPage.get_backbutton_topleft().click();
-        Thread.sleep(2000);
     }
 
 
@@ -142,23 +138,25 @@ public class LoginSteps {
         LoginPage.enterpintologin(pin_2nd).click();
         LoginPage.enterpintologin((pin_3rd)).click();
         LoginPage.enterpintologin(pin_4th).click();
-        Thread.sleep(5000);
 
     }
 
     @And("User clicks on Forgot password")
     public void userClicksOnForgotPassword() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(forgot_password_at_login_screen)));
         LoginPage.getforgotpassword_loginscreen().click();
     }
 
     @When("User enters a valid E-id")
     public void userEntersAValidEId() throws InterruptedException {
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(e_id_field_at_forgot_password_screen)));
+        LoginPage.getEIDField_forgotpasswordflow().clear();
         LoginPage.getEIDField_forgotpasswordflow().sendKeys("784197848020307");
     }
 
     @And("User enters a valid phone number")
     public void userEntersAValidPhoneNumber() {
+        LoginPage.getphonenumberfield_forgotpassword().clear();
         LoginPage.getphonenumberfield_forgotpassword().sendKeys("123456789");
     }
 
@@ -181,13 +179,17 @@ public class LoginSteps {
 
     @When("User enters valid new password")
     public void userEntersNewPassword() {
-        LoginPage.getenternewpassword_forgotpassword().sendKeys("Password123!");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_password_forgot_password_flow)));
+        LoginPage.getenternewpassword_forgotpassword().sendKeys("Vista123!");
     }
 
 
     @And("User enters valid confirm new password")
-    public void userEntersValidConfirmNewPassword() {
-        LoginPage.getconfirmnewpassword_forgotpassword().sendKeys("Password123!");
+    public void userEntersValidConfirmNewPassword() throws InterruptedException {
+        LoginPage.getconfirmnewpassword_forgotpassword().sendKeys("Vista123!");
+        LoginPage.getview_password_forgot_password_flow().click();
+        Thread.sleep(2000);
+        LoginPage.getview_password_forgot_password_flow().click();
     }
 
 
@@ -199,7 +201,7 @@ public class LoginSteps {
 
     @And("User enters correct new password")
     public void userEntersCorrectNewPassword() {
-        LoginPage.getpassword_mainscreen().sendKeys("Password123!");
+        LoginPage.getpassword_mainscreen().sendKeys("Vista123!");
     }
 
 
@@ -249,5 +251,42 @@ public class LoginSteps {
     }
 
 
+    @And("User clicks on skip button")
+    public void userClicksOnSkipButton() {
+        LoginPage.getskipbutton().click();
+    }
 
+    @And("User clicks on My Profile button")
+    public void userClicksOnMyProfileButton() {
+        LoginPage.getmyprofilebutton().click();
+    }
+
+    @When("User clicks on Passwords and Biometrics Button")
+    public void userClicksOnPasswordsAndBiometricsButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(passwords_and_biometrics_button)));
+        LoginPage.getpasswordsandbiomterics().click();
+    }
+
+    @And("User clicks on logout button")
+    public void userClicksOnLogoutButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(logout_button)));
+        LoginPage.getlogoutbutton().click();
+    }
+
+    @Then("User resets password to original password")
+    public void userResetsPasswordToOriginalPassword() throws InterruptedException {
+        LoginPage.getmyprofilebutton().click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(passwords_and_biometrics_button)));
+        LoginPage.getpasswordsandbiomterics().click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(change_password_button_settings)));
+        LoginPage.get_changepasswordbutton_settings().click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(old_password_field_at_change_password)));
+        LoginPage.get_old_password_field_at_change_password().sendKeys("Vista123!");
+        LoginPage.get_new_password_field_at_change_password().sendKeys("Password123!");
+        LoginPage.get_enter_confirm_password_field().sendKeys("Password123!");
+        LoginPage.get_submitbutton_pinlogin().click();
+        Thread.sleep(3000);
+
+
+    }
 }
