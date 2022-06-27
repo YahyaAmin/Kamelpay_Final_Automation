@@ -58,6 +58,7 @@ public class LoginSteps {
     @And("User clicks on login button")
     public void userClicksOnLoginButton() throws InterruptedException {
         LoginPage.getlogin_button_mainscreen().click();
+        LoginPage.getlogin_button_mainscreen().click();
     }
 
     @And("User clicks on dont allow biometric button")
@@ -69,7 +70,7 @@ public class LoginSteps {
 
     @Then("User should successfully login")
     public void userShouldSuccessfullyLogin() throws InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(3000);
     }
 
 
@@ -149,6 +150,7 @@ public class LoginSteps {
 
     @When("User enters a valid E-id")
     public void userEntersAValidEId() throws InterruptedException {
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(e_id_field_at_forgot_password_screen)));
         LoginPage.getEIDField_forgotpasswordflow().clear();
         LoginPage.getEIDField_forgotpasswordflow().sendKeys("784197848020307");
@@ -207,9 +209,8 @@ public class LoginSteps {
 
     @When("User enters incorrect phone number")
     public void userEntersIncorrectPhoneNumber() {
-
-        LoginPage.getphone_no_mainscreen().sendKeys(getRandomNumberLowerAndUpperBound(5,10));
-
+        LoginPage.getphonenumberfield_forgotpassword().clear();
+        LoginPage.getphonenumberfield_forgotpassword().sendKeys(getRandomNumberLowerAndUpperBound(5,10));
     }
 
     @Then("User shouldn't be able to login")
@@ -229,7 +230,7 @@ public class LoginSteps {
 
     @And("User enters incorrect pin for login")
     public void userEntersIncorrectPinForLogin() throws InterruptedException {
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(wait_for_entering_correct_pin_screen)));
         LoginPage.enterpintologin(getRandomNumberLowerAndUpperBound(1,2)).click();
         LoginPage.enterpintologin(getRandomNumberLowerAndUpperBound(1,2)).click();
         LoginPage.enterpintologin((getRandomNumberLowerAndUpperBound(1,2))).click();
@@ -289,4 +290,6 @@ public class LoginSteps {
 
 
     }
+
+
 }
