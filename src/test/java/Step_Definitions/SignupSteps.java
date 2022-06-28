@@ -61,12 +61,13 @@ public class SignupSteps {
     public void userEntersTheirValidPhoneNumberForRegistration() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_register_yourself_page)));
         SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
-        String number = driver.findElement(By.xpath("//android.view.ViewGroup[2]/android.widget.EditText")).getText();
-        if (number.length()<9){
+        
+        while (driver.findElement(By.xpath("//android.view.ViewGroup[2]/android.widget.EditText")).getText().length()<9) {
             SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
         }
-        Thread.sleep(5000);
-    }
+        }
+
+
 
     @When("User enters their valid username for registration")
     public void userEntersTheirValidUsernameForRegistration() {
