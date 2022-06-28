@@ -137,10 +137,8 @@ public class SignupSteps {
 
     @When("User enters a different confirm password")
     public void userEntersADifferentConfirmPassword() throws InterruptedException {
-        Thread.sleep(2000);
         SignupPage.get_confirm_your_password_at_register_yourself_page().sendKeys(different_confirm_password);
         SignupPage.get_view_password_eye_button().click();
-        Thread.sleep(2000);
         SignupPage.get_view_password_eye_button().click();
     }
 
@@ -148,6 +146,7 @@ public class SignupSteps {
 
     @And("User enters their password without uppercase letters")
     public void userEntersTheirAPasswordWithoutUppercaseLetters() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_your_password_at_register_yourself_page)));
         SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(password_without_uppercase);
     }
 
@@ -163,6 +162,7 @@ public class SignupSteps {
 
     @And("User enters their password without a number")
     public void userEntersTheirPasswordWithoutANumber() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_your_password_at_register_yourself_page)));
         SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(password_without_number);
     }
 
@@ -178,6 +178,7 @@ public class SignupSteps {
 
     @And("User enters their password without a lowercase letter")
     public void userEntersTheirPasswordWithoutALowercaseLetter() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_your_password_at_register_yourself_page)));
         SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(password_without_lowercase);
 
     }
@@ -194,6 +195,7 @@ public class SignupSteps {
 
     @And("User enters their password without a special character")
     public void userEntersTheirPasswordWithoutASpecialCharacter() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_your_password_at_register_yourself_page)));
         SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(password_without_special_character);
     }
 
@@ -210,7 +212,8 @@ public class SignupSteps {
 
     @And("User enters their password but password is too short")
     public void userEntersTheirPasswordButPasswordIsTooShort() {
-        SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(short_password);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_your_password_at_register_yourself_page)));
+        SignupPage.get_enter_your_password_at_register_yourself_page().sendKeys(short_password);;
     }
 
     @When("User enters a confirm password but password is too short")
@@ -241,5 +244,10 @@ public class SignupSteps {
     @When("User enters an invalid email")
     public void userEntersAnInvalidEmail() {
         SignupPage.get_email_field_at_signup().sendKeys(getRandomString(true,true,true,true,false,10));
+    }
+
+    @When("User enters email with spaces")
+    public void userEntersEmailWithSpaces() {
+        SignupPage.get_email_field_at_signup().sendKeys(getRandomString(true,true,true,true,false,10)+" "+"gmail.com");
     }
 }

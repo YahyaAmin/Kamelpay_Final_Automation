@@ -81,17 +81,17 @@ Feature: Sign Up Tests
       And User clicks on sign up button
       Then User shouldn't be able to sign in
 
-#start from here
+
   @Signuptest @Signuptest06
   Scenario: User signup but user forgets to enter confirm password
 
     Given User is on Login Page
+    And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User selects PayD card
-    And User clicks on I am ready button
+    When User clicks Get Your New Card button
     And User enters their valid phone number for registration
-    When User enters their valid username for registration
-    When User enters their valid password
+    And User enters their valid password
+    And User clicks on I agree terms and conditions checkbox
     And User clicks on sign up button
     Then User shouldn't be able to sign in
 
@@ -100,58 +100,60 @@ Feature: Sign Up Tests
   Scenario: User signup but user enters phone number with less than 9 digits
 
     Given User is on Login Page
+    And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User selects PayD card
-    And User clicks on I am ready button
+    When User clicks Get Your New Card button
     And User enters phone number with less than nine digits
-    When User enters their valid username for registration
-    When User enters their valid password
-    And User enters a valid confirm password
+    And User enters their valid password
+    When User enters a valid confirm password
+    And User clicks on I agree terms and conditions checkbox
     And User clicks on sign up button
     Then User shouldn't be able to sign in
 
 
-  @Signuptest @Signuptest08
-  Scenario: User signup but user enters username with special characters
+  #@Signuptest @Signuptest08
+  #Scenario: User signup but user enters username with special characters
 
-    Given User is on Login Page
-    And User clicks on Don't have an account? signup button
-    When User selects PayD card
-    And User clicks on I am ready button
-    And User enters their valid phone number for registration
-    When User enters username with special characters
-    When User enters their valid password
-    And User enters a valid confirm password
-    And User clicks on sign up button
-    Then User shouldn't be able to sign in
+    #Given User is on Login Page
+    #And User clicks on Don't have an account? signup button
+    #When User selects PayD card
+    #And User clicks on I am ready button
+    #And User enters their valid phone number for registration
+    #When User enters username with special characters
+    #When User enters their valid password
+    #And User enters a valid confirm password
+    #And User clicks on sign up button
+    #Then User shouldn't be able to sign in
 
 
   @Signuptest @Signuptest09
-  Scenario: User signup but user enters username with spaces
+  Scenario: User signup but user enters email with spaces
 
     Given User is on Login Page
+    And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User selects PayD card
-    And User clicks on I am ready button
+    When User clicks Get Your New Card button
     And User enters their valid phone number for registration
-    When User enters username with spaces
-    When User enters their valid password
-    And User enters a valid confirm password
+    When User enters email with spaces
+    And User enters their valid password
+    When User enters a valid confirm password
+    And User clicks on I agree terms and conditions checkbox
     And User clicks on sign up button
     Then User shouldn't be able to sign in
+
 
 
   @Signuptest @Signuptest10
   Scenario: User signup but user enters a different confirm password
 
     Given User is on Login Page
+    And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User selects PayD card
-    And User clicks on I am ready button
+    When User clicks Get Your New Card button
     And User enters their valid phone number for registration
-    When User enters their valid username for registration
     And User enters their valid password
     When User enters a different confirm password
+    And User clicks on I agree terms and conditions checkbox
     And User clicks on sign up button
     Then User shouldn't be able to sign in
 
@@ -160,70 +162,75 @@ Feature: Sign Up Tests
   Scenario: User sign up but password does not have uppercase letters
 
     Given User is on Login Page
+    And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User selects PayD card
-    And User clicks on I am ready button
+    When User clicks Get Your New Card button
     And User enters their valid phone number for registration
-    When User enters their valid username for registration
     And User enters their password without uppercase letters
     When User enters a confirm password without uppercase letters
+    And User clicks on I agree terms and conditions checkbox
     And User clicks on sign up button
+    Then User shouldn't be able to sign in
 
 
   @Signuptest @Signuptest12
   Scenario: User sign up but password does not have a number
 
     Given User is on Login Page
+    And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User selects PayD card
-    And User clicks on I am ready button
+    When User clicks Get Your New Card button
     And User enters their valid phone number for registration
-    When User enters their valid username for registration
     And User enters their password without a number
     When User enters a confirm password without a number
+    And User clicks on I agree terms and conditions checkbox
     And User clicks on sign up button
+    Then User shouldn't be able to sign in
 
 
   @Signuptest @Signuptest13
   Scenario: User sign up but password does not have a lowercase letter
 
     Given User is on Login Page
+    And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User selects PayD card
-    And User clicks on I am ready button
+    When User clicks Get Your New Card button
     And User enters their valid phone number for registration
-    When User enters their valid username for registration
     And User enters their password without a lowercase letter
     When User enters a confirm password without a lowercase letter
+    And User clicks on I agree terms and conditions checkbox
     And User clicks on sign up button
+    Then User shouldn't be able to sign in
 
 
   @Signuptest @Signuptest14
   Scenario: User sign up but password does not have a special character
 
     Given User is on Login Page
+    And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User selects PayD card
-    And User clicks on I am ready button
+    When User clicks Get Your New Card button
     And User enters their valid phone number for registration
-    When User enters their valid username for registration
     And User enters their password without a special character
     When User enters a confirm password without a special character
+    And User clicks on I agree terms and conditions checkbox
     And User clicks on sign up button
+    Then User shouldn't be able to sign in
 
 
   @Signuptest @Signuptest15
   Scenario: User sign up but password is too short
 
     Given User is on Login Page
+    And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User selects PayD card
-    And User clicks on I am ready button
+    When User clicks Get Your New Card button
     And User enters their valid phone number for registration
-    When User enters their valid username for registration
     And User enters their password but password is too short
     When User enters a confirm password but password is too short
+    And User clicks on I agree terms and conditions checkbox
     And User clicks on sign up button
+    Then User shouldn't be able to sign in
 
 
 
