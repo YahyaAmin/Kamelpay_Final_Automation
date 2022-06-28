@@ -196,11 +196,11 @@ Feature: Sign Up Tests
     And User clicks on Don't have an account? signup button
     When User clicks Get Your New Card button
     And User enters their valid phone number for registration
-    And User enters their password without a lowercase letter
-    When User enters a confirm password without a lowercase letter
-    And User clicks on I agree terms and conditions checkbox
-    And User clicks on sign up button
-    Then User shouldn't be able to sign in
+    #And User enters their password without a lowercase letter
+    #When User enters a confirm password without a lowercase letter
+    #And User clicks on I agree terms and conditions checkbox
+    #And User clicks on sign up button
+    #Then User shouldn't be able to sign in
 
 
   @Signuptest @Signuptest14
