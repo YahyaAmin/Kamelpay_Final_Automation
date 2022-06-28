@@ -1,5 +1,6 @@
 package Step_Definitions;
 
+import Pages.Android.LoginPage;
 import Tests.Password_Builder;
 import io.cucumber.java.en.And;
 import Pages.Android.SignupPage;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static Hooks.Base_Class.driver;
-import static Pages.Android.LoginPage.phone_no_on_mainscreen;
 import static Pages.Android.SignupPage.*;
 import static Tests.Useful_functions.getRandomDigit;
 import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
@@ -113,7 +113,7 @@ public class SignupSteps {
 
     @Then("User shouldn't be able to sign in")
     public void userShouldnTBeAbleToSignIn() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(3000);
     }
 
 
@@ -249,5 +249,58 @@ public class SignupSteps {
     @When("User enters email with spaces")
     public void userEntersEmailWithSpaces() {
         SignupPage.get_email_field_at_signup().sendKeys(getRandomString(true,true,true,true,false,10)+" "+"gmail.com");
+    }
+
+    @And("User enters invalid OTP at register yourself")
+    public void userEntersInvalidOTPAtRegisterYourself() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_otp_1st_slot_sign_up)));
+        SignupPage.get_enter_otp_1st_slot_sign_up().sendKeys(getRandomNumberLowerAndUpperBound(6,7));
+        Thread.sleep(1000);
+    }
+
+    @And("User enters OTP with less than six digits")
+    public void userEntersOTPWithLessThanSixDigits() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_otp_1st_slot_sign_up)));
+        SignupPage.get_enter_otp_1st_slot_sign_up().sendKeys(getRandomNumberLowerAndUpperBound(1,6));
+        LoginPage.getnextbutton_otpscreen().click();
+        Thread.sleep(1000);
+    }
+
+    @And("User enters leaves OTP empty")
+    public void userEntersLeavesOTPEmpty() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_otp_1st_slot_sign_up)));
+        SignupPage.get_enter_otp_1st_slot_sign_up().sendKeys("");
+        LoginPage.getnextbutton_otpscreen().click();
+        Thread.sleep(1000);
+    }
+
+    @And("User clicks on verify button after signup")
+    public void userClicksOnVerifyButtonAfterSignup() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(verify_button_after_signup)));
+        SignupPage.getverify_button_after_signup().click();
+    }
+
+    @When("User enters their last four digits of card")
+    public void userEntersTheirLastFourDigitsOfCard() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_card_last_digits)));
+        SignupPage.getCardLastFourDigits().sendKeys(getRandomNumberLowerAndUpperBound(4,5));
+
+    }
+
+    @And("User clicks on proceed button")
+    public void userClicksOnProceedButton() {
+        SignupPage.getproceed_button().click();
+    }
+
+    @Then("User should move to scan ID page")
+    public void userShouldMoveToScanIDPage() throws InterruptedException {
+        Thread.sleep(5000);
+    }
+
+    @When("User enters last four digits of their card but with spaces")
+    public void userEntersLastFourDigitsOfTheirCardButWithSpaces() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(card_last_four_digits_sigunp)));
+        SignupPage.get_card_last_four_digits_sigunp().sendKeys(getRandomString(true,false,false,false,true,4));
+
     }
 }

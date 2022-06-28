@@ -233,12 +233,90 @@ Feature: Sign Up Tests
     Then User shouldn't be able to sign in
 
 
+  @Signuptest @Signuptest16
+  Scenario: User signup but user enters an invalid 6 digit OTP
+
+    Given User is on Login Page
+    And User clicks on skip button
+    And User clicks on Don't have an account? signup button
+    When User clicks Get Your New Card button
+    And User enters their valid phone number for registration
+    And User enters their valid password
+    When User enters a valid confirm password
+    And User clicks on I agree terms and conditions checkbox
+    And User clicks on sign up button
+    And User enters invalid OTP at register yourself
+    When User clicks on next button at OTP screen
+    Then User shouldn't be able to sign in
 
 
+  @Signuptest @Signuptest17
+  Scenario: User signup but user enters OTP with less than 6 digits
+
+    Given User is on Login Page
+    And User clicks on skip button
+    And User clicks on Don't have an account? signup button
+    When User clicks Get Your New Card button
+    And User enters their valid phone number for registration
+    And User enters their valid password
+    When User enters a valid confirm password
+    And User clicks on I agree terms and conditions checkbox
+    And User clicks on sign up button
+    And User enters OTP with less than six digits
+    When User clicks on next button at OTP screen
+    Then User shouldn't be able to sign in
 
 
+  @Signuptest @Signuptest18
+  Scenario: User signup but user leaves OTP empty
+
+    Given User is on Login Page
+    And User clicks on skip button
+    And User clicks on Don't have an account? signup button
+    When User clicks Get Your New Card button
+    And User enters their valid phone number for registration
+    And User enters their valid password
+    When User enters a valid confirm password
+    And User clicks on I agree terms and conditions checkbox
+    And User clicks on sign up button
+    And User enters leaves OTP empty
+    When User clicks on next button at OTP screen
+    Then User shouldn't be able to sign in
 
 
+  @Signuptest @Signuptest19
+  Scenario: User signs in and moves to scan ID to verify ID
+
+    Given User is on Login Page
+    And User clicks on skip button
+    And User clicks on Don't have an account? signup button
+    When User clicks Get Your New Card button
+    And User enters their valid phone number for registration
+    And User enters their valid password
+    When User enters a valid confirm password
+    And User clicks on I agree terms and conditions checkbox
+    And User clicks on sign up button
+    And User enters valid OTP at register yourself
+    And User clicks on next button at OTP screen
+    And User clicks on dont allow biometric button
+    Then User should be able to sign up successfully
+    And User clicks on verify button after signup
+    When User enters their last four digits of card
+    And User clicks on proceed button
+    Then User should move to scan ID page
+
+
+  @Signuptest @Signuptest20
+  Scenario: User enters a card number with spaces at signup
+
+    Given User is on Login Page
+    And User clicks on skip button
+    And User clicks on Don't have an account? signup button
+    When User enters last four digits of their card but with spaces
+    And User clicks on I am ready button
+    Then User shouldn't be able to sign in
+
+    
 
 
 

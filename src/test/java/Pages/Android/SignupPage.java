@@ -12,7 +12,13 @@ public class SignupPage {
 
     public WebDriverWait wait = new WebDriverWait(driver, 30);
 
+    public static String enter_card_last_digits = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText";
+
+    private static String proceed_button = "//android.widget.TextView[@text='Proceed']";
+
     public static String card_last_four_digits_sigunp = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText";
+
+    public static String verify_button_after_signup = "//android.widget.TextView[@text='Verify']";
 
     private static String view_password_eye_button = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.widget.TextView";
 
@@ -49,7 +55,7 @@ public class SignupPage {
 
     public static String centiv_card_select_button_at_sign_up = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]";
 
-    private static String verify_button_after_sign_up = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]";
+    //private static String verify_button_after_sign_up = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]";
 
     private static String card_number_last_4_digits_1st_digit = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText";
 
@@ -91,9 +97,11 @@ public class SignupPage {
 
     public static AndroidElement get_dont_allow_biometric_button_after_sign_up(){return driver.findElement(By.xpath(dont_allow_biometric_button_after_sign_up));}
 
+    public static AndroidElement getCardLastFourDigits(){return driver.findElement(By.xpath(enter_card_last_digits));}
+
     public static AndroidElement get_centiv_card_select_button_at_sign_up(){return driver.findElement(By.xpath(centiv_card_select_button_at_sign_up));}
 
-    public static AndroidElement get_verify_button_after_sign_up(){return driver.findElement(By.xpath(verify_button_after_sign_up));}
+    //public static AndroidElement get_verify_button_after_sign_up(){return driver.findElement(By.xpath(verify_button_after_sign_up));}
 
     public static AndroidElement get_card_number_last_4_digits_1st_digit(){return driver.findElement(By.xpath(card_number_last_4_digits_1st_digit));}
 
@@ -110,4 +118,9 @@ public class SignupPage {
     public static AndroidElement get_i_agree_termsandcondition(){return driver.findElement(By.xpath(i_agree_termsandcondition));}
 
     public static AndroidElement getGetNewCard(){return driver.findElement(By.xpath(get_new_card_button));}
+
+    public static AndroidElement getverify_button_after_signup(){return driver.findElement(By.xpath(verify_button_after_signup));}
+
+    public static AndroidElement getproceed_button(){return driver.findElement(By.xpath(proceed_button));}
+
 }

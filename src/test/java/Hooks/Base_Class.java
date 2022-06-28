@@ -44,7 +44,7 @@ public class Base_Class {
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi");
         caps.setCapability(MobileCapabilityType.UDID, "7664beac0820");
-        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "60");
+        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "30");
         caps.setCapability(MobileCapabilityType.APP,finalpath);
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 
