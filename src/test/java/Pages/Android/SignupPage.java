@@ -31,7 +31,7 @@ public class SignupPage {
 
     public static String i_am_ready_button_at_signup = "//android.widget.TextView[@text='I am ready']";
 
-    public static String phone_number_field_at_register_yourself_page = "//android.widget.EditText[@text='__ ___ ____']";
+    public static String phone_number_field_at_register_yourself_page = "//android.view.ViewGroup[2]/android.widget.EditText";
 
     private static String username_field_at_register_yourself_page = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText";
 
