@@ -1,4 +1,4 @@
-@CardManagement
+@CardManagementFeature
 Feature: Card Management
 
   #User login steps in background

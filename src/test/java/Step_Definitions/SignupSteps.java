@@ -61,6 +61,7 @@ public class SignupSteps {
     public void userEntersTheirValidPhoneNumberForRegistration() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_register_yourself_page)));
         SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
+        
     }
 
     @When("User enters their valid username for registration")
