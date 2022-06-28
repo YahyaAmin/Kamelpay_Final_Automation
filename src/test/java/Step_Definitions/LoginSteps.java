@@ -2,7 +2,6 @@ package Step_Definitions;
 
 import Pages.Android.LoginPage;
 import Tests.Password_Builder;
-import io.appium.java_client.functions.ExpectedCondition;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -122,6 +121,7 @@ public class LoginSteps {
 
     @And("User clicks on back button at the top left")
     public void userClicksOnBackButtonAtTheTopLeft() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(back_button_top_left)));
         LoginPage.get_backbutton_topleft().click();
     }
 

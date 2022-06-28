@@ -316,7 +316,7 @@ Feature: Sign Up Tests
     And User clicks on I am ready button
     Then User shouldn't be able to sign in
 
-    
+
 
 
 
