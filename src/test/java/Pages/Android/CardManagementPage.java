@@ -9,6 +9,8 @@ public class CardManagementPage {
 
     public WebDriverWait wait = new WebDriverWait(driver, 30);
 
+    public static String tap_to_view_transaction_history = "//android.widget.TextView[@text='Tap to See Transactions']";
+
     public static String card_status_popup_byid = "rootView";
 
     public static String cross_button_popup_id = "trailingIcon";
@@ -66,5 +68,7 @@ public class CardManagementPage {
     public static AndroidElement get_cross_button_popup_id(){return driver.findElementById(cross_button_popup_id);}
 
     public static AndroidElement get_unblock_button(){return driver.findElement(By.xpath(unblock_button));}
+
+    public static AndroidElement get_tap_to_view_transaction_history(){return driver.findElement(By.xpath(tap_to_view_transaction_history));}
 
 }

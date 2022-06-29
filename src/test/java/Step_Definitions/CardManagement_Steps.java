@@ -250,4 +250,15 @@ public class CardManagement_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(card_management_button)));
         scrollLeft();
     }
+
+    @And("User clicks on Tap to See transaction history")
+    public void userClicksOnTapToSeeTransactionHistory() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(tap_to_view_transaction_history)));
+        CardManagementPage.get_tap_to_view_transaction_history().click();
+    }
+
+    @Then("User should see their transaction history")
+    public void userShouldSeeTheirTransactionHistory() throws InterruptedException {
+        Thread.sleep(4000);
+    }
 }

@@ -200,6 +200,12 @@ Feature: Card Management
     Then User should successfully unblock both cards
 
 
+  @CardManagement @CardManagement20
+  Scenario: User checks transaction history at card management
+
+    Given User clicks on card management button
+    And User clicks on Tap to See transaction history
+    Then User should see their transaction history
 
 
 
