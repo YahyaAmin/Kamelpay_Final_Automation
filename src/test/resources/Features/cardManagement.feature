@@ -85,4 +85,42 @@ Feature: Card Management
     Then User shouldnt be able to change pin
 
 
+  @CardManagement @CardManagement11
+  Scenario: User checks change pin at card management but leaves pin empty
+
+    Given User clicks on card management button
+    When User scrolls down
+    And User clicks on change pin button at card management screen
+    When User enters valid OTP after card management
+    And User clicks on next button at OTP screen
+    And User enters correct new confirm pin
+    When User clicks on next button change pin screen
+    Then User shouldn't be able to sign in
+
+
+  @CardManagement @CardManagement12
+  Scenario: User checks change pin at card management but confirm leaves pin empty
+
+    Given User clicks on card management button
+    When User scrolls down
+    And User clicks on change pin button at card management screen
+    When User enters valid OTP after card management
+    And User clicks on next button at OTP screen
+    And User enters their correct pin
+    When User clicks on next button change pin screen
+    Then User shouldn't be able to sign in
+
+
+  @CardManagement @CardManagement14
+  Scenario: User checks change card pin but pin has less than 4 digits
+
+    Given User clicks on card management button
+    When User scrolls down
+    And User clicks on change pin button at card management screen
+    When User enters valid OTP after card management
+    And User clicks on next button at OTP screen
+    And User enters their pin with less tha
+    When User clicks on next button change pin screen
+    Then User shouldn't be able to sign in
+
 

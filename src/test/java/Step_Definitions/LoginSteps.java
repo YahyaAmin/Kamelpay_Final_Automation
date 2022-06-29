@@ -116,7 +116,7 @@ public class LoginSteps {
     @When("User clicks on submit button at pin setup screen")
     public void userClicksOnSubmitButtonAtPinSetupScreen() throws InterruptedException {
         LoginPage.get_submitbutton_pinlogin().click();
-        Thread.sleep(3000);
+        Thread.sleep(9000);
     }
 
     @And("User clicks on back button at the top left")
@@ -256,6 +256,7 @@ public class LoginSteps {
 
     @And("User clicks on skip button")
     public void userClicksOnSkipButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(skip_button)));
         LoginPage.getskipbutton().click();
     }
 
