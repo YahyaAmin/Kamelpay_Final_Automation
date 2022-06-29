@@ -99,14 +99,14 @@ Feature: Card Management
 
 
   @CardManagement @CardManagement12
-  Scenario: User checks change pin at card management but confirm leaves pin empty
+  Scenario: User checks change pin at card management but leaves confirm pin empty
 
     Given User clicks on card management button
     When User scrolls down
     And User clicks on change pin button at card management screen
     When User enters valid OTP after card management
     And User clicks on next button at OTP screen
-    And User enters their correct pin
+    And User enters correct new confirm pin
     When User clicks on next button change pin screen
     Then User shouldn't be able to sign in
 
@@ -119,8 +119,14 @@ Feature: Card Management
     And User clicks on change pin button at card management screen
     When User enters valid OTP after card management
     And User clicks on next button at OTP screen
-    And User enters their pin with less tha
+    And User enters their pin with less than four digits
+    When User enters confirm pin with less than four digits
     When User clicks on next button change pin screen
     Then User shouldn't be able to sign in
+
+
+  @CardManagement @CardManagement15
+  Scenario: User  
+
 
 

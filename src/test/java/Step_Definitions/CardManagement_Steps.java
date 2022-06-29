@@ -91,6 +91,7 @@ public class CardManagement_Steps {
 
     @And("User enters correct new confirm pin")
     public void userEntersCorrectNewConfirmPin() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(confirm_new_pin_for_card)));
         CardManagementPage.get_confirm_new_pin_for_card().sendKeys(pin_for_card_1st+pin_for_card_2nd+pin_for_card_3rd+pin_for_card_4th);
     }
 
@@ -134,4 +135,20 @@ public class CardManagement_Steps {
         CardManagementPage.get_otp_1st_at_card_management().sendKeys(getRandomNumberLowerAndUpperBound(6,7));
     }
 
+
+    String pin_lessthan4digits = getRandomNumberLowerAndUpperBound(1,4);
+
+    @And("User enters their pin with less than four digits")
+    public void userEntersTheirPinWithLessThanFourDigits() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_for_card)));
+        CardManagementPage.get_enter_new_pin_for_card().sendKeys(pin_lessthan4digits);
+        CardManagementPage.get_enter_new_pin_for_card().click();
+    }
+
+    @When("User enters confirm pin with less than four digits")
+    public void userEntersConfirmPinWithLessThanFourDigits() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(confirm_new_pin_for_card)));
+        CardManagementPage.get_confirm_new_pin_for_card().sendKeys(pin_lessthan4digits);
+        CardManagementPage.get_confirm_new_pin_for_card().click();
+    }
 }
