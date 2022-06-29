@@ -1,6 +1,7 @@
 package Step_Definitions;
 
 import Pages.Android.LoginPage;
+import Tests.Password_Builder;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,6 +18,20 @@ import static Pages.Android.CardManagementPage.*;
 import static Tests.Useful_functions.*;
 
 public class CardManagement_Steps {
+
+    public String getRandomString(boolean Digits, boolean Lower, boolean Upper, boolean Punctuation, boolean Spaces, int length) {
+
+        Password_Builder.PasswordGenerator passwordGenerator = new Password_Builder.PasswordGenerator.PasswordGeneratorBuilder()
+                .useDigits(Digits)
+                .useLower(Lower)
+                .useUpper(Upper)
+                .usePunctuation(Punctuation)
+                .useSpaces(Spaces)
+                .build();
+        String password = passwordGenerator.generate(length); // output ex.: lrU12fmM 75iwI90o
+        return password;
+
+    }
 
     public WebDriverWait wait = new WebDriverWait(driver, 30);
     @Given("User clicks on card management button")
@@ -150,5 +165,40 @@ public class CardManagement_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(confirm_new_pin_for_card)));
         CardManagementPage.get_confirm_new_pin_for_card().sendKeys(pin_lessthan4digits);
         CardManagementPage.get_confirm_new_pin_for_card().click();
+    }
+
+    @When("User enters a different confirm pin for card")
+    public void userEntersADifferentConfirmPinForCard() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(confirm_new_pin_for_card)));
+        CardManagementPage.get_confirm_new_pin_for_card().sendKeys(getRandomNumberLowerAndUpperBound(4,5));
+    }
+
+    String pin_with_spaces = getRandomString(true,false,false,false,true,4);
+
+    @And("User enters a card pin with spaces")
+    public void userEntersACardPinWithSpaces() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_for_card)));
+        CardManagementPage.get_enter_new_pin_for_card().sendKeys(pin_with_spaces);
+    }
+
+    @When("User enters a confirm pin for card with spaces")
+    public void userEntersAConfirmPinForCardWithSpaces() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(confirm_new_pin_for_card)));
+        CardManagementPage.get_confirm_new_pin_for_card().sendKeys(pin_with_spaces);
+
+    }
+
+    String pin_with_special_characters = getRandomString(true,false,false,true,false,4);
+
+    @And("User enters a card pin with special characters")
+    public void userEntersACardPinWithSpecialCharacters() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_for_card)));
+        CardManagementPage.get_enter_new_pin_for_card().sendKeys(pin_with_special_characters);
+    }
+
+    @When("User enters a confirm pin for card with special characters")
+    public void userEntersAConfirmPinForCardWithSpecialCharacters() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(confirm_new_pin_for_card)));
+        CardManagementPage.get_confirm_new_pin_for_card().sendKeys(pin_with_special_characters);
     }
 }

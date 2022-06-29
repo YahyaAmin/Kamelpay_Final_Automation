@@ -126,7 +126,51 @@ Feature: Card Management
 
 
   @CardManagement @CardManagement15
-  Scenario: User  
+  Scenario: User enters a different pin and confirm pin for card
+
+    Given User clicks on card management button
+    When User scrolls down
+    And User clicks on change pin button at card management screen
+    When User enters valid OTP after card management
+    And User clicks on next button at OTP screen
+    And User enters a new valid pin for card
+    When User enters a different confirm pin for card
+    When User clicks on next button change pin screen
+    Then User shouldn't be able to sign in
 
 
+  @CardManagement @CardManagement16
+  Scenario: User enters card pin but pin has spaces
+
+    Given User clicks on card management button
+    When User scrolls down
+    And User clicks on change pin button at card management screen
+    When User enters valid OTP after card management
+    And User clicks on next button at OTP screen
+    And User enters a card pin with spaces
+    When User enters a confirm pin for card with spaces
+    When User clicks on next button change pin screen
+    Then User shouldn't be able to sign in
+
+
+  @CardManagement @CardManagement17
+  Scenario: User enters card pin but pin has special characters
+
+    Given User clicks on card management button
+    When User scrolls down
+    And User clicks on change pin button at card management screen
+    When User enters valid OTP after card management
+    And User clicks on next button at OTP screen
+    And User enters a card pin with special characters
+    When User enters a confirm pin for card with special characters
+    When User clicks on next button change pin screen
+    Then User shouldn't be able to sign in
+
+
+  @CardManagement @CardManagement18
+  Scenario: User blocks both cards and activates both cards
+
+    Given User clicks on Centiv card
+    And User scrolls down
+    When User clicks
 
