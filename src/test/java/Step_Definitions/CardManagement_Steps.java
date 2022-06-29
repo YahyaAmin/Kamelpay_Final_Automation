@@ -201,4 +201,24 @@ public class CardManagement_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(confirm_new_pin_for_card)));
         CardManagementPage.get_confirm_new_pin_for_card().sendKeys(pin_with_special_characters);
     }
+
+
+    @When("User clicks on Block-Unblock button")
+    public void userClicksOnBlockUnblockButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(block_unblock_button)));
+        CardManagementPage.get_block_unblock_button().click();
+    }
+
+    @And("User clicks on temporary block button")
+    public void userClicksOnTemporaryBlockButton() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(temporary_block_button)));
+        CardManagementPage.get_temporary_block_button().click();
+        Thread.sleep(7500);
+    }
+
+    @When("User clicks on the cross icon at the popup on card status screen")
+    public void userClicksOnTheCrossIconAtThePopupOnCardStatusScreen() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(card_status_popup_byid)));
+        CardManagementPage.get_cross_button_popup_id().click();
+    }
 }

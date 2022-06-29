@@ -172,5 +172,17 @@ Feature: Card Management
 
     Given User clicks on Centiv card
     And User scrolls down
-    When User clicks
+    When User clicks on Block-Unblock button
+    And User clicks on temporary block button
+    And User clicks on back button at the top left
+    When User clicks on back button at the top left
+    And User scrolls to the right
+    When User clicks on Payd card
+    And User scrolls down
+    When User clicks on Block-Unblock button
+    And User clicks on temporary block button
+    
+
+
+
 

@@ -9,6 +9,14 @@ public class CardManagementPage {
 
     public WebDriverWait wait = new WebDriverWait(driver, 30);
 
+    public static String card_status_popup_byid = "rootView";
+
+    public static String cross_button_popup_id = "trailingIcon";
+
+    public static String temporary_block_button = "//android.widget.TextView[@text='Temporary Block']";
+
+    public static String block_unblock_button = "//android.widget.TextView[@text='Block/Unblock']";
+
     public static String otp_1st_at_card_management = "//android.widget.EditText[@text='0']";
 
     private static String next_button = "//android.widget.TextView[@text='Next']";
@@ -47,5 +55,11 @@ public class CardManagementPage {
     public static AndroidElement get_next_button(){return driver.findElement(By.xpath(next_button));}
 
     public static AndroidElement get_otp_1st_at_card_management(){return driver.findElement(By.xpath(otp_1st_at_card_management));}
+    public static AndroidElement get_block_unblock_button(){return driver.findElement(By.xpath(block_unblock_button));}
 
+    public static AndroidElement get_temporary_block_button(){return driver.findElement(By.xpath(temporary_block_button));}
+
+    public static AndroidElement get_card_status_popup_byid(){return driver.findElementById(card_status_popup_byid);}
+
+    public static AndroidElement get_cross_button_popup_id(){return driver.findElementById(cross_button_popup_id);}
 }
