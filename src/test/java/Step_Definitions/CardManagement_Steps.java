@@ -222,8 +222,31 @@ public class CardManagement_Steps {
         CardManagementPage.get_cross_button_popup_id().click();
     }
 
-    @And("When User scrolls to the left")
-    public void whenUserScrollsToTheLeft() {
+
+
+    @When("user clicks unblock button")
+    public void userClicksUnblockButton() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(unblock_button)));
+        CardManagementPage.get_unblock_button().click();
+        Thread.sleep(7500);
+    }
+
+    @Then("User should successfully unblock both cards")
+    public void userShouldSuccessfullyUnblockBothCards() throws InterruptedException {
+        Thread.sleep(4000);
+    }
+
+    @And("User scrolls down at Payd card")
+    public void userScrollsDownAtPaydCard() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(payd_card_homescreen)));
+        scrollDown();
+    }
+
+
+
+
+    @And("User scrolls to the left")
+    public void userScrollsToTheLeft() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(card_management_button)));
         scrollLeft();
     }

@@ -178,13 +178,28 @@ Feature: Card Management
     When User clicks on back button at the top left
     And User scrolls to the right
     When User clicks on Payd card
-    And User scrolls down
+    And User scrolls down at Payd card
     When User clicks on Block-Unblock button
     And User clicks on temporary block button
     And User clicks on back button at the top left
     When User clicks on back button at the top left
-    #both cards blocked here
-    And When User scrolls to the left
+    And User scrolls to the left
+    When User clicks on Centiv card
+    And User clicks on Block-Unblock button
+    When user clicks unblock button
+    And User clicks on back button at the top left
+    When User clicks on back button at the top left
+    And User scrolls to the right
+    When User clicks on Payd card
+    And User scrolls down at Payd card
+    When User clicks on Block-Unblock button
+    When user clicks unblock button
+    And User clicks on back button at the top left
+    When User clicks on back button at the top left
+    And User scrolls to the left
+    Then User should successfully unblock both cards
+
+
 
 
 

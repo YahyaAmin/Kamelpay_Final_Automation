@@ -17,6 +17,8 @@ public class CardManagementPage {
 
     public static String block_unblock_button = "//android.widget.TextView[@text='Block/Unblock']";
 
+    public static String unblock_button = "//android.widget.TextView[@text='Unblock']";
+
     public static String otp_1st_at_card_management = "//android.widget.EditText[@text='0']";
 
     private static String next_button = "//android.widget.TextView[@text='Next']";
@@ -62,4 +64,7 @@ public class CardManagementPage {
     public static AndroidElement get_card_status_popup_byid(){return driver.findElementById(card_status_popup_byid);}
 
     public static AndroidElement get_cross_button_popup_id(){return driver.findElementById(cross_button_popup_id);}
+
+    public static AndroidElement get_unblock_button(){return driver.findElement(By.xpath(unblock_button));}
+
 }
