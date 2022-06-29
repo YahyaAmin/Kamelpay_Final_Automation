@@ -221,4 +221,10 @@ public class CardManagement_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(card_status_popup_byid)));
         CardManagementPage.get_cross_button_popup_id().click();
     }
+
+    @And("When User scrolls to the left")
+    public void whenUserScrollsToTheLeft() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(card_management_button)));
+        scrollLeft();
+    }
 }

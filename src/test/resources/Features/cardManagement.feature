@@ -181,7 +181,11 @@ Feature: Card Management
     And User scrolls down
     When User clicks on Block-Unblock button
     And User clicks on temporary block button
-    
+    And User clicks on back button at the top left
+    When User clicks on back button at the top left
+    #both cards blocked here
+    And When User scrolls to the left
+
 
 
 
