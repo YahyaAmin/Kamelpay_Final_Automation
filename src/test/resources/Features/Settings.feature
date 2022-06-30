@@ -203,3 +203,43 @@ Feature: Login Tests
     And User clicks on view password button
     And User clicks on submit button at pin setup screen
     Then User shouldnt be able to change password
+
+
+  @Settingstest @Settingstest18
+  Scenario: User goes to setup pin and enables login with pin
+
+    And User clicks on My Profile button
+    When User clicks on Passwords and Biometrics Button
+    And User clicks on setup pin login button
+    When User enters pin to setup pin
+    And User enters the same confirm pin
+    And User clicks on submit button at pin setup screen
+    And User clicks on back button at the top left
+    And User clicks on logout button
+    When User enters their correct pin
+    Then User should successfully login
+
+
+  @Settingstest @Settingstest19
+  Scenario: User goes to setup pin but leaves pin empty
+
+    And User clicks on My Profile button
+    When User clicks on Passwords and Biometrics Button
+    And User clicks on setup pin login button
+    When User leaves pin empty
+    And User leaves confirm pin empty
+    And User clicks on submit button at pin setup screen
+
+
+  @Settingstest @Settingstest20
+  Scenario: User goes to setup pin but enters pin with less than four digits
+
+    And User clicks on My Profile button
+    When User clicks on Passwords and Biometrics Button
+    And User clicks on setup pin login button
+    When User enters their setup pin with less than four digits
+    And User enters their setup confirm pin with less than four digits
+    And User clicks on submit button at pin setup screen
+
+
+    

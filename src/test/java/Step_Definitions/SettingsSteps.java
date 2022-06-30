@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static Hooks.Base_Class.driver;
 import static Pages.Android.LoginPage.*;
 import static Pages.Android.SettingsPage.*;
-
+import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
 
 
 public class SettingsSteps {
@@ -135,6 +135,8 @@ public class SettingsSteps {
         SettingsPage.get_enter_old_password_field().sendKeys(getRandomString(true,true,true,true,false,20));
     }
 
+    String pin_less_than_4_digits = getRandomNumberLowerAndUpperBound(1,4);
+
     String password_without_uppercase = getRandomString(true,true,false,true,false,20);
     String password_without_lowercase = getRandomString(true,false,true,true,false,20);
 
@@ -204,5 +206,32 @@ public class SettingsSteps {
     @When("User enters a different confirm passwords")
     public void userEntersADifferentConfirmPasswords() {
         SettingsPage.get_enter_confirm_password_field().sendKeys(getRandomString(true,true,true,true,false,20));
+    }
+
+    @When("User leaves pin empty")
+    public void userLeavesPinEmpty() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_1st)));
+        LoginPage.get_enternewpin_pinlogin().sendKeys("");
+    }
+
+    @And("User leaves confirm pin empty")
+    public void userLeavesConfirmPinEmpty() {
+        LoginPage.get_confirmpin_pinlogin().sendKeys("");
+    }
+
+    @Then("User shouldnt be able to change pin code")
+    public void userShouldntBeAbleToChangePinCode() throws InterruptedException {
+        Thread.sleep(3000);
+    }
+
+    @When("User enters their setup pin with less than four digits")
+    public void userEntersTheirSetupPinWithLessThanFourDigits() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_1st)));
+        LoginPage.get_enternewpin_pinlogin().sendKeys(pin_less_than_4_digits);
+    }
+
+    @And("User enters their setup confirm pin with less than four digits")
+    public void userEntersTheirSetupConfirmPinWithLessThanFourDigits() {
+        LoginPage.get_confirmpin_pinlogin().sendKeys(pin_less_than_4_digits);
     }
 }
