@@ -146,6 +146,10 @@ public class SettingsSteps {
 
     String password_with_spaces = getRandomString(true,true,true,true,true,20);
 
+    String pin_with_spaces = getRandomString(true,false,false,false,true,4);
+
+    String pin_with_special_characters = getRandomString(true,false,false,true,false,4);
+
     @And("User enters their new password without uppercase letters")
     public void userEntersTheirNewPasswordWithoutUppercaseLetters() {
         SettingsPage.get_enter_new_password_field().sendKeys(password_without_uppercase);
@@ -233,5 +237,34 @@ public class SettingsSteps {
     @And("User enters their setup confirm pin with less than four digits")
     public void userEntersTheirSetupConfirmPinWithLessThanFourDigits() {
         LoginPage.get_confirmpin_pinlogin().sendKeys(pin_less_than_4_digits);
+    }
+
+    @When("User enters their setup pin but pin has spaces")
+    public void userEntersTheirSetupPinButPinHasSpaces() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_1st)));
+        LoginPage.get_enternewpin_pinlogin().sendKeys(pin_with_spaces);
+    }
+
+    @And("User enters their setup confirm pin but pin has spaces")
+    public void userEntersTheirSetupConfirmPinButPinHasSpaces() {
+        LoginPage.get_confirmpin_pinlogin().sendKeys(pin_with_spaces);
+    }
+
+    @When("User enters their setup pin but pin has special characters")
+    public void userEntersTheirSetupPinButPinHasSpecialCharacters() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_1st)));
+        LoginPage.get_enternewpin_pinlogin().sendKeys(pin_with_special_characters);
+    }
+
+    @And("User enters their setup confirm pin but pin has special characters")
+    public void userEntersTheirSetupConfirmPinButPinHasSpecialCharacters() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_1st)));
+        LoginPage.get_confirmpin_pinlogin().sendKeys(pin_with_special_characters);
+    }
+
+    @And("User enters a different confirm pin at setup pin")
+    public void userEntersADifferentConfirmPinAtSetupPin() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_1st)));
+        LoginPage.get_confirmpin_pinlogin().sendKeys(getRandomNumberLowerAndUpperBound(4,5));
     }
 }

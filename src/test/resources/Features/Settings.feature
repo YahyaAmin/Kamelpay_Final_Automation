@@ -242,4 +242,34 @@ Feature: Login Tests
     And User clicks on submit button at pin setup screen
 
 
-    
+  @Settingstest @Settingstest21
+  Scenario: User goes to setup pin but enters pin with spaces
+
+    And User clicks on My Profile button
+    When User clicks on Passwords and Biometrics Button
+    And User clicks on setup pin login button
+    When User enters their setup pin but pin has spaces
+    And User enters their setup confirm pin but pin has spaces
+    And User clicks on submit button at pin setup screen
+
+
+  @Settingstest @Settingstest22
+  Scenario: User goes to setup pin but pin has special characters
+
+    And User clicks on My Profile button
+    When User clicks on Passwords and Biometrics Button
+    And User clicks on setup pin login button
+    When User enters their setup pin but pin has special characters
+    And User enters their setup confirm pin but pin has special characters
+    And User clicks on submit button at pin setup screen
+
+
+  @Settingstest @Settingstest23
+  Scenario: User goes to setup pin but pin and confirm pin does not match
+
+    And User clicks on My Profile button
+    When User clicks on Passwords and Biometrics Button
+    And User clicks on setup pin login button
+    When User enters pin to setup pin
+    And User enters a different confirm pin at setup pin
+    And User clicks on submit button at pin setup screen
