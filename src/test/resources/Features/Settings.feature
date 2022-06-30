@@ -161,3 +161,45 @@ Feature: Login Tests
     And User clicks on view password button
     And User clicks on submit button at pin setup screen
     Then User shouldnt be able to change password
+
+
+  @Settingstest @Settingstest14
+  Scenario: User goes to change password but user enters new password without a special character
+
+    Given User clicks on settings button at the bottom right
+    And User clicks on Passwords and Biometrics Button
+    When User clicks on change password button
+    And User enters their old password
+    And User enters their new password without a special character
+    When User enters their confirm password without a special character
+    And User clicks on view password button
+    And User clicks on submit button at pin setup screen
+    Then User shouldnt be able to change password
+
+
+  @Settingstest @Settingstest15
+  Scenario: User goes to change password but user enters new password with spaces
+
+    Given User clicks on settings button at the bottom right
+    And User clicks on Passwords and Biometrics Button
+    When User clicks on change password button
+    And User enters their old password
+    And User enters their new password with spaces
+    When User enters their confirm password with spaces
+    And User clicks on view password button
+    And User clicks on submit button at pin setup screen
+    Then User shouldnt be able to change password
+
+
+  @Settingstest @Settingstest16
+  Scenario: User goes to change password but password and confirm password do not match
+
+    Given User clicks on settings button at the bottom right
+    And User clicks on Passwords and Biometrics Button
+    When User clicks on change password button
+    And User enters their old password
+    And User enters their new passwords
+    When User enters a different confirm passwords
+    And User clicks on view password button
+    And User clicks on submit button at pin setup screen
+    Then User shouldnt be able to change password

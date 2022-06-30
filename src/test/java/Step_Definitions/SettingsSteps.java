@@ -14,7 +14,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static Hooks.Base_Class.driver;
 import static Pages.Android.LoginPage.*;
 import static Pages.Android.SettingsPage.*;
-import static Tests.Useful_functions.*;
+
+
 
 public class SettingsSteps {
     public WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -139,6 +140,10 @@ public class SettingsSteps {
 
     String password_without_number = getRandomString(false,true,true,true,false,20);
 
+    String password_without_special_character = getRandomString(true,true,true,false,false,20);
+
+    String password_with_spaces = getRandomString(true,true,true,true,true,20);
+
     @And("User enters their new password without uppercase letters")
     public void userEntersTheirNewPasswordWithoutUppercaseLetters() {
         SettingsPage.get_enter_new_password_field().sendKeys(password_without_uppercase);
@@ -160,5 +165,44 @@ public class SettingsSteps {
         SettingsPage.get_enter_confirm_password_field().sendKeys(password_without_lowercase);
     }
 
-    
+
+    @And("User enters their new password without a number")
+    public void userEntersTheirNewPasswordWithoutANumber() {
+        SettingsPage.get_enter_new_password_field().sendKeys(password_without_number);
+    }
+
+    @When("User enters their confirm password without a number")
+    public void userEntersTheirConfirmPasswordWithoutANumber() {
+        SettingsPage.get_enter_confirm_password_field().sendKeys(password_without_number);
+    }
+
+    @And("User enters their new password without a special character")
+    public void userEntersTheirNewPasswordWithoutASpecialCharacter() {
+        SettingsPage.get_enter_new_password_field().sendKeys(password_without_special_character);
+    }
+
+    @When("User enters their confirm password without a special character")
+    public void userEntersTheirConfirmPasswordWithoutASpecialCharacter() {
+        SettingsPage.get_enter_confirm_password_field().sendKeys(password_without_special_character);
+    }
+
+    @And("User enters their new password with spaces")
+    public void userEntersTheirNewPasswordWithSpaces() {
+        SettingsPage.get_enter_new_password_field().sendKeys(password_with_spaces);
+    }
+
+    @When("User enters their confirm password with spaces")
+    public void userEntersTheirConfirmPasswordWithSpaces() {
+        SettingsPage.get_enter_confirm_password_field().sendKeys(password_with_spaces);
+    }
+
+    @And("User enters their new passwords")
+    public void userEntersTheirNewPasswords() {
+        SettingsPage.get_enter_new_password_field().sendKeys(getRandomString(true,true,true,true,false,20));
+    }
+
+    @When("User enters a different confirm passwords")
+    public void userEntersADifferentConfirmPasswords() {
+        SettingsPage.get_enter_confirm_password_field().sendKeys(getRandomString(true,true,true,true,false,20));
+    }
 }
