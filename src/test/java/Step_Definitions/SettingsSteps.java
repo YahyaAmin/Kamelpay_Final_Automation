@@ -15,6 +15,7 @@ import static Hooks.Base_Class.driver;
 import static Pages.Android.LoginPage.*;
 import static Pages.Android.SettingsPage.*;
 import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
+import static Tests.Useful_functions.scrollDown;
 
 
 public class SettingsSteps {
@@ -266,5 +267,75 @@ public class SettingsSteps {
     public void userEntersADifferentConfirmPinAtSetupPin() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_new_pin_1st)));
         LoginPage.get_confirmpin_pinlogin().sendKeys(getRandomNumberLowerAndUpperBound(4,5));
+    }
+
+    @When("User clicks on personal information button")
+    public void userClicksOnPersonalInformationButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(personal_information_button)));
+        SettingsPage.get_personal_information_button().click();
+    }
+
+    @And("User clicks on update button")
+    public void userClicksOnUpdateButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(update_button)));
+        SettingsPage.get_update_button().click();
+    }
+
+    @When("User enters a new building number")
+    public void userEntersANewBuildingNumber() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(building_number_field)));
+        SettingsPage.get_building_number_field().clear();
+        SettingsPage.get_building_number_field().sendKeys(getRandomNumberLowerAndUpperBound(1,4));
+    }
+
+
+    @And("User enters their street number")
+    public void userEntersTheirStreetNumber() {
+        SettingsPage.get_street_number_field().clear();
+        SettingsPage.get_street_number_field().sendKeys(getRandomNumberLowerAndUpperBound(1,4));
+    }
+
+    @When("User enters their street name")
+    public void userEntersTheirStreetName() {
+        SettingsPage.get_street_name().clear();
+        SettingsPage.get_street_name().sendKeys(getRandomString(false,true,true,false,true,10));
+    }
+
+    @And("User enters a zip code")
+    public void userEntersAZipCode() {
+        SettingsPage.get_zip_code_field().clear();
+        SettingsPage.get_zip_code_field().sendKeys(getRandomNumberLowerAndUpperBound(1,6));
+        SettingsPage.get_click_out().click();
+    }
+
+    @When("User clicks on the update button")
+    public void userClicksOnTheUpdateButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(update2_button)));
+        SettingsPage.get_update2_button().click();
+
+    }
+
+    @Then("User info should be updated")
+    public void userInfoShouldBeUpdated() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(update_button)));
+        Thread.sleep(1500);
+        scrollDown();
+        Thread.sleep(1500);
+    }
+
+    @When("User leaves their street name empty")
+    public void userLeavesTheirStreetNameEmpty() {
+        SettingsPage.get_street_name().clear();
+    }
+
+    @And("User leaves their zip code empty")
+    public void userLeavesTheirZipCodeEmpty() {
+        SettingsPage.get_zip_code_field().clear();
+        SettingsPage.get_click_out().click();
+    }
+
+    @Then("User info should not be updated")
+    public void userInfoShouldNotBeUpdated() throws InterruptedException {
+        Thread.sleep(2000);
     }
 }

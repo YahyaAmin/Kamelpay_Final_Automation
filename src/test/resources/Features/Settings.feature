@@ -273,3 +273,59 @@ Feature: Login Tests
     When User enters pin to setup pin
     And User enters a different confirm pin at setup pin
     And User clicks on submit button at pin setup screen
+
+
+  @Settingstest @Settingstest26
+  Scenario: User updates home address information successfully
+
+    And User clicks on My Profile button
+    When User clicks on personal information button
+    And User clicks on update button
+    When User enters a new building number
+    And User enters their street number
+    When User enters their street name
+    And User enters a zip code
+    When User clicks on the update button
+    Then User info should be updated
+
+
+  @Settingstest @Settingstest27
+  Scenario: User updates home address information but leaves zip code and street name empty
+
+    And User clicks on My Profile button
+    When User clicks on personal information button
+    And User clicks on update button
+    When User enters a new building number
+    And User enters their street number
+    When User leaves their street name empty
+    And User leaves their zip code empty
+    When User clicks on the update button
+    Then User info should not be updated
+
+
+  @Settingstest @Settingstest28
+  Scenario: User updates home address information but leaves street name empty
+
+    And User clicks on My Profile button
+    When User clicks on personal information button
+    And User clicks on update button
+    When User enters a new building number
+    And User enters their street number
+    When User leaves their street name empty
+    And User enters a zip code
+    When User clicks on the update button
+    Then User info should not be updated
+
+
+  @Settingstest @Settingstest29
+  Scenario: User updates home address information but leaves zip code empty
+
+    And User clicks on My Profile button
+    When User clicks on personal information button
+    And User clicks on update button
+    When User enters a new building number
+    And User enters their street number
+    When User enters their street name
+    And User leaves their zip code empty
+    When User clicks on the update button
+    Then User info should not be updated
