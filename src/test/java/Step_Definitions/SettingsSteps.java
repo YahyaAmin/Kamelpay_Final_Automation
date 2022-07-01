@@ -338,4 +338,6 @@ public class SettingsSteps {
     public void userInfoShouldNotBeUpdated() throws InterruptedException {
         Thread.sleep(2000);
     }
+
+
 }
