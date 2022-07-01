@@ -8,6 +8,7 @@ import static Hooks.Base_Class.driver;
 
 public class SendMoneyPage {
 
+    public static String cash_pickup_button = "//android.widget.TextView[@text='Cash Pickup']";
     public static String otp_first_digit_field_send_money = "//android.view.ViewGroup[1]/android.widget.EditText";
 
     public static String last_name_beneficiary = "//android.view.ViewGroup[2]/android.widget.EditText";
@@ -17,6 +18,8 @@ public class SendMoneyPage {
     public static String bank_accountbutton = "//android.widget.TextView[@text='Bank Account']";
 
     public static String click_outside_exchange_rates = "//android.widget.TextView[@text='Receiver']";
+
+    public static String first_saved_beneficary = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup";
 
     public static String confirm_button = "//android.widget.TextView[@text='Confirm']";
 
@@ -90,5 +93,9 @@ public class SendMoneyPage {
     public static AndroidElement get_send_money_at_confirmation(){return driver.findElement(By.xpath(send_money_at_confirmation));}
 
     public static AndroidElement get_otp_first_digit_field_send_money(){return driver.findElement(By.xpath(otp_first_digit_field_send_money));}
+
+    public static AndroidElement get_first_saved_beneficary(){return driver.findElement(By.xpath(first_saved_beneficary));}
+
+    public static AndroidElement get_cash_pickup_button(){return driver.findElement(By.xpath(cash_pickup_button));}
 
 }

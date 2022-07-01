@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static Hooks.Base_Class.driver;
+import static Pages.Android.CardManagementPage.centiv_card_at_homescreen;
 import static Pages.Android.CardManagementPage.payd_card_homescreen;
 import static Pages.Android.SendMoneyPage.*;
 import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
@@ -88,7 +89,7 @@ public class SendMoney_Steps {
     public void userEntersTheAmountTheyWantToSend() throws InterruptedException {
         Thread.sleep(1000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(sender_amount_field)));
-        SendMoneyPage.get_sender_amount_field().sendKeys(getRandomNumberLowerAndUpperBound(1,4));
+        SendMoneyPage.get_sender_amount_field().sendKeys(getRandomNumberLowerAndUpperBound(2,4));
         Thread.sleep(3000);
         SendMoneyPage.get_click_outside_exchange_rates().click();
     }
@@ -156,5 +157,28 @@ public class SendMoney_Steps {
     public void userEntersValidOTPAtSendMoneyFlow() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(otp_first_digit_field_send_money)));
         SendMoneyPage.get_otp_first_digit_field_send_money().sendKeys("666666");
+    }
+
+    @When("User clicks on the first saved beneficiary")
+    public void userClicksOnTheFirstSavedBeneficiary() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_saved_beneficary)));
+        SendMoneyPage.get_first_saved_beneficary().click();
+    }
+
+    @Then("User shouldnt be able to send money")
+    public void userShouldntBeAbleToSendMoney() throws InterruptedException {
+        Thread.sleep(4000);
+    }
+
+    @When("User clicks on Send Money Button at Centiv card")
+    public void userClicksOnSendMoneyButtonAtCentivCard() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(centiv_card_at_homescreen)));
+        SendMoneyPage.get_send_money_button().click();
+    }
+
+    @And("User clicks on cash pickup button")
+    public void userClicksOnCashPickupButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cash_pickup_button)));
+        SendMoneyPage.get_cash_pickup_button().click();
     }
 }

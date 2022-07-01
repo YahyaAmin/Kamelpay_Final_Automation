@@ -164,7 +164,8 @@ public class LoginSteps {
     }
 
     @When("User clicks on next button at forgot password page")
-    public void userClicksOnNextButtonAtForgotPasswordPage() {
+    public void userClicksOnNextButtonAtForgotPasswordPage() throws InterruptedException {
+        Thread.sleep(2000);
         LoginPage.getnextbutton_forgotpasswordfield().click();
     }
 
