@@ -100,7 +100,8 @@ public class SendMoney_Steps {
     }
 
     @When("User enters first name of beneficiary")
-    public void userEntersFirstNameOfBeneficiary() {
+    public void userEntersFirstNameOfBeneficiary() throws InterruptedException {
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_name_beneficiary)));
         SendMoneyPage.get_first_name_beneficiary().sendKeys(getRandomString(false,true,true,false,false,8));
     }
@@ -180,5 +181,43 @@ public class SendMoney_Steps {
     public void userClicksOnCashPickupButton() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cash_pickup_button)));
         SendMoneyPage.get_cash_pickup_button().click();
+    }
+
+    @When("User searches for Bangladesh")
+    public void userSearchesForBangladesh() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(click_outside_on_send_money)));
+        SendMoneyPage.get_search_for_country_send_money().sendKeys("Bangladesh");
+    }
+
+    @And("User clicks on Bangladesh")
+    public void userClicksOnBangladesh() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_county_wait("Bangladesh"))));
+        SendMoneyPage.searched_country_locator("Bangladesh").click();
+        Thread.sleep(4000);
+    }
+
+    @And("User clicks on Mobile Wallet")
+    public void userClicksOnMobileWallet() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_wallet_button)));
+        SendMoneyPage.get_mobile_wallet_button().click();
+    }
+
+    @When("User clicks on track history")
+    public void userClicksOnTrackHistory() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(track_history)));
+        SendMoneyPage.get_track_history().click();
+    }
+
+    @Then("User should be redirected to their track history")
+    public void userShouldBeRedirectedToTheirTrackHistory() throws InterruptedException {
+        Thread.sleep(5000);
+        scrollDown();
+        Thread.sleep(3000);
+    }
+
+    @When("User leaves beneficiary first name empty")
+    public void userLeavesBeneficiaryFirstNameEmpty() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_name_beneficiary)));
+        SendMoneyPage.get_first_name_beneficiary().sendKeys("");
     }
 }

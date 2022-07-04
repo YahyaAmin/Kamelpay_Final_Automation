@@ -90,5 +90,182 @@ Feature: Send Money Tests
 
 
   @Sendmoney @Sendmoney05
-  Scenario: 
+  Scenario: User sends money through mobile wallet
 
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    And User clicks on Send Money at Send Money screen
+    When User searches for Bangladesh
+    And User clicks on Bangladesh
+    And User clicks on Mobile Wallet
+    When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters the amount they want to send
+    And User scrolls down at exchange rate page
+    And User clicks on next button at forgot password page
+    When User enters first name of beneficiary
+    And User enters last name of beneficiary
+    And User enters phone number of beneficiary
+    When User scrolls down at exchange rate page
+    And User enters remittance purpose
+    And User clicks on next button at forgot password page
+    When User clicks I agree terms and conditions box
+    And User clicks on Send Money at confirmation screen
+    And User enters valid OTP at send money flow
+    And User clicks on next button at OTP screen
+    Then User should be able to successfully send money
+
+
+  @Sendmoney @Sendmoney06
+  Scenario: User checks their track history
+
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    When User clicks on track history
+    Then User should be redirected to their track history
+
+
+  @Sendmoney @Sendmoney07
+  Scenario: User sends money through bank transfer but leaves first name of beneficiary empty
+
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    And User clicks on Send Money at Send Money screen
+    When User searches for country
+    And User clicks on country they searched for
+    And User clicks on the bank account button
+    When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters the amount they want to send
+    And User scrolls down at exchange rate page
+    And User clicks on next button at forgot password page
+    When User leaves beneficiary first name empty
+    And User enters last name of beneficiary
+    And User enters phone number of beneficiary
+    When User scrolls down at exchange rate page
+    And User enters account title
+    When User enters Iban number
+    And User enters remittance purpose
+    And User clicks on next button at forgot password page
+    Then User shouldnt be able to send money
+
+
+  @Sendmoney @Sendmoney08
+  Scenario: User sends money through bank transfer but leaves last name of beneficiary empty
+
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    And User clicks on Send Money at Send Money screen
+    When User searches for country
+    And User clicks on country they searched for
+    And User clicks on the bank account button
+    When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters the amount they want to send
+    And User scrolls down at exchange rate page
+    And User clicks on next button at forgot password page
+    When User enters first name of beneficiary
+    And User enters phone number of beneficiary
+    When User scrolls down at exchange rate page
+    And User enters account title
+    When User enters Iban number
+    And User enters remittance purpose
+    And User clicks on next button at forgot password page
+    Then User shouldnt be able to send money
+
+
+  @Sendmoney @Sendmoney09
+  Scenario: User sends money through bank transfer but leaves phone number of beneficiary empty
+
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    And User clicks on Send Money at Send Money screen
+    When User searches for country
+    And User clicks on country they searched for
+    And User clicks on the bank account button
+    When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters the amount they want to send
+    And User scrolls down at exchange rate page
+    And User clicks on next button at forgot password page
+    When User enters first name of beneficiary
+    And User enters last name of beneficiary
+    When User scrolls down at exchange rate page
+    And User enters account title
+    When User enters Iban number
+    And User enters remittance purpose
+    And User clicks on next button at forgot password page
+    Then User shouldnt be able to send money
+
+
+  @Sendmoney @Sendmoney10
+  Scenario: User sends money through bank transfer but leaves account title empty
+
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    And User clicks on Send Money at Send Money screen
+    When User searches for country
+    And User clicks on country they searched for
+    And User clicks on the bank account button
+    When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters the amount they want to send
+    And User scrolls down at exchange rate page
+    And User clicks on next button at forgot password page
+    When User enters first name of beneficiary
+    And User enters last name of beneficiary
+    When User enters phone number of beneficiary
+    When User scrolls down at exchange rate page
+    When User enters Iban number
+    And User enters remittance purpose
+    And User clicks on next button at forgot password page
+    Then User shouldnt be able to send money
+
+
+  @Sendmoney @Sendmoney11
+  Scenario: User sends money through bank transfer but leaves IBAN number empty
+
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    And User clicks on Send Money at Send Money screen
+    When User searches for country
+    And User clicks on country they searched for
+    And User clicks on the bank account button
+    When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters the amount they want to send
+    And User scrolls down at exchange rate page
+    And User clicks on next button at forgot password page
+    When User enters first name of beneficiary
+    And User enters last name of beneficiary
+    When User enters phone number of beneficiary
+    When User scrolls down at exchange rate page
+    And User enters account title
+    And User enters remittance purpose
+    And User clicks on next button at forgot password page
+    Then User shouldnt be able to send money
+
+
+  @Sendmoney @Sendmoney12
+  Scenario: User sends money through bank transfer but leaves remittance purpose empty
+
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    And User clicks on Send Money at Send Money screen
+    When User searches for country
+    And User clicks on country they searched for
+    And User clicks on the bank account button
+    When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters the amount they want to send
+    And User scrolls down at exchange rate page
+    And User clicks on next button at forgot password page
+    When User enters first name of beneficiary
+    And User enters last name of beneficiary
+    When User enters phone number of beneficiary
+    When User scrolls down at exchange rate page
+    When User enters Iban number
+    And User enters account title
+    And User enters remittance purpose
+    And User clicks on next button at forgot password page
+    Then User shouldnt be able to send money

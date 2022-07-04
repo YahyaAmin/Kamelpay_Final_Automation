@@ -23,6 +23,9 @@ public class SendMoneyPage {
 
     public static String confirm_button = "//android.widget.TextView[@text='Confirm']";
 
+    public static String track_history = "//android.widget.TextView[@text='Track History']";
+
+    public static String mobile_wallet_button = "//android.widget.TextView[@text='Mobile Wallet']";
     public static String first_bank_in_list = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup";
     public static String send_money_button = "//android.widget.TextView[@text='Send Money']";
 
@@ -97,5 +100,9 @@ public class SendMoneyPage {
     public static AndroidElement get_first_saved_beneficary(){return driver.findElement(By.xpath(first_saved_beneficary));}
 
     public static AndroidElement get_cash_pickup_button(){return driver.findElement(By.xpath(cash_pickup_button));}
+
+    public static AndroidElement get_mobile_wallet_button(){return driver.findElement(By.xpath(mobile_wallet_button));}
+
+    public static AndroidElement get_track_history(){return driver.findElement(By.xpath(track_history));}
 
 }
