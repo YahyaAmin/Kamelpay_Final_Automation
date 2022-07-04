@@ -273,7 +273,8 @@ public class LoginSteps {
     }
 
     @And("User clicks on logout button")
-    public void userClicksOnLogoutButton() {
+    public void userClicksOnLogoutButton() throws InterruptedException {
+        Thread.sleep(1500);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(logout_button)));
         LoginPage.getlogoutbutton().click();
     }
