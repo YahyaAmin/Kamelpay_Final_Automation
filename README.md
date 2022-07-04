@@ -31,3 +31,16 @@ RUNNING CUCUMBER JSON REPORT
 mvn clean verify
 mvn verify -DskipTests
 =====================================================================================================
+
+
+Appium Inspector Properties
+
+{
+  "platformName": "Android",
+  "platformVersion": "11",
+  "deviceName": "Samsung Galaxy S5",
+  "automationName": "Appium",
+  "app": "C:\\Users\\abc\\Desktop\\apk\\KamelPay.apk"
+}
+
+===========================================================================
