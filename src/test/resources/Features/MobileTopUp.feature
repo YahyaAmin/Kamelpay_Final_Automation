@@ -46,5 +46,6 @@ Feature: Mobile Top Up
     When User clicks on Mobile Top Up button
     And User clicks on Add Topup button
     When User enters an invalid phone number at topup
+    And User clicks on save beneficiary button at topup
     And User clicks on next button at recharge page
     Then User shouldnt be able to topup

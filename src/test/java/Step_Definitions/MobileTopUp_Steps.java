@@ -91,4 +91,10 @@ public class MobileTopUp_Steps {
     public void userShouldntBeAbleToTopup() throws InterruptedException {
         Thread.sleep(2000);
     }
+
+    @And("User clicks on save beneficiary button at topup")
+    public void userClicksOnSaveBeneficiaryButtonAtTopup() throws InterruptedException {
+       MobileTopUpPage.get_save_account_to_beneficary().click();
+       Thread.sleep(1500);
+    }
 }

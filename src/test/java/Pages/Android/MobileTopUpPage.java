@@ -21,6 +21,7 @@ public class MobileTopUpPage {
 
     public static String agree_terms_checkbox = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]";
 
+    public static String save_account_to_beneficary = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]";
 
     public MobileTopUpPage(){}
 
@@ -40,5 +41,7 @@ public class MobileTopUpPage {
     public static AndroidElement get_pay_now_button(){return driver.findElement(By.xpath(pay_now_button));}
 
     public static AndroidElement get_next_button(){return driver.findElement(By.xpath(next_button));}
+
+    public static AndroidElement get_save_account_to_beneficary(){return driver.findElement(By.xpath(save_account_to_beneficary));}
 
 }
