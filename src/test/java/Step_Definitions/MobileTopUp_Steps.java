@@ -62,4 +62,10 @@ public class MobileTopUp_Steps {
     public void userShouldBeAbleToTopupSuccessfully() throws InterruptedException {
         Thread.sleep(6000);
     }
+
+    @And("User clicks on next button at recharge page")
+    public void userClicksOnNextButtonAtRechargePage() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(next_button)));
+        MobileTopUpPage.get_next_button().click();
+    }
 }

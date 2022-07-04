@@ -7,6 +7,7 @@ import static Hooks.Base_Class.driver;
 
 public class MobileTopUpPage {
 
+    public static String next_button = "//android.widget.TextView[@text='Next']";
     public static String pay_now_button = "//android.widget.TextView[@text='Pay Now']";
 
     public static String first_service_provider = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup";
@@ -36,5 +37,7 @@ public class MobileTopUpPage {
     public static AndroidElement get_agree_terms_checkbox(){return driver.findElement(By.xpath(agree_terms_checkbox));}
 
     public static AndroidElement get_pay_now_button(){return driver.findElement(By.xpath(pay_now_button));}
+
+    public static AndroidElement get_next_button(){return driver.findElement(By.xpath(next_button));}
 
 }

@@ -21,7 +21,7 @@ Feature: Mobile Top Up
     And User clicks on next button at forgot password page
     And User selects the first service provider
     When User selects a recharge package
-    And User clicks on next button at forgot password page
+    And User clicks on next button at recharge page
     When User clicks on I agree terms and conditions checkbox at Mobile Top Up
     And User clicks on pay now button
     When User enters valid OTP at send money flow
