@@ -61,8 +61,11 @@ public class SignupSteps {
     public void userEntersTheirValidPhoneNumberForRegistration() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_register_yourself_page)));
         SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
-
-        while (get_phone_number_field_at_register_yourself_page().getText().length()<9) {
+        Thread.sleep(1000);
+        //int phone_num=Integer.parseInt(ph_number);
+        String ph_num = get_phone_number_field_at_register_yourself_page().getText().replace(" ","");
+        int phone_num=Integer.parseInt(ph_num);
+        if (phone_num<99999999) {
             SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
         }
         }
@@ -75,7 +78,7 @@ public class SignupSteps {
 
     }
 
-    String valid_password = getRandomString(true,true,true,true,false,20);
+    String valid_password = getRandomString(true,true,true,true,false,24);
 
     @And("User enters their valid password")
     public void userEntersTheirValidPassword() {
