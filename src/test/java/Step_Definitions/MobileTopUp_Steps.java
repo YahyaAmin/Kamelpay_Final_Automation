@@ -1,6 +1,7 @@
 package Step_Definitions;
 
 import Pages.Android.MobileTopUpPage;
+import Pages.Android.SignupPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static Hooks.Base_Class.driver;
 import static Pages.Android.MobileTopUpPage.*;
+import static Pages.Android.SignupPage.get_phone_number_field_at_register_yourself_page;
 import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
 
 
@@ -32,6 +34,12 @@ public class MobileTopUp_Steps {
     public void userEntersAValidPhoneNumberAtTopup() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_mobile_topup)));
         MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
+
+        String ph_num = get_phone_number_field_at_mobile_topup().getText().replace(" ","");
+        int phone_num=Integer.parseInt(ph_num);
+        if (phone_num<99999999) {
+            MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
+        }
     }
 
     @And("User selects the first service provider")

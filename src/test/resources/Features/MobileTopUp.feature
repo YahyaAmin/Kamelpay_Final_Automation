@@ -18,7 +18,7 @@ Feature: Mobile Top Up
     When User clicks on Mobile Top Up button
     And User clicks on Add Topup button
     When User enters a valid phone number at topup
-    And User clicks on next button at forgot password page
+    And User clicks on next button at recharge page
     And User selects the first service provider
     When User selects a recharge package
     And User clicks on next button at recharge page

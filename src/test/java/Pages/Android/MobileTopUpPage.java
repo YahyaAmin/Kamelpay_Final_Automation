@@ -10,12 +10,12 @@ public class MobileTopUpPage {
     public static String next_button = "//android.widget.TextView[@text='Next']";
     public static String pay_now_button = "//android.widget.TextView[@text='Pay Now']";
 
-    public static String first_service_provider = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup";
+    public static String first_service_provider = "//android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]";
     public static String mobile_topup_button = "//android.widget.TextView[@text='Mobile Topup']";
 
     public static String add_topup_button = "//android.widget.TextView[@text='Add Topup']";
 
-    public static String second_recharge_package = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]";
+    public static String second_recharge_package = "//android.widget.TextView[@text='20.00 AED Recharge']";
 
     public static String phone_number_field_at_mobile_topup = "//android.view.ViewGroup[1]/android.widget.EditText";
 
