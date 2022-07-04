@@ -301,4 +301,5 @@ public class SendMoney_Steps {
     public void userShouldSuccessfullyAddBeneficiary() throws InterruptedException {
         Thread.sleep(5000);
     }
+
 }

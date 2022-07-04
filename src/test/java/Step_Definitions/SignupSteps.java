@@ -59,6 +59,7 @@ public class SignupSteps {
 
     @And("User enters their valid phone number for registration")
     public void userEntersTheirValidPhoneNumberForRegistration() throws InterruptedException {
+        Thread.sleep(1500);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_register_yourself_page)));
         SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
         Thread.sleep(1000);
@@ -128,8 +129,9 @@ public class SignupSteps {
 
 
     @And("User enters phone number with less than nine digits")
-    public void userEntersPhoneNumberWithLessThanNineDigits() {
+    public void userEntersPhoneNumberWithLessThanNineDigits() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_register_yourself_page)));
+        Thread.sleep(1000);
         SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(1,9));
     }
 
@@ -257,7 +259,8 @@ public class SignupSteps {
     }
 
     @When("User enters email with spaces")
-    public void userEntersEmailWithSpaces() {
+    public void userEntersEmailWithSpaces() throws InterruptedException {
+        Thread.sleep(1000);
         SignupPage.get_email_field_at_signup().sendKeys(getRandomString(true,true,true,true,false,10)+" "+"gmail.com");
     }
 
