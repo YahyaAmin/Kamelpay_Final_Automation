@@ -147,6 +147,7 @@ Feature: Send Money Tests
     When User enters Iban number
     And User enters remittance purpose
     And User clicks on next button at forgot password page
+    When User scrolls up
     Then User shouldnt be able to send money
 
 
@@ -264,8 +265,71 @@ Feature: Send Money Tests
     And User enters last name of beneficiary
     When User enters phone number of beneficiary
     When User scrolls down at exchange rate page
-    When User enters Iban number
     And User enters account title
-    And User enters remittance purpose
+    When User enters Iban number
     And User clicks on next button at forgot password page
     Then User shouldnt be able to send money
+
+
+  @Sendmoney @Sendmoney13
+  Scenario: User adds new beneficiary successfully at send money
+
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    And User clicks on add new beneficary button
+    When User searches for country
+    And User clicks on country they searched for
+    And User clicks on the bank account button
+    When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters first name of beneficiary
+    When User enters first name of beneficiary at add beneficiary
+    And User enters last name of beneficiary at add beneficiary
+    When User enters phone number of beneficiary at add beneficary
+    When User scrolls down at exchange rate page
+    And User enters account title at add beneficary
+    When User enters Iban number at add beneficiary
+    And User enters remittance purpose at add beneficiary
+    And User clicks on save beneficiary button
+    Then User enters valid OTP at send money flow
+    And User clicks on next button at OTP screen
+    Then User should successfully add beneficiary
+
+
+  @Sendmoney @Sendmoney14
+  Scenario: User adds new beneficiary at bank transfer but leaves beneficiary name empty
+
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    And User clicks on add new beneficary button
+    When User searches for country
+    And User clicks on country they searched for
+    And User clicks on the bank account button
+    When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters first name of beneficiary at add beneficiary
+    And User enters last name of beneficiary at add beneficiary
+    When User enters phone number of beneficiary at add beneficary
+    When User scrolls down at exchange rate page
+    And User enters account title at add beneficary
+    When User enters Iban number at add beneficiary
+    And User enters remittance purpose at add beneficiary
+    And User clicks on save beneficiary button
+    Then User shouldnt be able to send money
+
+
+
+  @Sendmoney @Sendmoney15
+  Scenario: User sends money through bank transfer but sender amount is zero
+
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    And User clicks on Send Money at Send Money screen
+    When User searches for country
+    And User clicks on country they searched for
+    And User clicks on the bank account button
+    When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters the amount to zero
+    And User scrolls down at exchange rate page
+    And User clicks on next button at forgot password page

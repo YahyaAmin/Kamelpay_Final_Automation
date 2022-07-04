@@ -1,9 +1,11 @@
 package Step_Definitions;
 
+import Pages.Android.LoginPage;
 import Pages.Android.SendMoneyPage;
 import Pages.Android.SignupPage;
 import Tests.Password_Builder;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -14,8 +16,7 @@ import static Hooks.Base_Class.driver;
 import static Pages.Android.CardManagementPage.centiv_card_at_homescreen;
 import static Pages.Android.CardManagementPage.payd_card_homescreen;
 import static Pages.Android.SendMoneyPage.*;
-import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
-import static Tests.Useful_functions.scrollDown;
+import static Tests.Useful_functions.*;
 
 
 public class SendMoney_Steps {
@@ -52,7 +53,8 @@ public class SendMoney_Steps {
     public String searched_country = "Pakistan";
 
     @When("User searches for country")
-    public void userSearchesForCountry() {
+    public void userSearchesForCountry() throws InterruptedException {
+        Thread.sleep(2500);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(click_outside_on_send_money)));
         SendMoneyPage.get_search_for_country_send_money().sendKeys(searched_country);
     }
@@ -155,7 +157,8 @@ public class SendMoney_Steps {
     }
 
     @And("User enters valid OTP at send money flow")
-    public void userEntersValidOTPAtSendMoneyFlow() {
+    public void userEntersValidOTPAtSendMoneyFlow() throws InterruptedException {
+        Thread.sleep(1000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(otp_first_digit_field_send_money)));
         SendMoneyPage.get_otp_first_digit_field_send_money().sendKeys("666666");
     }
@@ -184,9 +187,10 @@ public class SendMoney_Steps {
     }
 
     @When("User searches for Bangladesh")
-    public void userSearchesForBangladesh() {
+    public void userSearchesForBangladesh() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(click_outside_on_send_money)));
         SendMoneyPage.get_search_for_country_send_money().sendKeys("Bangladesh");
+        Thread.sleep(2500);
     }
 
     @And("User clicks on Bangladesh")
@@ -216,8 +220,85 @@ public class SendMoney_Steps {
     }
 
     @When("User leaves beneficiary first name empty")
-    public void userLeavesBeneficiaryFirstNameEmpty() {
+    public void userLeavesBeneficiaryFirstNameEmpty() throws InterruptedException {
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_name_beneficiary)));
         SendMoneyPage.get_first_name_beneficiary().sendKeys("");
+    }
+
+    @When("User scrolls up")
+    public void userScrollsUp() throws InterruptedException {
+        scrollUp();
+    }
+
+
+    @Given("I sleep the thread")
+    public void iSleepTheThread() throws InterruptedException {
+        Thread.sleep(3000);
+    }
+
+    @And("User clicks on add new beneficary button")
+    public void userClicksOnAddNewBeneficaryButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(add_new_beneficiary_button)));
+        SendMoneyPage.get_add_new_beneficiary_button().click();
+    }
+
+    @When("User enters the amount to zero")
+    public void userEntersTheAmountToZero() throws InterruptedException {
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(sender_amount_field)));
+        SendMoneyPage.get_sender_amount_field().sendKeys("0");
+        Thread.sleep(3000);
+        SendMoneyPage.get_click_outside_exchange_rates().click();
+    }
+
+    @When("User enters first name of beneficiary at add beneficiary")
+    public void userEntersFirstNameOfBeneficiaryAtAddBeneficiary() throws InterruptedException {
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_name_beneficiary)));
+        SendMoneyPage.get_first_name_beneficiary1().sendKeys(getRandomString(false,true,true,false,false,8));
+    }
+
+    @And("User enters last name of beneficiary at add beneficiary")
+    public void userEntersLastNameOfBeneficiaryAtAddBeneficiary() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(last_name_beneficiary1)));
+        SendMoneyPage.get_last_name_beneficiary1().sendKeys(getRandomString(false,true,true,false,false,6));
+
+    }
+
+    @When("User enters phone number of beneficiary at add beneficary")
+    public void userEntersPhoneNumberOfBeneficiaryAtAddBeneficary() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_beneficiary1)));
+        SendMoneyPage.get_phone_number_field_beneficiary1().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
+        SendMoneyPage.click_outside_beneficiary_page1().click();
+    }
+
+    @And("User enters account title at add beneficary")
+    public void userEntersAccountTitleAtAddBeneficary() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(account_title_field_beneficiary1)));
+        SendMoneyPage.get_account_title_field_beneficiary1().sendKeys(getRandomString(false,true,true,false,false,8));
+    }
+
+    @When("User enters Iban number at add beneficiary")
+    public void userEntersIbanNumberAtAddBeneficiary() {
+        SendMoneyPage.get_iban_number_beneficiary1().sendKeys(getRandomString(false,false,true,false,false,2)+getRandomNumberLowerAndUpperBound(2,3)+getRandomString(false,false,true,false,false,4)+getRandomNumberLowerAndUpperBound(16,17));
+        SendMoneyPage.get_click_outside_beneficary2().click();
+    }
+
+    @And("User enters remittance purpose at add beneficiary")
+    public void userEntersRemittancePurposeAtAddBeneficiary() {
+        SendMoneyPage.get_remittance_purpose_field_beneficiary1().sendKeys(getRandomString(false,true,true,false,true,9));
+
+    }
+
+    @And("User clicks on save beneficiary button")
+    public void userClicksOnSaveBeneficiaryButton() throws InterruptedException {
+        Thread.sleep(2000);
+        SendMoneyPage.get_save_beneficary_button().click();
+    }
+
+    @Then("User should successfully add beneficiary")
+    public void userShouldSuccessfullyAddBeneficiary() throws InterruptedException {
+        Thread.sleep(5000);
     }
 }
