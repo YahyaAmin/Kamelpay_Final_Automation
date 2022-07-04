@@ -55,9 +55,11 @@ public class MobileTopUp_Steps {
     }
 
     @When("User clicks on I agree terms and conditions checkbox at Mobile Top Up")
-    public void userClicksOnIAgreeTermsAndConditionsCheckboxAtMobileTopUp() {
+    public void userClicksOnIAgreeTermsAndConditionsCheckboxAtMobileTopUp() throws InterruptedException {
+        Thread.sleep(1500);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(agree_terms_checkbox)));
         MobileTopUpPage.get_agree_terms_checkbox().click();
+        Thread.sleep(1000);
     }
 
     @And("User clicks on pay now button")
@@ -72,8 +74,21 @@ public class MobileTopUp_Steps {
     }
 
     @And("User clicks on next button at recharge page")
-    public void userClicksOnNextButtonAtRechargePage() {
+    public void userClicksOnNextButtonAtRechargePage() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(next_button)));
         MobileTopUpPage.get_next_button().click();
+        Thread.sleep(2000);
+    }
+
+    @When("User enters an invalid phone number at topup")
+    public void userEntersAnInvalidPhoneNumberAtTopup() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_mobile_topup)));
+        MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys(getRandomNumberLowerAndUpperBound(8,9));
+
+    }
+
+    @Then("User shouldnt be able to topup")
+    public void userShouldntBeAbleToTopup() throws InterruptedException {
+        Thread.sleep(2000);
     }
 }

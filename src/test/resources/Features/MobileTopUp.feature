@@ -27,3 +27,24 @@ Feature: Mobile Top Up
     When User enters valid OTP at send money flow
     And User clicks on next button at OTP screen
     Then User should be able to topup successfully
+
+
+  @MobileTopUpCase @MobileTopUpCase02
+  Scenario: Mobile topUp but user enters invalid phone number
+
+    When User clicks on Mobile Top Up button
+    And User clicks on Add Topup button
+    When User enters an invalid phone number at topup
+    And User clicks on next button at recharge page
+    Then User shouldnt be able to topup
+
+
+
+  @MobileTopUpCase @MobileTopUpCase03
+  Scenario: Mobile topUp and user clicks on save to beneficiary but forgets to enter beneficiary name
+
+    When User clicks on Mobile Top Up button
+    And User clicks on Add Topup button
+    When User enters an invalid phone number at topup
+    And User clicks on next button at recharge page
+    Then User shouldnt be able to topup
