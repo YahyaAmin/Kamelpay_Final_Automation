@@ -31,7 +31,8 @@ public class MobileTopUp_Steps {
     }
 
     @When("User enters a valid phone number at topup")
-    public void userEntersAValidPhoneNumberAtTopup() {
+    public void userEntersAValidPhoneNumberAtTopup() throws InterruptedException {
+        Thread.sleep(1000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_mobile_topup)));
         MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
 
@@ -51,7 +52,7 @@ public class MobileTopUp_Steps {
     @When("User selects a recharge package")
     public void userSelectsARechargePackage() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(second_recharge_package)));
-        MobileTopUpPage.get_second_recharge_package().click();
+        MobileTopUpPage.get_second_recharge_package("20.00").click();
     }
 
     @When("User clicks on I agree terms and conditions checkbox at Mobile Top Up")
@@ -96,5 +97,91 @@ public class MobileTopUp_Steps {
     public void userClicksOnSaveBeneficiaryButtonAtTopup() throws InterruptedException {
        MobileTopUpPage.get_save_account_to_beneficary().click();
        Thread.sleep(1500);
+    }
+
+    @When("User clicks on country code")
+    public void userClicksOnCountryCode() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(country_code)));
+        MobileTopUpPage.get_country_code().click();
+    }
+
+    String country1 = "Pakistan";
+    @And("User searches for first country")
+    public void userSearchesForFirstCountry() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_country)));
+        MobileTopUpPage.get_search_country().sendKeys(country1);
+    }
+
+    @When("User clicks on their searched country")
+    public void userClicksOnTheirSearchedCountry() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(wait_country)));
+        MobileTopUpPage.get_country(country1).click();
+    }
+
+    @And("User clicks on the first existing beneficiary")
+    public void userClicksOnTheFirstExistingBeneficiary() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(existing_beneficary)));
+        Thread.sleep(1000);
+        MobileTopUpPage.get_existing_beneficary().click();
+    }
+
+    @Then("User should see the country code and flag at phone number")
+    public void userShouldSeeTheCountryCodeAndFlagAtPhoneNumber() throws InterruptedException {
+        Thread.sleep(5000);
+    }
+
+
+    @When("User selects a recharge package of {int} AED")
+    public void userSelectsARechargePackageOfAED(int arg0) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(get_country_xpath("55.00"))));
+        MobileTopUpPage.get_second_recharge_package("55.00").click();
+    }
+
+    @And("User searches for existing beneficiaries")
+    public void userSearchesForExistingBeneficiaries() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(existing_beneficary)));
+        Thread.sleep(1000);
+        MobileTopUpPage.get_search_existing_beneficiaries().sendKeys("khizer");
+        Thread.sleep(3000);
+        MobileTopUpPage.get_search_existing_beneficiaries().clear();
+        MobileTopUpPage.get_search_existing_beneficiaries().sendKeys("wasif");
+        Thread.sleep(3000);
+        MobileTopUpPage.get_search_existing_beneficiaries().clear();
+        MobileTopUpPage.get_search_existing_beneficiaries().sendKeys("yahya");
+        Thread.sleep(1000);
+
+    }
+
+    @Then("User should successfully be able to search beneficiaries")
+    public void userShouldSuccessfullyBeAbleToSearchBeneficiaries() throws InterruptedException {
+        Thread.sleep(1500);
+    }
+
+    @And("User searches for different service providers")
+    public void userSearchesForDifferentServiceProviders() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_service_provider)));
+        Thread.sleep(1000);
+        MobileTopUpPage.get_search_service_providers().sendKeys("Etisalat");
+        Thread.sleep(2000);
+        MobileTopUpPage.get_search_service_providers().clear();
+        Thread.sleep(1000);
+        MobileTopUpPage.get_search_service_providers().sendKeys("Du Prepaid");
+        Thread.sleep(2000);
+        MobileTopUpPage.get_search_service_providers().clear();
+        Thread.sleep(1000);
+        MobileTopUpPage.get_search_service_providers().sendKeys("ABCD Topup");
+        Thread.sleep(500);
+    }
+
+    @Then("User shouldnt be able to proceed")
+    public void userShouldntBeAbleToProceed() throws InterruptedException {
+        Thread.sleep(2000);
+    }
+
+    @When("User leaves phone number empty at topup")
+    public void userLeavesPhoneNumberEmptyAtTopup() throws InterruptedException {
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_mobile_topup)));
+        MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys("");
     }
 }

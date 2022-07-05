@@ -7,13 +7,20 @@ import static Hooks.Base_Class.driver;
 
 public class MobileTopUpPage {
 
+    public static String search_existing_beneficiaries = "//android.widget.EditText";
+
+    public static String search_service_providers = "//android.widget.EditText";
+    public static String  wait_country = "//android.widget.TextView[@text='Pakistan']";
     public static String next_button = "//android.widget.TextView[@text='Next']";
     public static String pay_now_button = "//android.widget.TextView[@text='Pay Now']";
 
+    public static String search_country = "//android.widget.EditText";
     public static String first_service_provider = "//android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]";
     public static String mobile_topup_button = "//android.widget.TextView[@text='Mobile Topup']";
 
     public static String add_topup_button = "//android.widget.TextView[@text='Add Topup']";
+
+    public static String existing_beneficary = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup";
 
     public static String second_recharge_package = "//android.widget.TextView[@text='20.00 AED Recharge']";
 
@@ -22,6 +29,8 @@ public class MobileTopUpPage {
     public static String agree_terms_checkbox = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]";
 
     public static String save_account_to_beneficary = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]";
+
+    public static String country_code = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup";
 
     public MobileTopUpPage(){}
 
@@ -34,7 +43,9 @@ public class MobileTopUpPage {
 
     public static AndroidElement get_first_service_provider(){return driver.findElement(By.xpath(first_service_provider));}
 
-    public static AndroidElement get_second_recharge_package(){return driver.findElement(By.xpath(second_recharge_package));}
+    public static AndroidElement get_second_recharge_package(String amount){return driver.findElement(By.xpath("//android.widget.TextView[@text='"+amount+" AED Recharge']"));}
+
+    public static String get_country_xpath(String amount){return "//android.widget.TextView[@text='"+amount+" AED Recharge']";}
 
     public static AndroidElement get_agree_terms_checkbox(){return driver.findElement(By.xpath(agree_terms_checkbox));}
 
@@ -43,5 +54,17 @@ public class MobileTopUpPage {
     public static AndroidElement get_next_button(){return driver.findElement(By.xpath(next_button));}
 
     public static AndroidElement get_save_account_to_beneficary(){return driver.findElement(By.xpath(save_account_to_beneficary));}
+
+    public static AndroidElement get_country_code(){return driver.findElement(By.xpath(country_code));}
+
+    public static AndroidElement get_search_country(){return driver.findElement(By.xpath(search_country));}
+
+    public static AndroidElement get_country(String country){return driver.findElement(By.xpath("//android.widget.TextView[@text='"+country+"']"));}
+
+    public static AndroidElement get_existing_beneficary(){return driver.findElement(By.xpath(existing_beneficary));}
+
+    public static AndroidElement get_search_existing_beneficiaries(){return driver.findElement(By.xpath(search_existing_beneficiaries));}
+
+    public static AndroidElement get_search_service_providers(){return driver.findElement(By.xpath(search_service_providers));}
 
 }

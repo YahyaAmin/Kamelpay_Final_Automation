@@ -49,3 +49,55 @@ Feature: Mobile Top Up
     And User clicks on save beneficiary button at topup
     And User clicks on next button at recharge page
     Then User shouldnt be able to topup
+
+
+  @MobileTopUpCase @MobileTopUpCase04
+  Scenario: User checks whether they can search for countries at topup
+
+    When User clicks on Mobile Top Up button
+    And User clicks on Add Topup button
+    When User clicks on country code
+    And User searches for first country
+    When User clicks on their searched country
+    Then User should see the country code and flag at phone number
+
+
+  @MobileTopUpCase @MobileTopUpCase05
+  Scenario: User checks if they can pay to existing beneficiary
+
+    When User clicks on Mobile Top Up button
+    And User clicks on the first existing beneficiary
+    When User selects a recharge package of 55 AED
+    And User clicks on next button at recharge page
+    When User clicks on I agree terms and conditions checkbox at Mobile Top Up
+    And User clicks on pay now button
+    Then User should be able to topup successfully
+
+
+  @MobileTopUpCase @MobileTopUpCase06
+  Scenario: User checks if they can search for existing beneficiaries
+
+    When User clicks on Mobile Top Up button
+    And User searches for existing beneficiaries
+    Then User should successfully be able to search beneficiaries
+
+
+  @MobileTopUpCase @MobileTopUpCase07
+  Scenario: User checks if they can search for service providers
+
+    When User clicks on Mobile Top Up button
+    And User clicks on Add Topup button
+    When User enters a valid phone number at topup
+    And User clicks on next button at recharge page
+    And User searches for different service providers
+    Then User should successfully be able to search beneficiaries
+
+
+  @MobileTopUpCase @MobileTopUpCase08
+  Scenario: User goes to mobile topup but leaves phone number empty
+
+    When User clicks on Mobile Top Up button
+    And User clicks on Add Topup button
+    When User leaves phone number empty at topup
+    And User clicks on next button at recharge page
+    Then User shouldnt be able to proceed
