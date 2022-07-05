@@ -10,6 +10,9 @@ public class PayBill {
 
     public static String utility_button = "//android.widget.TextView[@text='Utility']";
 
+    public static String mobile_number_field_tata_power = "//android.view.ViewGroup[3]/android.widget.EditText";
+    public static String consumer_number_tata_power = "//android.view.ViewGroup[2]/android.widget.EditText";
+
     public static String search_field_at_pay_utility = "//android.widget.EditText";
     public static String pay_bill_button = "//android.widget.TextView[@text='Utility Bills']";
 
@@ -41,4 +44,9 @@ public class PayBill {
     public static AndroidElement get_mobile_number_field_at_pay_bill(){return driver.findElement(By.xpath(mobile_number_field_at_pay_bill));}
 
     public static AndroidElement get_consumer_number_at_pay_bill(){return driver.findElement(By.xpath(consumer_number_at_pay_bill));}
+
+    public static AndroidElement get_consumer_number_tata_power(){return driver.findElement(By.xpath(consumer_number_tata_power));}
+
+    public static AndroidElement get_mobile_number_field_tata_power(){return driver.findElement(By.xpath(mobile_number_field_tata_power));}
+
 }

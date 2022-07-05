@@ -29,3 +29,30 @@ Feature: Pay Bill
 
 
   @PayBillTest @PayBillTest02
+  Scenario: User successfully pays bill to Tata Power Mumbai
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company Tata Power
+    And User clicks on the first country in the list
+    And User enters their valid mobile number of Tata Power
+    And User enters valid mobile number for Tata Power
+    When User clicks on next button at forgot password page
+    Then User should move to bill is past
+
+
+  @PayBillTest @PayBillTest03
+  Scenario: User successfully pays bill to Cignal TV
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Philippines
+    When User clicks on Philippines
+    And User clicks on Utility button at bill type
+    And User searches for company Cignal TV
+    When User enters a valid subscriber name at Cignal TV
+
+

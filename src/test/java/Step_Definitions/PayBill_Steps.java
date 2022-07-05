@@ -83,4 +83,48 @@ public class PayBill_Steps {
     public void userShouldMoveToBillIsPast() throws InterruptedException {
         Thread.sleep(3000);
     }
+
+    @When("User searches for company Tata Power")
+    public void userSearchesForCompanyTataPower() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("Tata Power (Mumbai)");
+    }
+
+    @And("User enters their valid mobile number of Tata Power")
+    public void userEntersTheirValidMobileNumberOfTataPower() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(consumer_number_tata_power)));
+        PayBill.get_consumer_number_tata_power().sendKeys("112233445566");
+    }
+
+    @And("User enters valid mobile number for Tata Power")
+    public void userEntersValidMobileNumberForTataPower() throws InterruptedException {
+        PayBill.get_mobile_number_field_tata_power().sendKeys("9012345678");
+        Thread.sleep(1000);
+    }
+
+    @And("User searches for Philippines")
+    public void userSearchesForPhilippines() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_country_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_search_country_at_pay_bill().sendKeys("Philippines");
+    }
+
+    @When("User clicks on Philippines")
+    public void userClicksOnPhilippines() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searched_country_at_pay_bill("Philippines"))));
+        PayBill.get_searched_country_at_pay_bill("Philippines").click();
+    }
+
+    @And("User searches for company Cignal TV")
+    public void userSearchesForCompanyCignalTV() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("Cignal TV");
+    }
+
+    @When("User enters a valid subscriber name at Cignal TV")
+    public void userEntersAValidSubscriberNameAtCignalTV() {
+
+    }
 }
