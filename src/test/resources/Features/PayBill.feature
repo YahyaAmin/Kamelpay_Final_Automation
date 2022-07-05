@@ -66,3 +66,6 @@ Feature: Pay Bill
     Then User should be successfully able to pay bill
 
 
+  Scenario:  
+
+

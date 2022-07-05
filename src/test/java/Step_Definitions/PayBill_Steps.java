@@ -135,14 +135,16 @@ public class PayBill_Steps {
     }
 
     @And("User enters amount at Cignal TV")
-    public void userEntersAmountAtCignalTV() {
+    public void userEntersAmountAtCignalTV() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_amount_field_cignal_tv)));
+        Thread.sleep(1500);
         PayBill.get_enter_amount_field_cignal_tv().sendKeys(getRandomNumberLowerAndUpperBound(2,4));
     }
 
     @And("User enters agree terms and conditions")
-    public void userEntersAgreeTermsAndConditions() {
+    public void userEntersAgreeTermsAndConditions() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(agree_terms_and_conditions_cignal_tv)));
+        Thread.sleep(2500);
         PayBill.get_agree_terms_and_conditions_cignal_tv().click();
     }
 
