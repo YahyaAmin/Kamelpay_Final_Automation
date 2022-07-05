@@ -102,3 +102,13 @@ Feature: Pay Bill
     And User enters valid mobile number for Aavantika
     When User clicks on next button at forgot password page
     Then User should see bill is past
+
+
+  @PayBillTest @PayBillTest06
+  Scenario: User successfully pays bill to Adani Gas Ltd.
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
