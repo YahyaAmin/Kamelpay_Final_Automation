@@ -66,6 +66,39 @@ Feature: Pay Bill
     Then User should be successfully able to pay bill
 
 
-  Scenario:  
+  @PayBillTest @PayBillTest04
+  Scenario: User successfully pays bill to Pampanga I Electric Corp
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Philippines
+    When User clicks on Philippines
+    And User clicks on Utility button at bill type
+    And User searches for Pampanga I
+    And User clicks on Pampanga I
+    When User enters a valid subscriber name at Pampanga I
+    And User enters a valid account number at Pampanga I
+    When User clicks on next button at forgot password page
+    And User enters amount at Cignal TV
+    When User clicks on next button at forgot password page
+    And User enters agree terms and conditions
+    And User clicks on pay now button
+    When User enters OTP at pay bill flow
+    And User clicks on next button at OTP screen
+    Then User should be successfully able to pay bill
 
 
+  @PayBillTest @PayBillTest05
+  Scenario: User successfully pays bill to Avantika Gas Ltd.
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company Aavantika
+    And User clicks on the company Aavantika
+    When User enters customer number
+    And User enters valid mobile number for Aavantika
+    When User clicks on next button at forgot password page
+    Then User should see bill is past

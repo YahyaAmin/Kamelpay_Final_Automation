@@ -8,6 +8,8 @@ import static Hooks.Base_Class.driver;
 
 public class PayBill {
 
+    public static String mobile_number_aavantika = "//android.view.ViewGroup[3]/android.widget.EditText";
+    public static String pampanga_button = "//android.widget.TextView[@text='Pampanga I Electric Cooperative Inc.']";
     public static String cignal_tv_button = "//android.widget.TextView[@text='Cignal TV']";
     public static String otp_first_digit_pay_bill = "//android.view.ViewGroup[1]/android.widget.EditText";
     public static String agree_terms_and_conditions_cignal_tv = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]";
@@ -30,6 +32,7 @@ public class PayBill {
     public static String mobile_number_field_at_pay_bill = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String first_company_in_list = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup";
 
+    public static String customer_number_field = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String searched_country_at_pay_bill(String country){return "//android.widget.TextView[@text='"+country+"']";}
 
     public PayBill(){}
@@ -66,4 +69,12 @@ public class PayBill {
     public static AndroidElement get_otp_first_digit_pay_bill(){return driver.findElement(By.xpath(otp_first_digit_pay_bill));}
 
     public static AndroidElement get_cignal_tv_button(){return driver.findElement(By.xpath(cignal_tv_button));}
+
+    public static AndroidElement get_pampanga_button(){return driver.findElement(By.xpath(pampanga_button));}
+
+    public static AndroidElement get_customer_number_field(){return driver.findElement(By.xpath(customer_number_field));}
+
+    public static AndroidElement get_mobile_number_aavantika(){return driver.findElement(By.xpath(mobile_number_aavantika));}
+
+
 }

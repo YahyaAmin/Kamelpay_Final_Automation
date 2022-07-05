@@ -156,7 +156,7 @@ public class PayBill_Steps {
 
     @Then("User should be successfully able to pay bill")
     public void userShouldBeSuccessfullyAbleToPayBill() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(6000);
     }
 
     @And("User clicks on Cignal TV")
@@ -164,5 +164,62 @@ public class PayBill_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cignal_tv_button)));
         Thread.sleep(1000);
         PayBill.get_cignal_tv_button().click();
+    }
+
+    @And("User searches for Pampanga I")
+    public void userSearchesForPampangaI() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("Pampanga I");
+    }
+
+    @And("User clicks on Pampanga I")
+    public void userClicksOnPampangaI() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(pampanga_button)));
+        Thread.sleep(1000);
+        PayBill.get_pampanga_button().click();
+    }
+
+    @When("User enters a valid subscriber name at Pampanga I")
+    public void userEntersAValidSubscriberNameAtPampangaI() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(subscriber_name_field)));
+        PayBill.get_subscriber_name_field().sendKeys("JOHN DOE");
+    }
+
+    @And("User enters a valid account number at Pampanga I")
+    public void userEntersAValidAccountNumberAtPampangaI() {
+        PayBill.get_account_number_field_cignal_tv().sendKeys("06066679");
+    }
+
+    @When("User searches for company Aavantika")
+    public void userSearchesForCompanyAavantika() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("Aavantika");
+    }
+
+    @And("User clicks on the company Aavantika")
+    public void userClicksOnTheCompanyAavantika() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_company_in_list)));
+        Thread.sleep(1000);
+        PayBill.get_first_company_in_list().click();
+    }
+
+    @When("User enters customer number")
+    public void userEntersCustomerNumber() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(customer_number_field)));
+        Thread.sleep(700);
+        get_customer_number_field().sendKeys("2233445566");
+    }
+
+    @And("User enters valid mobile number for Aavantika")
+    public void userEntersValidMobileNumberForAavantika() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_aavantika)));
+        get_mobile_number_aavantika().sendKeys("9012345678");
+    }
+
+    @Then("User should see bill is past")
+    public void userShouldSeeBillIsPast() throws InterruptedException {
+        Thread.sleep(6000);
     }
 }
