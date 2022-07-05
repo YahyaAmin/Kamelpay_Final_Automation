@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static Hooks.Base_Class.driver;
 import static Pages.Android.MobileTopUpPage.mobile_topup_button;
 import static Pages.Android.PayBill.*;
-
+import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
 
 
 public class PayBill_Steps {
@@ -125,6 +125,42 @@ public class PayBill_Steps {
 
     @When("User enters a valid subscriber name at Cignal TV")
     public void userEntersAValidSubscriberNameAtCignalTV() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(subscriber_name_field)));
+        PayBill.get_subscriber_name_field().sendKeys("JOHN DOE");
+    }
 
+    @And("User enters a valid account number at Cignal TV")
+    public void userEntersAValidAccountNumberAtCignalTV() {
+        PayBill.get_account_number_field_cignal_tv().sendKeys("9001758799");
+    }
+
+    @And("User enters amount at Cignal TV")
+    public void userEntersAmountAtCignalTV() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_amount_field_cignal_tv)));
+        PayBill.get_enter_amount_field_cignal_tv().sendKeys(getRandomNumberLowerAndUpperBound(2,4));
+    }
+
+    @And("User enters agree terms and conditions")
+    public void userEntersAgreeTermsAndConditions() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(agree_terms_and_conditions_cignal_tv)));
+        PayBill.get_agree_terms_and_conditions_cignal_tv().click();
+    }
+
+    @When("User enters OTP at pay bill flow")
+    public void userEntersOTPAtPayBillFlow() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(otp_first_digit_pay_bill)));
+        PayBill.get_otp_first_digit_pay_bill().sendKeys("666666");
+    }
+
+    @Then("User should be successfully able to pay bill")
+    public void userShouldBeSuccessfullyAbleToPayBill() throws InterruptedException {
+        Thread.sleep(5000);
+    }
+
+    @And("User clicks on Cignal TV")
+    public void userClicksOnCignalTV() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cignal_tv_button)));
+        Thread.sleep(1000);
+        PayBill.get_cignal_tv_button().click();
     }
 }

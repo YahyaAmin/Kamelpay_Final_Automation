@@ -8,6 +8,12 @@ import static Hooks.Base_Class.driver;
 
 public class PayBill {
 
+    public static String cignal_tv_button = "//android.widget.TextView[@text='Cignal TV']";
+    public static String otp_first_digit_pay_bill = "//android.view.ViewGroup[1]/android.widget.EditText";
+    public static String agree_terms_and_conditions_cignal_tv = "//android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]";
+    public static String enter_amount_field_cignal_tv = "//android.view.ViewGroup[2]/android.widget.EditText";
+    public static String account_number_field_cignal_tv = "//android.view.ViewGroup[3]/android.widget.EditText";
+    public static String subscriber_name_field = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String utility_button = "//android.widget.TextView[@text='Utility']";
 
     public static String mobile_number_field_tata_power = "//android.view.ViewGroup[3]/android.widget.EditText";
@@ -49,4 +55,15 @@ public class PayBill {
 
     public static AndroidElement get_mobile_number_field_tata_power(){return driver.findElement(By.xpath(mobile_number_field_tata_power));}
 
+    public static AndroidElement get_subscriber_name_field(){return driver.findElement(By.xpath(subscriber_name_field));}
+
+    public static AndroidElement get_account_number_field_cignal_tv(){return driver.findElement(By.xpath(account_number_field_cignal_tv));}
+
+    public static AndroidElement get_enter_amount_field_cignal_tv(){return driver.findElement(By.xpath(enter_amount_field_cignal_tv));}
+
+    public static AndroidElement get_agree_terms_and_conditions_cignal_tv(){return driver.findElement(By.xpath(agree_terms_and_conditions_cignal_tv));}
+
+    public static AndroidElement get_otp_first_digit_pay_bill(){return driver.findElement(By.xpath(otp_first_digit_pay_bill));}
+
+    public static AndroidElement get_cignal_tv_button(){return driver.findElement(By.xpath(cignal_tv_button));}
 }

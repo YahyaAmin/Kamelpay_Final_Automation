@@ -53,6 +53,16 @@ Feature: Pay Bill
     When User clicks on Philippines
     And User clicks on Utility button at bill type
     And User searches for company Cignal TV
+    And User clicks on Cignal TV
     When User enters a valid subscriber name at Cignal TV
+    And User enters a valid account number at Cignal TV
+    When User clicks on next button at forgot password page
+    And User enters amount at Cignal TV
+    When User clicks on next button at forgot password page
+    And User enters agree terms and conditions
+    And User clicks on pay now button
+    When User enters OTP at pay bill flow
+    And User clicks on next button at OTP screen
+    Then User should be successfully able to pay bill
 
 
