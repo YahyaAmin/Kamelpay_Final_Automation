@@ -260,5 +260,11 @@ Feature: Pay Bill
     And User clicks on pay new bill button
     And User searches for Pakistan
     When User clicks on Pakistan
+    And User clicks on Mobile Prepaid button
+    And User clicks on Zong Prepaid Button
+    And User enters valid mobile number for Zong Prepaid Button
+    When User clicks on next button at forgot password page
+
+
 
 

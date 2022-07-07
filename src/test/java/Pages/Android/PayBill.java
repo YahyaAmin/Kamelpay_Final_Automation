@@ -8,6 +8,8 @@ import static Hooks.Base_Class.driver;
 
 public class PayBill {
 
+    public static String zong_prepaid_button = "//android.widget.TextView[@text='Zong Postpaid']";
+    public static String mobile_prepaid_button = "//android.widget.TextView[@text='Mobile Prepaid']";
     public static String reference_number_LESCO = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String wait_gujarat = "//android.widget.TextView[@text='Bill Due Date']";
     public static String mobile_number_aavantika = "//android.view.ViewGroup[3]/android.widget.EditText";
@@ -81,4 +83,9 @@ public class PayBill {
     public static AndroidElement get_wait_gujarat(){return driver.findElement(By.xpath(wait_gujarat));}
 
     public static AndroidElement get_reference_number_LESCO(){return driver.findElement(By.xpath(reference_number_LESCO));}
+
+    public static AndroidElement get_mobile_prepaid_button(){return driver.findElement(By.xpath(mobile_prepaid_button));}
+
+    public static AndroidElement get_zong_prepaid_button(){return driver.findElement(By.xpath(zong_prepaid_button));}
+
 }

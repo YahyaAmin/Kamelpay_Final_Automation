@@ -447,4 +447,25 @@ public class PayBill_Steps {
         Thread.sleep(1000);
         PayBill.get_reference_number_LESCO().sendKeys("45849090047");
     }
+
+    @And("User clicks on Mobile Prepaid button")
+    public void userClicksOnMobilePrepaidButton() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_prepaid_button)));
+        Thread.sleep(1000);
+        get_mobile_prepaid_button().click();
+    }
+
+    @And("User clicks on Zong Prepaid Button")
+    public void userClicksOnZongPrepaidButton() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(zong_prepaid_button)));
+        Thread.sleep(1000);
+        get_zong_prepaid_button().click();
+    }
+
+    @And("User enters valid mobile number for Zong Prepaid Button")
+    public void userEntersValidMobileNumberForZongPrepaidButton() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reference_number_LESCO)));
+        Thread.sleep(1000);
+        PayBill.get_reference_number_LESCO().sendKeys("3938010321");
+    }
 }
