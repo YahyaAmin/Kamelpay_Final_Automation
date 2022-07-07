@@ -112,3 +112,12 @@ Feature: Pay Bill
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
+    When User searches for company Adani Gas
+    And User clicks on the company Aavantika
+    When User enters customer number
+    And User enters valid mobile number for Aavantika
+    When User clicks on next button at forgot password page
+    Then User should see bill is past
+
+
+

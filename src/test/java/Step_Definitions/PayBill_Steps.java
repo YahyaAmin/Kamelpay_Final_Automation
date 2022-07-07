@@ -222,4 +222,11 @@ public class PayBill_Steps {
     public void userShouldSeeBillIsPast() throws InterruptedException {
         Thread.sleep(6000);
     }
+
+    @When("User searches for company Adani Gas")
+    public void userSearchesForCompanyAdaniGas() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("Adani Gas Ltd");
+    }
 }

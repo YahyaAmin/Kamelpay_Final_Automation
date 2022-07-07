@@ -42,7 +42,7 @@ public class LoginSteps {
     @When("User enters correct phone number")
     public void userEntersUsernameAndPassword() {
          wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_no_on_mainscreen)));
-         LoginPage.getphone_no_mainscreen().sendKeys("123456789");
+         LoginPage.getphone_no_mainscreen().sendKeys("505636092");
     }
 
 
