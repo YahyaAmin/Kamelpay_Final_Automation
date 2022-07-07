@@ -134,7 +134,32 @@ Feature: Pay Bill
     And User enters valid mobile number for Gujarat
     When User clicks on next button at forgot password page
     When User clicks on next button at Gujarat
+    And User enters agree terms and conditions
+    And User clicks on pay now button
+    When User enters OTP at pay bill flow
+    And User clicks on next button at OTP screen
+    Then User should be successfully able to pay bill
 
 
+  @PayBillTest @PayBillTest08
+  Scenario: User successfully pays bill to PLDT (Philipines)
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Philippines
+    When User clicks on Philippines
+    And User clicks on Utility button at bill type
+    When User searches for PLDT
+    And User clicks on PLDT
+    When User enters account number for PLDT
+    And User enters valid telephone number for PLDT
+    When User clicks on next button at forgot password page
+    And User enters amount at Cignal TV
+    When User clicks on next button at forgot password page
+    And User enters agree terms and conditions
+    And User clicks on pay now button
+    When User enters OTP at pay bill flow
+    And User clicks on next button at OTP screen
+    Then User should be successfully able to pay bill
 
 

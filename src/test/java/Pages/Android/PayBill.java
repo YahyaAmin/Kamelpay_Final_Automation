@@ -8,6 +8,7 @@ import static Hooks.Base_Class.driver;
 
 public class PayBill {
 
+    public static String wait_gujarat = "//android.widget.TextView[@text='Bill Due Date']";
     public static String mobile_number_aavantika = "//android.view.ViewGroup[3]/android.widget.EditText";
     public static String pampanga_button = "//android.widget.TextView[@text='Pampanga I Electric Cooperative Inc.']";
     public static String cignal_tv_button = "//android.widget.TextView[@text='Cignal TV']";
@@ -76,5 +77,6 @@ public class PayBill {
 
     public static AndroidElement get_mobile_number_aavantika(){return driver.findElement(By.xpath(mobile_number_aavantika));}
 
+    public static AndroidElement get_wait_gujarat(){return driver.findElement(By.xpath(wait_gujarat));}
 
 }

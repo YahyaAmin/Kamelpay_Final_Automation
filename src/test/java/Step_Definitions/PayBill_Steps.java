@@ -267,8 +267,35 @@ public class PayBill_Steps {
 
     @When("User clicks on next button at Gujarat")
     public void userClicksOnNextButtonAtGujarat() throws InterruptedException {
-        
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(wait_gujarat)));
         Thread.sleep(2000);
         LoginPage.getnextbutton_forgotpasswordfield().click();
+    }
+
+    @When("User searches for PLDT")
+    public void userSearchesForPLDT() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("PLDT");
+    }
+
+    @And("User clicks on PLDT")
+    public void userClicksOnPLDT() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_company_in_list)));
+        Thread.sleep(1000);
+        PayBill.get_first_company_in_list().click();
+    }
+
+    @When("User enters account number for PLDT")
+    public void userEntersAccountNumberForPLDT() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(customer_number_field)));
+        Thread.sleep(700);
+        get_customer_number_field().sendKeys("7788990011");
+    }
+
+    @And("User enters valid telephone number for PLDT")
+    public void userEntersValidTelephoneNumberForPLDT() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_aavantika)));
+        get_mobile_number_aavantika().sendKeys("832826648");
     }
 }
