@@ -105,7 +105,7 @@ Feature: Pay Bill
 
 
   @PayBillTest @PayBillTest06
-  Scenario: User successfully pays bill to Adani Gas Ltd.
+  Scenario: User pays bill to Adani Gas Ltd. but bill is past
 
     Given User clicks on utility bills
     And User clicks on pay new bill button
@@ -114,10 +114,27 @@ Feature: Pay Bill
     And User clicks on Utility button at bill type
     When User searches for company Adani Gas
     And User clicks on the company Aavantika
-    When User enters customer number
+    When User enters customer number for Aavantika
     And User enters valid mobile number for Aavantika
     When User clicks on next button at forgot password page
     Then User should see bill is past
+
+
+  @PayBillTest @PayBillTest07
+  Scenario: User successfully pays bill to Gujarat Gas Ltd (India)
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company Gujarat Gas Ltd
+    And User clicks on the company Gujarat Gas Ltd
+    When User enters customer number for Gujarat LTD
+    And User enters valid mobile number for Gujarat
+    When User clicks on next button at forgot password page
+    When User clicks on next button at Gujarat
+
 
 
 

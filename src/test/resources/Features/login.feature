@@ -128,6 +128,7 @@ Feature: Login Tests
         When User enters pin to setup pin
         And User enters the same confirm pin
         And User clicks on submit button at pin setup screen
+        And User clicks on back button at the top left
         And User clicks on logout button
         When User clicks on cant login button
         Given User is on Login Page

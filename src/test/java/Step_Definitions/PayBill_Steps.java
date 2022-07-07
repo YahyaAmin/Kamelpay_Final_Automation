@@ -1,5 +1,6 @@
 package Step_Definitions;
 
+import Pages.Android.LoginPage;
 import Pages.Android.PayBill;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -228,5 +229,46 @@ public class PayBill_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
         Thread.sleep(1000);
         PayBill.get_search_field_at_pay_utility().sendKeys("Adani Gas Ltd");
+    }
+
+    @When("User searches for company Gujarat Gas Ltd")
+    public void userSearchesForCompanyGujaratGasLtd() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("Gujarat Gas");
+    }
+
+    @When("User enters customer number for Aavantika")
+    public void userEntersCustomerNumberForAavantika() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(customer_number_field)));
+        Thread.sleep(700);
+        get_customer_number_field().sendKeys("1000083625");
+    }
+
+    @And("User clicks on the company Gujarat Gas Ltd")
+    public void userClicksOnTheCompanyGujaratGasLtd() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_company_in_list)));
+        Thread.sleep(1000);
+        PayBill.get_first_company_in_list().click();
+    }
+
+    @When("User enters customer number for Gujarat LTD")
+    public void userEntersCustomerNumberForGujaratLTD() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(customer_number_field)));
+        Thread.sleep(700);
+        get_customer_number_field().sendKeys("500000937265");
+    }
+
+    @And("User enters valid mobile number for Gujarat")
+    public void userEntersValidMobileNumberForGujarat() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_aavantika)));
+        get_mobile_number_aavantika().sendKeys("9841025363");
+    }
+
+    @When("User clicks on next button at Gujarat")
+    public void userClicksOnNextButtonAtGujarat() throws InterruptedException {
+        
+        Thread.sleep(2000);
+        LoginPage.getnextbutton_forgotpasswordfield().click();
     }
 }

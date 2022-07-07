@@ -160,7 +160,7 @@ public class LoginSteps {
     public void userEntersAValidPhoneNumber() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_forgot_password_screen)));
         LoginPage.getphonenumberfield_forgotpassword().clear();
-        LoginPage.getphonenumberfield_forgotpassword().sendKeys("123456789");
+        LoginPage.getphonenumberfield_forgotpassword().sendKeys("505636092");
     }
 
     @When("User clicks on next button at forgot password page")
