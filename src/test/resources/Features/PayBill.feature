@@ -163,3 +163,14 @@ Feature: Pay Bill
     Then User should be successfully able to pay bill
 
 
+  @PayBillTest @PayBillTest09
+  Scenario: User pays bill to LESCO but bill is past
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Pakistan
+    When User clicks on Pakistan
+    And User clicks on Utility button at bill type
+    When User searches for LESCO
+    And User clicks on LESCO
+

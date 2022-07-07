@@ -298,4 +298,31 @@ public class PayBill_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_aavantika)));
         get_mobile_number_aavantika().sendKeys("832826648");
     }
+
+    @And("User searches for Pakistan")
+    public void userSearchesForPakistan() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_country_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_search_country_at_pay_bill().sendKeys("Pakistan");
+    }
+
+    @When("User clicks on Pakistan")
+    public void userClicksOnPakistan() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searched_country_at_pay_bill("Pakistan"))));
+        PayBill.get_searched_country_at_pay_bill("Pakistan").click();
+    }
+
+    @When("User searches for LESCO")
+    public void userSearchesForLESCO() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("LESCO");
+    }
+
+    @And("User clicks on LESCO")
+    public void userClicksOnLESCO() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_company_in_list)));
+        Thread.sleep(1000);
+        PayBill.get_first_company_in_list().click();
+    }
 }
