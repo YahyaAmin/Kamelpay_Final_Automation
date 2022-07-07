@@ -325,4 +325,126 @@ public class PayBill_Steps {
         Thread.sleep(1000);
         PayBill.get_first_company_in_list().click();
     }
+
+    @When("User enters a valid referrence number")
+    public void userEntersAValidReferrenceNumber() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reference_number_LESCO)));
+        Thread.sleep(1000);
+        PayBill.get_reference_number_LESCO().sendKeys("04116738439200");
+    }
+
+    @When("User searches for PTCL Landline")
+    public void userSearchesForPTCLLandline() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("PTCL Landline");
+    }
+
+    @And("User clicks on PTCL Landline")
+    public void userClicksOnPTCLLandline() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_company_in_list)));
+        Thread.sleep(1000);
+        PayBill.get_first_company_in_list().click();
+    }
+
+    @When("User enters a valid referrence number for PTCL")
+    public void userEntersAValidReferrenceNumberForPTCL() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reference_number_LESCO)));
+        Thread.sleep(1000);
+        PayBill.get_reference_number_LESCO().sendKeys("2937763091");
+    }
+
+    @Then("User should see biller unavailable")
+    public void userShouldSeeBillerUnavailable() throws InterruptedException {
+        Thread.sleep(6000);
+    }
+
+    @When("User searches for SSGC")
+    public void userSearchesForSSGC() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("SSGC");
+    }
+
+    @And("User clicks on SSGC")
+    public void userClicksOnSSGC() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_company_in_list)));
+        Thread.sleep(1000);
+        PayBill.get_first_company_in_list().click();
+    }
+
+    @When("User enters a valid referrence number for SSGC")
+    public void userEntersAValidReferrenceNumberForSSGC() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reference_number_LESCO)));
+        Thread.sleep(1000);
+        PayBill.get_reference_number_LESCO().sendKeys("6372229438");
+    }
+
+    @Then("User should see request timed out")
+    public void userShouldSeeRequestTimedOut() throws InterruptedException {
+        Thread.sleep(6000);
+    }
+
+    @When("User searches for KWSB")
+    public void userSearchesForKWSB() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("KWSB");
+    }
+
+    @And("User clicks on KWSB")
+    public void userClicksOnKWSB() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_company_in_list)));
+        Thread.sleep(1000);
+        PayBill.get_first_company_in_list().click();
+    }
+
+    @When("User enters a valid referrence number for KWSB")
+    public void userEntersAValidReferrenceNumberForKWSB() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reference_number_LESCO)));
+        Thread.sleep(1000);
+        PayBill.get_reference_number_LESCO().sendKeys("76740217800040");
+    }
+
+    @When("User searches for K-Electric")
+    public void userSearchesForKElectric() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("K-Electric");
+    }
+
+    @And("User clicks on K-Electric")
+    public void userClicksOnKElectric() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_company_in_list)));
+        Thread.sleep(1000);
+        PayBill.get_first_company_in_list().click();
+    }
+
+    @When("User enters a valid referrence number for K-Electric")
+    public void userEntersAValidReferrenceNumberForKElectric() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reference_number_LESCO)));
+        Thread.sleep(1000);
+        PayBill.get_reference_number_LESCO().sendKeys("0509320091734");
+    }
+
+    @When("User searches for SNGPL")
+    public void userSearchesForSNGPL() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(1000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("SNGPL");
+    }
+
+    @And("User clicks on SNGPL")
+    public void userClicksOnSNGPL() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_company_in_list)));
+        Thread.sleep(1000);
+        PayBill.get_first_company_in_list().click();
+    }
+
+    @When("User enters a valid consumer number for SNGPL")
+    public void userEntersAValidConsumerNumberForSNGPL() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reference_number_LESCO)));
+        Thread.sleep(1000);
+        PayBill.get_reference_number_LESCO().sendKeys("45849090047");
+    }
 }

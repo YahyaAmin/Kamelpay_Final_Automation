@@ -173,4 +173,92 @@ Feature: Pay Bill
     And User clicks on Utility button at bill type
     When User searches for LESCO
     And User clicks on LESCO
+    When User enters a valid referrence number
+    And User clicks on next button at forgot password page
+    Then User should see bill is past
+
+
+  @PayBillTest @PayBillTest10
+  Scenario: User pay bill to PTCL Landline but biller is unavailable
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Pakistan
+    When User clicks on Pakistan
+    And User clicks on Utility button at bill type
+    When User searches for PTCL Landline
+    And User clicks on PTCL Landline
+    When User enters a valid referrence number for PTCL
+    And User clicks on next button at forgot password page
+    Then User should see biller unavailable
+
+
+  @PayBillTest @PayBillTest11
+  Scenario: User pay bill to SSGC but request timed out
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Pakistan
+    When User clicks on Pakistan
+    And User clicks on Utility button at bill type
+    When User searches for SSGC
+    And User clicks on SSGC
+    When User enters a valid referrence number for SSGC
+    And User clicks on next button at forgot password page
+    Then User should see request timed out
+
+
+  @PayBillTest @PayBillTest12
+  Scenario: User pay bill to KWSB but bill is past
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Pakistan
+    When User clicks on Pakistan
+    And User clicks on Utility button at bill type
+    When User searches for KWSB
+    And User clicks on KWSB
+    When User enters a valid referrence number for KWSB
+    And User clicks on next button at forgot password page
+    Then User should see bill is past
+
+
+  @PayBillTest @PayBillTest13
+  Scenario: User pay bill to K-Electric but bill is past
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Pakistan
+    When User clicks on Pakistan
+    And User clicks on Utility button at bill type
+    When User searches for K-Electric
+    And User clicks on K-Electric
+    When User enters a valid referrence number for K-Electric
+    And User clicks on next button at forgot password page
+    Then User should see bill is past
+
+
+  @PayBillTest @PayBillTest14
+  Scenario: User pays bill to SNGPL but error in processing transactions
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Pakistan
+    When User clicks on Pakistan
+    And User clicks on Utility button at bill type
+    When User searches for SNGPL
+    And User clicks on SNGPL
+    When User enters a valid consumer number for SNGPL
+    And User clicks on next button at forgot password page
+    Then User should see bill is past
+
+
+  @PayBillTest @PayBillTest15
+  Scenario: User successfully pays bill to Zong Prepaid
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Pakistan
+    When User clicks on Pakistan
+
 
