@@ -38,6 +38,7 @@ public class SignupSteps {
     @And("User clicks on Don't have an account? signup button")
     public void userClicksOnDonTHaveAnAccountSignupButton() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dont_have_an_account_signup_button)));
+        Thread.sleep(500);
         SignupPage.get_dont_have_an_account_signup_button().click();
         Thread.sleep(1000);
     }

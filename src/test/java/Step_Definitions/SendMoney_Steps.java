@@ -196,6 +196,7 @@ public class SendMoney_Steps {
     @And("User clicks on Bangladesh")
     public void userClicksOnBangladesh() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_county_wait("Bangladesh"))));
+        Thread.sleep(1000);
         SendMoneyPage.searched_country_locator("Bangladesh").click();
         Thread.sleep(4000);
     }
