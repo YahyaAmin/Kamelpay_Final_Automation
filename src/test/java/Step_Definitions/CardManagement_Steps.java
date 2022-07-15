@@ -111,7 +111,9 @@ public class CardManagement_Steps {
     }
 
     @When("User clicks on next button change pin screen")
-    public void userClicksOnNextButtonChangePinScreen() {
+    public void userClicksOnNextButtonChangePinScreen() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(next_button)));
+        Thread.sleep(500);
         CardManagementPage.get_next_button().click();
     }
 

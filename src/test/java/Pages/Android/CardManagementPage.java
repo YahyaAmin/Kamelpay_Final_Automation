@@ -23,7 +23,7 @@ public class CardManagementPage {
 
     public static String otp_1st_at_card_management = "//android.widget.EditText[@text='0']";
 
-    private static String next_button = "//android.widget.TextView[@text='Next']";
+    public static String next_button = "//android.widget.TextView[@text='Next']";
 
     public static String enter_new_pin_for_card = "//android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText[@index='0']";
 
