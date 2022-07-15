@@ -8,7 +8,10 @@ import static Hooks.Base_Class.driver;
 
 public class PayBill {
 
-    public static String zong_prepaid_button = "//android.widget.TextView[@text='Zong Postpaid']";
+    public static String reference_number_hesco = "//android.widget.EditText";
+    public static String mobile_number_field_zong = "//android.widget.EditText";
+    public static String get_recharge_usd(String amount){return "//android.widget.TextView[@text='"+amount+" USD Recharge']";}
+    public static String zong_prepaid_button = "//android.widget.TextView[@text='Zong Prepaid']";
     public static String mobile_prepaid_button = "//android.widget.TextView[@text='Mobile Prepaid']";
     public static String reference_number_LESCO = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String wait_gujarat = "//android.widget.TextView[@text='Bill Due Date']";
@@ -87,5 +90,11 @@ public class PayBill {
     public static AndroidElement get_mobile_prepaid_button(){return driver.findElement(By.xpath(mobile_prepaid_button));}
 
     public static AndroidElement get_zong_prepaid_button(){return driver.findElement(By.xpath(zong_prepaid_button));}
+
+    public static AndroidElement get_get_recharge_usd(String amount){return driver.findElement(By.xpath("//android.widget.TextView[@text='"+amount+" USD Recharge']"));}
+
+    public static AndroidElement get_mobile_number_field_zong(){return driver.findElement(By.xpath(mobile_number_field_zong));}
+
+    public static AndroidElement get_reference_number_hesco(){return driver.findElement(By.xpath(reference_number_hesco));}
 
 }

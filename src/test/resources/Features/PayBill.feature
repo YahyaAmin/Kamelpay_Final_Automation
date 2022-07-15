@@ -262,8 +262,33 @@ Feature: Pay Bill
     When User clicks on Pakistan
     And User clicks on Mobile Prepaid button
     And User clicks on Zong Prepaid Button
-    And User enters valid mobile number for Zong Prepaid Button
+    And User selects a recharge package of 2 USD
     When User clicks on next button at forgot password page
+    And User enters their mobile number for Zong
+    And User clicks on next button at forgot password page
+    When User clicks on next button at forgot password page
+    And User enters agree terms and conditions
+    And User clicks on pay now button
+    When User enters OTP at pay bill flow
+    And User clicks on next button at OTP screen
+    Then User should be successfully able to pay bill
+
+
+  @PayBillTest @PayBillTest16
+  Scenario: User pays bill to HESCO but account status is invalid
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Pakistan
+    When User clicks on Pakistan
+    And User clicks on Utility button at bill type
+    When User searches for HESCO
+    And User clicks on HESCO
+    When User enters an invalid reference number for HESCO
+    And User clicks on next button at forgot password page
+    Then User should see account status is invalid
+
+
 
 
 

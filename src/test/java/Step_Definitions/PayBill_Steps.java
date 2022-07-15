@@ -468,4 +468,42 @@ public class PayBill_Steps {
         Thread.sleep(1000);
         PayBill.get_reference_number_LESCO().sendKeys("3938010321");
     }
+
+    @And("User selects a recharge package of {int} USD")
+    public void userSelectsARechargePackageOfUSD(int arg0) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(get_recharge_usd("2"))));
+        PayBill.get_get_recharge_usd("2").click();
+    }
+
+    @And("User enters their mobile number for Zong")
+    public void userEntersTheirMobileNumberForZong() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_field_zong)));
+        PayBill.get_mobile_number_field_zong().sendKeys("923938010321");
+    }
+
+    @When("User searches for HESCO")
+    public void userSearchesForHESCO() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_field_at_pay_utility)));
+        Thread.sleep(2000);
+        PayBill.get_search_field_at_pay_utility().sendKeys("HESCO");
+    }
+
+    @And("User clicks on HESCO")
+    public void userClicksOnHESCO() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_company_in_list)));
+        Thread.sleep(1000);
+        PayBill.get_first_company_in_list().click();
+    }
+
+    @When("User enters an invalid reference number for HESCO")
+    public void userEntersAnInvalidReferenceNumberForHESCO() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reference_number_hesco)));
+        Thread.sleep(1000);
+        PayBill.get_reference_number_hesco().sendKeys("18739209142040");
+    }
+
+    @Then("User should see account status is invalid")
+    public void userShouldSeeAccountStatusIsInvalid() throws InterruptedException {
+        Thread.sleep(5000);
+    }
 }
