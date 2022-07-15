@@ -84,8 +84,9 @@ public class MobileTopUp_Steps {
     }
 
     @When("User enters an invalid phone number at topup")
-    public void userEntersAnInvalidPhoneNumberAtTopup() {
+    public void userEntersAnInvalidPhoneNumberAtTopup() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_mobile_topup)));
+        Thread.sleep(500);
         MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys(getRandomNumberLowerAndUpperBound(8,9));
 
     }
