@@ -2,6 +2,7 @@ package Step_Definitions;
 
 import Pages.Android.LoginPage;
 import Pages.Android.PayBill;
+import Tests.Password_Builder;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,6 +19,20 @@ import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
 public class PayBill_Steps {
 
     public WebDriverWait wait = new WebDriverWait(driver, 30);
+
+    public String getRandomString(boolean Digits, boolean Lower, boolean Upper, boolean Punctuation, boolean Spaces, int length) {
+
+        Password_Builder.PasswordGenerator passwordGenerator = new Password_Builder.PasswordGenerator.PasswordGeneratorBuilder()
+                .useDigits(Digits)
+                .useLower(Lower)
+                .useUpper(Upper)
+                .usePunctuation(Punctuation)
+                .useSpaces(Spaces)
+                .build();
+        String password = passwordGenerator.generate(length); // output ex.: lrU12fmM 75iwI90o
+        return password;
+
+    }
 
     @Given("User clicks on utility bills")
     public void userClicksOnUtilityBills() {
@@ -505,5 +520,128 @@ public class PayBill_Steps {
     @Then("User should see account status is invalid")
     public void userShouldSeeAccountStatusIsInvalid() throws InterruptedException {
         Thread.sleep(5000);
+    }
+
+    @When("User clicks on add account to beneficiary button")
+    public void userClicksOnAddAccountToBeneficiaryButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(add_account_to_beneficiary_button)));
+        PayBill.get_add_account_to_beneficiary_button().click();
+    }
+
+    @And("User enters a valid beneficiary name")
+    public void userEntersAValidBeneficiaryName() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(beneficiary_name_field)));
+        Thread.sleep(1000);
+        PayBill.get_beneficiary_name_field().sendKeys(getRandomString(false,true,true,false,false,8));
+    }
+
+    @Then("User should see error please enter mobile number")
+    public void userShouldSeeErrorPleaseEnterMobileNumber() throws InterruptedException {
+        Thread.sleep(4000);
+    }
+
+    @When("User enters their mobile number less than ten digits for KSEB")
+    public void userEntersTheirMobileNumberLessThanTenDigitsForKSEB() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_field_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_mobile_number_field_at_pay_bill().sendKeys(getRandomNumberLowerAndUpperBound(7,9));
+    }
+
+    @Then("User should see error please enter a valid mobile number")
+    public void userShouldSeeErrorPleaseEnterAValidMobileNumber() throws InterruptedException {
+        Thread.sleep(4000);
+    }
+
+    @When("User enters their mobile number more than ten digits for KSEB")
+    public void userEntersTheirMobileNumberMoreThanTenDigitsForKSEB() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_field_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_mobile_number_field_at_pay_bill().sendKeys(getRandomNumberLowerAndUpperBound(11,14));
+    }
+
+    @When("User enters their random ten digit mobile number for KSEB")
+    public void userEntersTheirRandomTenDigitMobileNumberForKSEB() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_field_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_mobile_number_field_at_pay_bill().sendKeys(getRandomNumberLowerAndUpperBound(10,11));
+    }
+
+    @Then("User should see error please enter a valid consumer number")
+    public void userShouldSeeErrorPleaseEnterAValidConsumerNumber() throws InterruptedException {
+        Thread.sleep(4000);
+    }
+
+    @And("User enters consumer number of KSEB less than thirteen digits")
+    public void userEntersConsumerNumberOfKSEBLessThanThirteenDigits() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(consumer_number_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_consumer_number_at_pay_bill().sendKeys(getRandomNumberLowerAndUpperBound(5,12));
+    }
+
+    @And("User enters consumer number of KSEB more than thirteen digits")
+    public void userEntersConsumerNumberOfKSEBMoreThanThirteenDigits() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(consumer_number_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_consumer_number_at_pay_bill().sendKeys(getRandomNumberLowerAndUpperBound(14,17));
+    }
+
+    @And("User enters consumer number of KSEB is a random thirteen digit number")
+    public void userEntersConsumerNumberOfKSEBIsARandomThirteenDigitNumber() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(consumer_number_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_consumer_number_at_pay_bill().sendKeys(getRandomNumberLowerAndUpperBound(13,14));
+    }
+
+    @And("User enters consumer number of KSEB is a random number with spaces")
+    public void userEntersConsumerNumberOfKSEBIsARandomNumberWithSpaces() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(consumer_number_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_consumer_number_at_pay_bill().sendKeys(getRandomString(true,false,false,false,true,13));
+    }
+
+    @And("User enters consumer number of KSEB is a random number with special characters")
+    public void userEntersConsumerNumberOfKSEBIsARandomNumberWithSpecialCharacters() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(consumer_number_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_consumer_number_at_pay_bill().sendKeys(getRandomString(true,false,false,true,false,13));
+    }
+
+    @When("User enters their mobile number at KSEB but number has spaces")
+    public void userEntersTheirMobileNumberAtKSEBButNumberHasSpaces() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_field_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_mobile_number_field_at_pay_bill().sendKeys(getRandomString(true,false,false,false,true,10));
+    }
+
+    @When("User enters their mobile number at KSEB but number has special characters")
+    public void userEntersTheirMobileNumberAtKSEBButNumberHasSpecialCharacters() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_field_at_pay_bill)));
+        Thread.sleep(1000);
+        PayBill.get_mobile_number_field_at_pay_bill().sendKeys(getRandomString(true,false,false,true,false,10));
+    }
+
+    @Then("User should not be able to save beneficary")
+    public void userShouldNotBeAbleToSaveBeneficary() throws InterruptedException {
+        Thread.sleep(5000);
+    }
+
+    @And("User forgets to enter beneficary name")
+    public void userForgetsToEnterBeneficaryName() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(beneficiary_name_field)));
+        Thread.sleep(1000);
+    }
+
+    @When("User enters a valid promo code")
+    public void userEntersAValidPromoCode() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(promo_code_field)));
+        PayBill.get_promo_code_field().sendKeys("free");
+        Thread.sleep(1000);
+    }
+
+    @And("User clicks on apply button")
+    public void userClicksOnApplyButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(apply_button)));
+        PayBill.get_apply_button().click();
+
     }
 }

@@ -64,8 +64,9 @@ public class MobileTopUp_Steps {
     }
 
     @And("User clicks on pay now button")
-    public void userClicksOnPayNowButton() {
+    public void userClicksOnPayNowButton() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(pay_now_button)));
+        Thread.sleep(1000);
         MobileTopUpPage.get_pay_now_button().click();
     }
 

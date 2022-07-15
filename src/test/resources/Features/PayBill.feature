@@ -289,7 +289,258 @@ Feature: Pay Bill
     Then User should see account status is invalid
 
 
+  @PayBillTest @PayBillTest17
+  Scenario: User pays bill to Pampanga I and saves beneficiary
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Philippines
+    When User clicks on Philippines
+    When User clicks on Utility button at bill type
+    And User searches for Pampanga I
+    And User clicks on Pampanga I
+    When User enters a valid subscriber name at Pampanga I
+    And User enters a valid account number at Pampanga I
+    When User clicks on add account to beneficiary button
+    And User enters a valid beneficiary name
+    When User clicks on next button at forgot password page
+    And User enters amount at Cignal TV
+    When User clicks on next button at forgot password page
+    And User enters agree terms and conditions
+    And User clicks on pay now button
+    When User enters OTP at pay bill flow
+    And User clicks on next button at OTP screen
+    Then User should be successfully able to pay bill
+
+
+  @PayBillTest @PayBillTest18
+  Scenario: User pays bill but forgets to enter mobile number for KSEB
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters consumer number of KSEB
+    And User clicks on next button at forgot password page
+    Then User should see error please enter mobile number
+
+
+  @PayBillTest @PayBillTest19
+  Scenario: User pays bill but enters mobile number less than ten digits for KSEB
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters their mobile number less than ten digits for KSEB
+    And User enters consumer number of KSEB
+    And User clicks on next button at forgot password page
+    Then User should see error please enter a valid mobile number
+
+
+  @PayBillTest @PayBillTest20
+  Scenario: User pays bill but enters mobile number more than ten digits for KSEB
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters their mobile number more than ten digits for KSEB
+    And User enters consumer number of KSEB
+    And User clicks on next button at forgot password page
+    Then User should see error please enter a valid mobile number
+
+
+  @PayBillTest @PayBillTest21
+  Scenario: User pays bill but enters a random ten digit mobile number for KSEB
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters their random ten digit mobile number for KSEB
+    And User enters consumer number of KSEB
+    And User clicks on next button at forgot password page
+    Then User should see error please enter a valid mobile number
+
+
+  @PayBillTest @PayBillTest22
+  Scenario: User pays bill but forgets to enter consumer number
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters their valid mobile number of KSEB
+    And User clicks on next button at forgot password page
+    Then User should see error please enter a valid consumer number
+
+
+  @PayBillTest @PayBillTest23
+  Scenario: User pays bill but consumer number is less than 13 digits
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters their valid mobile number of KSEB
+    And User enters consumer number of KSEB less than thirteen digits
+    And User clicks on next button at forgot password page
+    Then User should see error please enter a valid consumer number
+
+
+  @PayBillTest @PayBillTest24
+  Scenario: User pays bill but consumer number is more than 13 digits
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters their valid mobile number of KSEB
+    And User enters consumer number of KSEB more than thirteen digits
+    And User clicks on next button at forgot password page
+    Then User should see error please enter a valid consumer number
+
+
+  @PayBillTest @PayBillTest25
+  Scenario: User pays bill but consumer number is a random 13 digit number
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters their valid mobile number of KSEB
+    And User enters consumer number of KSEB is a random thirteen digit number
+    And User clicks on next button at forgot password page
+    Then User should see error please enter a valid consumer number
 
 
 
+  @PayBillTest @PayBillTest26
+  Scenario: User pays bill but consumer number has spaces
 
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters their valid mobile number of KSEB
+    And User enters consumer number of KSEB is a random number with spaces
+    And User clicks on next button at forgot password page
+    Then User should see error please enter a valid consumer number
+
+
+  @PayBillTest @PayBillTest27
+  Scenario: User pays bill but consumer number has special characters
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters their valid mobile number of KSEB
+    And User enters consumer number of KSEB is a random number with special characters
+    And User clicks on next button at forgot password page
+    Then User should see error please enter a valid consumer number
+
+
+  @PayBillTest @PayBillTest28
+  Scenario: User pays bill but mobile number has spaces
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters their mobile number at KSEB but number has spaces
+    And User enters consumer number of KSEB
+    And User clicks on next button at forgot password page
+    Then User should see error please enter a valid mobile number
+
+
+  @PayBillTest @PayBillTest29
+  Scenario: User pays bill but mobile number has special characters
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    When User searches for country at Pay Bill
+    And User clicks on the searched country at Pay Bill
+    And User clicks on Utility button at bill type
+    When User searches for company
+    And User clicks on the first country in the list
+    When User enters their mobile number at KSEB but number has special characters
+    And User enters consumer number of KSEB
+    And User clicks on next button at forgot password page
+    Then User should see error please enter a valid mobile number
+
+
+  @PayBillTest @PayBillTest30
+  Scenario: User checks if they can save beneficiary but leaves beneficiary name empty
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Philippines
+    When User clicks on Philippines
+    When User clicks on Utility button at bill type
+    And User searches for Pampanga I
+    And User clicks on Pampanga I
+    When User enters a valid subscriber name at Pampanga I
+    And User enters a valid account number at Pampanga I
+    When User clicks on add account to beneficiary button
+    And User forgets to enter beneficary name
+    When User clicks on next button at forgot password page
+    Then User should not be able to save beneficary
+
+
+  @PayBillTest @PayBillTest31
+  Scenario: User enters a valid promo code and gets a discount
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Philippines
+    When User clicks on Philippines
+    And User clicks on Utility button at bill type
+    And User searches for Pampanga I
+    And User clicks on Pampanga I
+    When User enters a valid subscriber name at Pampanga I
+    And User enters a valid account number at Pampanga I
+    When User clicks on next button at forgot password page
+    And User enters amount at Cignal TV
+    When User clicks on next button at forgot password page
+    And User enters agree terms and conditions
+    When User enters a valid promo code
+    And User clicks on apply button
+    And User clicks on pay now button
+    When User enters OTP at pay bill flow
+    And User clicks on next button at OTP screen
+    Then User should be successfully able to pay bill

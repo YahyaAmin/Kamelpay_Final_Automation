@@ -8,6 +8,9 @@ import static Hooks.Base_Class.driver;
 
 public class PayBill {
 
+    public static String apply_button = "//android.widget.TextView[@text='Apply']";
+    public static String promo_code_field = "//android.widget.EditText";
+    public static String add_account_to_beneficiary_button = "//android.view.ViewGroup/android.view.ViewGroup[4]";
     public static String reference_number_hesco = "//android.widget.EditText";
     public static String mobile_number_field_zong = "//android.widget.EditText";
     public static String get_recharge_usd(String amount){return "//android.widget.TextView[@text='"+amount+" USD Recharge']";}
@@ -41,6 +44,8 @@ public class PayBill {
 
     public static String customer_number_field = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String searched_country_at_pay_bill(String country){return "//android.widget.TextView[@text='"+country+"']";}
+
+    public static String beneficiary_name_field = "//android.view.ViewGroup[5]/android.widget.EditText";
 
     public PayBill(){}
 
@@ -96,5 +101,13 @@ public class PayBill {
     public static AndroidElement get_mobile_number_field_zong(){return driver.findElement(By.xpath(mobile_number_field_zong));}
 
     public static AndroidElement get_reference_number_hesco(){return driver.findElement(By.xpath(reference_number_hesco));}
+
+    public static AndroidElement get_add_account_to_beneficiary_button(){return driver.findElement(By.xpath(add_account_to_beneficiary_button));}
+
+    public static AndroidElement get_beneficiary_name_field(){return driver.findElement(By.xpath(beneficiary_name_field));}
+
+    public static AndroidElement get_promo_code_field(){return driver.findElement(By.xpath(promo_code_field));}
+
+    public static AndroidElement get_apply_button(){return driver.findElement(By.xpath(apply_button));}
 
 }
