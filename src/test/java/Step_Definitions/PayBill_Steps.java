@@ -644,4 +644,16 @@ public class PayBill_Steps {
         PayBill.get_apply_button().click();
 
     }
+
+    @Then("User should be successfully able to pay bill without discount")
+    public void userShouldBeSuccessfullyAbleToPayBillWithoutDiscount() throws InterruptedException {
+        Thread.sleep(6000);
+    }
+
+    @When("User enters an invalid promo code")
+    public void userEntersAnInvalidPromoCode() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(promo_code_field)));
+        PayBill.get_promo_code_field().sendKeys(getRandomString(true,true,true,false,false,6));
+        Thread.sleep(1000);
+    }
 }

@@ -544,3 +544,27 @@ Feature: Pay Bill
     When User enters OTP at pay bill flow
     And User clicks on next button at OTP screen
     Then User should be successfully able to pay bill
+
+
+  @PayBillTest @PayBillTest32
+  Scenario: User enters an invalid promo code and does not get a discount at pay bill
+
+    Given User clicks on utility bills
+    And User clicks on pay new bill button
+    And User searches for Philippines
+    When User clicks on Philippines
+    And User clicks on Utility button at bill type
+    And User searches for Pampanga I
+    And User clicks on Pampanga I
+    When User enters a valid subscriber name at Pampanga I
+    And User enters a valid account number at Pampanga I
+    When User clicks on next button at forgot password page
+    And User enters amount at Cignal TV
+    When User clicks on next button at forgot password page
+    And User enters agree terms and conditions
+    When User enters an invalid promo code
+    And User clicks on apply button
+    And User clicks on pay now button
+    When User enters OTP at pay bill flow
+    And User clicks on next button at OTP screen
+    Then User should be successfully able to pay bill without discount
