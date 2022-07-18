@@ -12,7 +12,7 @@ public class SendMoneyPage {
     public static String add_new_beneficiary_button = "//android.widget.TextView[@text='Add New Beneficiary']";
     public static String cash_pickup_button = "//android.widget.TextView[@text='Cash Pickup']";
     public static String otp_first_digit_field_send_money = "//android.view.ViewGroup[1]/android.widget.EditText";
-
+    
     public static String last_name_beneficiary = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String last_name_beneficiary1 = "//android.view.ViewGroup[3]/android.widget.EditText";
     public static String first_name_beneficiary = "//android.view.ViewGroup[1]/android.widget.EditText";
