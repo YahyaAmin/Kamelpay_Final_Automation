@@ -16,6 +16,7 @@ import static Hooks.Base_Class.driver;
 import static Pages.Android.CardManagementPage.centiv_card_at_homescreen;
 import static Pages.Android.CardManagementPage.payd_card_homescreen;
 import static Pages.Android.SendMoneyPage.*;
+import static Pages.Android.SignupPage.get_phone_number_field_at_register_yourself_page;
 import static Tests.Useful_functions.*;
 
 
@@ -270,9 +271,16 @@ public class SendMoney_Steps {
     }
 
     @When("User enters phone number of beneficiary at add beneficary")
-    public void userEntersPhoneNumberOfBeneficiaryAtAddBeneficary() {
+    public void userEntersPhoneNumberOfBeneficiaryAtAddBeneficary() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_beneficiary1)));
         SendMoneyPage.get_phone_number_field_beneficiary1().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
+        Thread.sleep(1000);
+        //int phone_num=Integer.parseInt(ph_number);
+        String ph_num1 = get_phone_number_field_beneficiary1().getText().replace(" ","");
+        long phone_num1=Long.parseLong(ph_num1);
+        if (phone_num1<999999999) {
+            SendMoneyPage.get_phone_number_field_beneficiary1().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
+        }
         SendMoneyPage.click_outside_beneficiary_page1().click();
     }
 
