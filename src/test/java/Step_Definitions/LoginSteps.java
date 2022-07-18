@@ -257,7 +257,7 @@ public class LoginSteps {
 
     @And("User clicks on skip button")
     public void userClicksOnSkipButton() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(1300);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(skip_button)));
         LoginPage.getskipbutton().click();
     }

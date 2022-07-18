@@ -141,8 +141,10 @@ public class SendMoney_Steps {
     }
 
     @When("User clicks I agree terms and conditions box")
-    public void userClicksIAgreeTermsAndConditionsBox() {
+    public void userClicksIAgreeTermsAndConditionsBox() throws InterruptedException {
+        Thread.sleep(500);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(agree_terms_box)));
+        Thread.sleep(500);
         SendMoneyPage.get_agree_terms_box().click();
     }
 
