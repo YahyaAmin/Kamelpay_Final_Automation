@@ -34,12 +34,12 @@ public class MobileTopUp_Steps {
     public void userEntersAValidPhoneNumberAtTopup() throws InterruptedException {
         Thread.sleep(1000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_mobile_topup)));
-        MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
+        MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys(getRandomNumberLowerAndUpperBound(9,10));
 
         String ph_num = get_phone_number_field_at_mobile_topup().getText().replace(" ","");
         int phone_num=Integer.parseInt(ph_num);
         if (phone_num<99999999) {
-            MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
+            MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys(getRandomNumberLowerAndUpperBound(9,10));
         }
     }
 

@@ -17,7 +17,7 @@ public class LoginPage{
 
     private static String login_button_mainscreen = "//android.view.ViewGroup[@index='7']";
 
-    public static String phone_no_on_mainscreen = "//android.widget.EditText[@text='__ ___ ____']";
+    public static String phone_no_on_mainscreen = "//android.view.ViewGroup[1]/android.widget.EditText";
 
     private static String password_on_mainscreen_xpath = "//android.widget.EditText[@text='Enter your Password']";
 
@@ -82,7 +82,7 @@ public class LoginPage{
 
     public static String otp_1st_digit_at_forgot_password_flow = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText";
 
-    public static String enter_new_password_forgot_password_flow = "//android.widget.EditText[@text='Enter your Password']";
+    public static String enter_new_password_forgot_password_flow = "//android.widget.EditText[@text='Enter your New password']";
 
     private static String confirm_new_password_forgot_password_flow = "//android.widget.EditText[@text='Enter your new confirm password']";
 
