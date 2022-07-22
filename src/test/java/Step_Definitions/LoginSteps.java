@@ -264,6 +264,7 @@ public class LoginSteps {
 
     @And("User clicks on My Profile button")
     public void userClicksOnMyProfileButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(my_profile_button)));
         LoginPage.getmyprofilebutton().click();
     }
 

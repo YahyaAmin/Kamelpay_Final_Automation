@@ -7,14 +7,9 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidElement;
-
-
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
-
 import java.io.File;
 
-import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
 
 public class Base_Class {
 

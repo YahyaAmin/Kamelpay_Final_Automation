@@ -25,7 +25,7 @@ public class LoginPage{
 
     public static String three_lines_home_button_at_homescreen = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
 
-    public static String my_profile_button = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[3]";
+    public static String my_profile_button = "//android.view.ViewGroup[2]/android.view.ViewGroup[4]";
 
     public static String settings_button_sidebar = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]";
 
@@ -95,15 +95,15 @@ public class LoginPage{
 
     public static String skip_button = "//android.widget.TextView[@text='Skip']";
 
-    public static String old_password_field_at_change_password = "//android.widget.EditText[@text='Enter your old password']";
+    public static String old_password_field_at_change_password = "//android.widget.EditText[@text='Enter your Old password']";
 
     public static String passwords_and_biometrics_button = "//android.widget.TextView[@text='Passwords & Biometrics']";
 
     private static String view_password_forgot_password_flow = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.TextView";
 
-    private static String enter_confirm_password_field = "//android.widget.EditText[@text='Enter your confirm password']";
+    private static String enter_confirm_password_field = "//android.widget.EditText[@text='Enter your confirm new password']";
 
-    private static String new_password_field_at_change_password = "//android.widget.EditText[@text='Enter your new password']";
+    private static String new_password_field_at_change_password = "//android.widget.EditText[@text='Enter your New password']";
 
     public LoginPage(){}
 
