@@ -59,6 +59,42 @@ public static int getRandomDigit(int upperbound) {
 
     }
 
+    public static void scrollRightPre() {
+
+        //The viewing size of the device
+        Dimension size = driver.manage().window().getSize();
+
+        //x position set to mid-screen horizontally
+        int height = (int) (size.height / 2.1);
+
+        //Starting y location set to 80% of the height (near bottom)
+        int startPoint = (int) (size.getWidth() * 0.80);
+
+        //Ending y location set to 20% of the height (near top)
+        int endPoint = (int) (size.getWidth() * 0.20);
+
+        new TouchAction(driver).press(PointOption.point(startPoint, height)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000))).moveTo(PointOption.point(endPoint, height)).release().perform();
+
+    }
+
+    public static void scrollRightPost() {
+
+        //The viewing size of the device
+        Dimension size = driver.manage().window().getSize();
+
+        //x position set to mid-screen horizontally
+        int height = size.height / 3;
+
+        //Starting y location set to 80% of the height (near bottom)
+        int startPoint = (int) (size.getWidth() * 0.80);
+
+        //Ending y location set to 20% of the height (near top)
+        int endPoint = (int) (size.getWidth() * 0.20);
+
+        new TouchAction(driver).press(PointOption.point(startPoint, height)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000))).moveTo(PointOption.point(endPoint, height)).release().perform();
+
+    }
+
     public static void scrollLeft() {
 
         //The viewing size of the device

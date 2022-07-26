@@ -1,6 +1,7 @@
 package Step_Definitions;
 import Pages.Android.LoginPage;
 import Pages.Android.MyCountry;
+import Pages.Android.PayBill;
 import Tests.Password_Builder;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -10,7 +11,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static Hooks.Base_Class.driver;
+import static Pages.Android.CardManagementPage.card_management_button;
 import static Pages.Android.CardManagementPage.centiv_card_at_homescreen;
+import static Pages.Android.PayBill.*;
 import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
 import static Pages.Android.MyCountry.*;
 import static Tests.Useful_functions.*;
@@ -65,4 +68,156 @@ public class MyCountry_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(wait_my_country_page)));
         scrollDown();
     }
+
+    @And("User scrolls to the right at my country page")
+    public void userScrollsToTheRightAtMyCountryPage() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(zong_prepaid_button)));
+        scrollRightPost();
+        Thread.sleep(2000);
+        scrollRightPost();
+        Thread.sleep(2000);
+        scrollRightPre();
+        Thread.sleep(2000);
+        scrollRightPre();
+    }
+
+    @When("User clicks on Ufone Postpaid")
+    public void userClicksOnUfonePostpaid() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ufone_post_paid)));
+        MyCountry.get_ufone_post_paid().click();
+    }
+
+    @And("User enters a valid phone number for Ufone")
+    public void userEntersAValidPhoneNumberForUfone() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ufone_mobile_number_field)));
+        MyCountry.get_ufone_mobile_number_field().sendKeys("03293766000");
+    }
+
+    @When("User clicks on Mobilink Postpaid button")
+    public void userClicksOnMobilinkPostpaidButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(postpaid_button("Mobilink Postpaid"))));
+        MyCountry.get_postpaid_button("Mobilink Postpaid").click();
+    }
+
+    @And("User enters a invalid phone number at Mobilink")
+    public void userEntersAInvalidPhoneNumberAtMobilink() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ufone_mobile_number_field)));
+        MyCountry.get_ufone_mobile_number_field().sendKeys(getRandomNumberLowerAndUpperBound(1,9));
+    }
+
+    @Then("User should see invalid phone number error")
+    public void userShouldSeeInvalidPhoneNumberError() throws InterruptedException {
+        Thread.sleep(3000);
+    }
+
+    @And("User enters a phone number more than eleven digits")
+    public void userEntersAPhoneNumberMoreThanElevenDigits() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ufone_mobile_number_field)));
+        MyCountry.get_ufone_mobile_number_field().sendKeys(getRandomNumberLowerAndUpperBound(13,17));
+    }
+
+    @And("User enters a phone number with special characters")
+    public void userEntersAPhoneNumberWithSpecialCharacters() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ufone_mobile_number_field)));
+        MyCountry.get_ufone_mobile_number_field().sendKeys(getRandomString(true,false,false,true,false,11));
+    }
+
+    @And("User enters a phone number with spaces")
+    public void userEntersAPhoneNumberWithSpaces() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ufone_mobile_number_field)));
+        MyCountry.get_ufone_mobile_number_field().sendKeys(getRandomString(true,false,false,false,true,11));
+    }
+
+    @And("User enters a phone number with random eleven digits")
+    public void userEntersAPhoneNumberWithRandomElevenDigits() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ufone_mobile_number_field)));
+        MyCountry.get_ufone_mobile_number_field().sendKeys(getRandomNumberLowerAndUpperBound(11,12));
+    }
+
+    @Then("User should see invalid reference")
+    public void userShouldSeeInvalidReference() throws InterruptedException {
+        Thread.sleep(4000);
+    }
+
+    @And("User enters mobile number less than twelve digits")
+    public void userEntersMobileNumberLessThanTwelveDigits() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_field_zong)));
+        PayBill.get_mobile_number_field_zong().sendKeys(getRandomNumberLowerAndUpperBound(4,11));
+    }
+
+    @And("User enters mobile number more than twelve digits")
+    public void userEntersMobileNumberMoreThanTwelveDigits() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_field_zong)));
+        PayBill.get_mobile_number_field_zong().sendKeys(getRandomNumberLowerAndUpperBound(14,17));
+    }
+
+    @And("User enters mobile number has spaces")
+    public void userEntersMobileNumberHasSpaces() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_field_zong)));
+        PayBill.get_mobile_number_field_zong().sendKeys(getRandomString(true,false,false,false,true,12));
+    }
+
+    @And("User enters mobile number has special characters")
+    public void userEntersMobileNumberHasSpecialCharacters() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobile_number_field_zong)));
+        PayBill.get_mobile_number_field_zong().sendKeys(getRandomString(true,false,false,true,false,12));
+    }
+
+    @When("User leaves OTP empty")
+    public void userLeavesOTPEmpty() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(otp_first_digit_pay_bill)));
+    }
+
+    @Then("User should see invalid OTP")
+    public void userShouldSeeInvalidOTP() throws InterruptedException {
+        Thread.sleep(3000);
+    }
+
+    @When("User enters OTP with special characters")
+    public void userEntersOTPWithSpecialCharacters() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(otp_first_digit_pay_bill)));
+        PayBill.get_otp_first_digit_pay_bill().sendKeys(getRandomString(true,false,false,true,false,6));
+    }
+
+    @When("User enters OTP but OTP has spaces")
+    public void userEntersOTPButOTPHasSpaces() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(otp_first_digit_pay_bill)));
+        PayBill.get_otp_first_digit_pay_bill().sendKeys(getRandomString(true,false,false,false,true,6));
+    }
+
+    @When("User enters OTP but it is an incorrect six digit OTP")
+    public void userEntersOTPButItIsAnIncorrectSixDigitOTP() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(otp_first_digit_pay_bill)));
+        PayBill.get_otp_first_digit_pay_bill().sendKeys(getRandomString(true,false,false,false,false,6));
+    }
+
+    @When("User clicks on LESCO at MyCountry")
+    public void userClicksOnLESCOAtMyCountry() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LESCO_button)));
+        MyCountry.get_LESCO_button().click();
+    }
+
+    @When("User clicks on SNGPL at MyCountry")
+    public void userClicksOnSNGPLAtMyCountry() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SNGPL_button)));
+        MyCountry.get_SNGPL_button().click();
+    }
+
+    @Then("User should see error processing transaction")
+    public void userShouldSeeErrorProcessingTransaction() throws InterruptedException {
+        Thread.sleep(6000);
+    }
+
+    @When("User clicks on Central Depositary Company Pakistan")
+    public void userClicksOnCentralDepositaryCompanyPakistan() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(central_despoitory_company_pakistan)));
+        MyCountry.get_central_despoitory_company_pakistan().click();
+    }
+
+    @And("User enters a reference number at financial services")
+    public void userEntersAReferenceNumberAtFinancialServices() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reference_field_financial_services)));
+        MyCountry.get_reference_field_financial_services().sendKeys(getRandomNumberLowerAndUpperBound(8,12));
+    }
+
 }

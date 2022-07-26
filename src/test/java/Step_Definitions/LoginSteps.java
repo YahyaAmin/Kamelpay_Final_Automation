@@ -69,7 +69,7 @@ public class LoginSteps {
 
     @Then("User should successfully login")
     public void userShouldSuccessfullyLogin() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(2000);
     }
 
 
