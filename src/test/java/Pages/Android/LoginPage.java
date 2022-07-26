@@ -105,6 +105,8 @@ public class LoginPage{
 
     private static String new_password_field_at_change_password = "//android.widget.EditText[@text='Enter your New password']";
 
+    public static String last_four_card_digits_forgot_password_flow = "//android.view.ViewGroup[1]/android.widget.EditText";
+
     public LoginPage(){}
 
     public static AndroidElement getlogin_button_mainscreen(){return driver.findElement(By.xpath(login_button_mainscreen));}
@@ -194,4 +196,7 @@ public class LoginPage{
     public static AndroidElement get_new_password_field_at_change_password(){return driver.findElement(By.xpath(new_password_field_at_change_password));}
 
     public static AndroidElement get_enter_confirm_password_field(){return driver.findElement(By.xpath(enter_confirm_password_field));}
+
+    public static AndroidElement get_last_four_card_digits_forgot_password_flow(){return driver.findElement(By.xpath(last_four_card_digits_forgot_password_flow));}
+
 }

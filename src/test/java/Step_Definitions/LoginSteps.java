@@ -299,5 +299,12 @@ public class LoginSteps {
     }
 
 
+    @And("User enters valid last four digits of their card")
+    public void userEntersValidLastFourDigitsOfTheirCard() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(last_four_card_digits_forgot_password_flow)));
+        Thread.sleep(500);
+        get_last_four_card_digits_forgot_password_flow().sendKeys("0123");
+    }
+
 
 }

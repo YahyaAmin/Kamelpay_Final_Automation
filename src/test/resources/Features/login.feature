@@ -43,6 +43,8 @@ Feature: Login Tests
         And User clicks on Forgot password
         And User enters a valid phone number
         When User clicks on next button at forgot password page
+        And User enters valid last four digits of their card
+        And User clicks on proceed button
         And User enters valid OTP
         And User clicks on next button at OTP screen
         When User enters valid new password

@@ -62,14 +62,13 @@ public class SignupSteps {
     public void userEntersTheirValidPhoneNumberForRegistration() throws InterruptedException {
         Thread.sleep(1500);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_register_yourself_page)));
-        SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
+        SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys("50"+getRandomNumberLowerAndUpperBound(7,8));
         Thread.sleep(1000);
-        //int phone_num=Integer.parseInt(ph_number);
-        String ph_num = get_phone_number_field_at_register_yourself_page().getText().replace(" ","");
-        int phone_num=Integer.parseInt(ph_num);
-        if (phone_num<99999999) {
-            SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
-        }
+        //String ph_num = get_phone_number_field_at_register_yourself_page().getText().replace(" ","");
+        //int phone_num=Integer.parseInt(ph_num);
+        //if (phone_num<99999999) {
+          //  SignupPage.get_phone_number_field_at_register_yourself_page().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
+        //}
         }
 
 

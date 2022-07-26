@@ -20,22 +20,22 @@ Feature: Sign Up Tests
       Then User should be able to sign up successfully
 
 
-    @Signuptest @Signuptest02
-      Scenario: User signup successfully with new card
+    #@Signuptest @Signuptest02
+     # Scenario: User signup successfully with new card
 
-      Given User is on Login Page
-      And User clicks on skip button
-      And User clicks on Don't have an account? signup button
-      When User clicks Get Your New Card button
-      And User enters their valid phone number for registration
-      And User enters their valid password
-      When User enters a valid confirm password
-      And User clicks on I agree terms and conditions checkbox
-      And User clicks on sign up button
-      And User enters valid OTP at register yourself
-      And User clicks on next button at OTP screen
-      And User clicks on dont allow biometric button
-      Then User should be able to sign up successfully
+      #Given User is on Login Page
+      #And User clicks on skip button
+      #And User clicks on Don't have an account? signup button
+      #When User clicks Get Your New Card button
+      #And User enters their valid phone number for registration
+      #And User enters their valid password
+      #When User enters a valid confirm password
+      #And User clicks on I agree terms and conditions checkbox
+      #And User clicks on sign up button
+      #And User enters valid OTP at register yourself
+      #And User clicks on next button at OTP screen
+      #And User clicks on dont allow biometric button
+      #Then User should be able to sign up successfully
 
 
     @Signuptest @Signuptest03
