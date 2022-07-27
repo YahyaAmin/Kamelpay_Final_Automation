@@ -32,7 +32,7 @@ public class MobileTopUp_Steps {
     public void userEntersAValidPhoneNumberAtTopup() throws InterruptedException {
         Thread.sleep(1000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_mobile_topup)));
-        MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys(getRandomNumberLowerAndUpperBound(9,10));
+        MobileTopUpPage.get_phone_number_field_at_mobile_topup().sendKeys("50"+getRandomNumberLowerAndUpperBound(7,8));
 
         String ph_num = get_phone_number_field_at_mobile_topup().getText().replace(" ","");
         int phone_num=Integer.parseInt(ph_num);
