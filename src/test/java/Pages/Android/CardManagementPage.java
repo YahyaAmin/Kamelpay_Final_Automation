@@ -9,7 +9,7 @@ public class CardManagementPage {
 
     public WebDriverWait wait = new WebDriverWait(driver, 30);
 
-    public static String tap_to_view_transaction_history = "//android.widget.TextView[@text='Tap to See Transactions']";
+    public static String tap_to_view_transaction_history = "//android.widget.TextView[@text='Tap to see Transactions']";
 
     public static String card_status_popup_byid = "rootView";
 
@@ -31,7 +31,7 @@ public class CardManagementPage {
 
     public static String change_pin_card_management = "//android.widget.TextView[@text='Change Pin']";
 
-    public static String card_management_button = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]";
+    public static String card_management_button = "//android.view.ViewGroup[2]/android.view.ViewGroup[3]/android.widget.TextView";
 
     public static String whatsapp_button = "//android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ImageView[@index='0']";
 

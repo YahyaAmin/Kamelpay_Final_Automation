@@ -34,6 +34,7 @@ public class CardManagement_Steps {
     }
 
     public WebDriverWait wait = new WebDriverWait(driver, 30);
+
     @Given("User clicks on card management button")
     public void userClicksOnCardManagementButton() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(card_management_button)));
@@ -90,7 +91,7 @@ public class CardManagement_Steps {
     @When("User scrolls down")
     public void userScrollsDown() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(centiv_card_at_homescreen)));
-        scrollDown();
+        scrollDown_CardManagement();
     }
 
     String pin_for_card_1st = getRandomNumberLowerAndUpperBound(1,2);

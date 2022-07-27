@@ -106,7 +106,7 @@ Feature: Card Management
     And User clicks on change pin button at card management screen
     When User enters valid OTP after card management
     And User clicks on next button at OTP screen
-    And User enters correct new confirm pin
+    And User enters a new valid pin for card
     When User clicks on next button change pin screen
     Then User shouldn't be able to sign in
 

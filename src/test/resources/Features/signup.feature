@@ -44,7 +44,8 @@ Feature: Sign Up Tests
       Given User is on Login Page
       And User clicks on skip button
       And User clicks on Don't have an account? signup button
-      When User clicks Get Your New Card button
+      When User enters last four digits of their card
+      And User clicks on I am ready button
       And User enters their valid password
       When User enters a valid confirm password
       And User clicks on I agree terms and conditions checkbox
@@ -58,7 +59,8 @@ Feature: Sign Up Tests
       Given User is on Login Page
       And User clicks on skip button
       And User clicks on Don't have an account? signup button
-      When User clicks Get Your New Card button
+      When User enters last four digits of their card
+      And User clicks on I am ready button
       And User enters their valid phone number for registration
       When User enters an invalid email
       And User enters their valid password
@@ -74,7 +76,8 @@ Feature: Sign Up Tests
       Given User is on Login Page
       And User clicks on skip button
       And User clicks on Don't have an account? signup button
-      When User clicks Get Your New Card button
+      When User enters last four digits of their card
+      And User clicks on I am ready button
       And User enters their valid phone number for registration
       When User enters a valid confirm password
       And User clicks on I agree terms and conditions checkbox
@@ -88,7 +91,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     And User enters their valid password
     And User clicks on I agree terms and conditions checkbox
@@ -102,7 +106,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters phone number with less than nine digits
     And User enters their valid password
     When User enters a valid confirm password
@@ -132,7 +137,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     When User enters email with spaces
     And User enters their valid password
@@ -149,7 +155,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     And User enters their valid password
     When User enters a different confirm password
@@ -164,7 +171,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     And User enters their password without uppercase letters
     When User enters a confirm password without uppercase letters
@@ -179,7 +187,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     And User enters their password without a number
     When User enters a confirm password without a number
@@ -194,7 +203,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     And User enters their password without a lowercase letter
     When User enters a confirm password without a lowercase letter
@@ -209,7 +219,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     And User enters their password without a special character
     When User enters a confirm password without a special character
@@ -224,7 +235,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     And User enters their password but password is too short
     When User enters a confirm password but password is too short
@@ -239,7 +251,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     And User enters their valid password
     When User enters a valid confirm password
@@ -256,7 +269,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     And User enters their valid password
     When User enters a valid confirm password
@@ -273,7 +287,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     And User enters their valid password
     When User enters a valid confirm password
@@ -290,7 +305,8 @@ Feature: Sign Up Tests
     Given User is on Login Page
     And User clicks on skip button
     And User clicks on Don't have an account? signup button
-    When User clicks Get Your New Card button
+    When User enters last four digits of their card
+    And User clicks on I am ready button
     And User enters their valid phone number for registration
     And User enters their valid password
     When User enters a valid confirm password
