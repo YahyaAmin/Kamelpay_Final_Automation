@@ -242,7 +242,7 @@ public class CardManagement_Steps {
     @And("User scrolls down at Payd card")
     public void userScrollsDownAtPaydCard() throws InterruptedException {
         Thread.sleep(500);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(payd_card_homescreen)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(card_details_wait)));
         scrollDown_CardManagement();
     }
 

@@ -39,6 +39,8 @@ public class CardManagementPage {
 
     public static String payd_card_homescreen = "//android.widget.TextView[@text='PayD']";
 
+    public static String card_details_wait = "//android.widget.TextView[@text='Card Details']";
+
 
     public CardManagementPage(){}
 
