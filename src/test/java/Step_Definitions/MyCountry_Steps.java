@@ -2,6 +2,7 @@ package Step_Definitions;
 import Pages.Android.LoginPage;
 import Pages.Android.MyCountry;
 import Pages.Android.PayBill;
+import Pages.Android.SendMoneyPage;
 import Tests.Password_Builder;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -14,6 +15,7 @@ import static Hooks.Base_Class.driver;
 import static Pages.Android.CardManagementPage.card_management_button;
 import static Pages.Android.CardManagementPage.centiv_card_at_homescreen;
 import static Pages.Android.PayBill.*;
+import static Pages.Android.SendMoneyPage.phone_number_field_beneficiary;
 import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
 import static Pages.Android.MyCountry.*;
 import static Tests.Useful_functions.*;
@@ -220,4 +222,23 @@ public class MyCountry_Steps {
         MyCountry.get_reference_field_financial_services().sendKeys(getRandomNumberLowerAndUpperBound(8,12));
     }
 
+    @And("User enters Pakistani phone number of beneficiary")
+    public void userEntersPakistaniPhoneNumberOfBeneficiary() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_beneficiary)));
+        SendMoneyPage.get_phone_number_field_beneficiary().sendKeys("345"+getRandomNumberLowerAndUpperBound(6,7));
+        SendMoneyPage.click_outside_beneficiary_page1().click();
+    }
+
+    @And("User enters a valid account title")
+    public void userEntersAValidAccountTitle() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(account_title_field)));
+        MyCountry.get_account_title_field().sendKeys(getRandomString(false,true,true,false,true,8));
+
+    }
+
+    @And("User enters a valid IBAN number")
+    public void userEntersAValidIBANNumber() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(iban_no_field)));
+        MyCountry.get_iban_no_field().sendKeys(getRandomString(true,false,true,false,false,24));
+    }
 }

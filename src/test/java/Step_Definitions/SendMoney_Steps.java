@@ -119,7 +119,7 @@ public class SendMoney_Steps {
     @And("User enters phone number of beneficiary")
     public void userEntersPhoneNumberOfBeneficiary() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_beneficiary)));
-        SendMoneyPage.get_phone_number_field_beneficiary().sendKeys(getRandomNumberLowerAndUpperBound(9,10)+getRandomNumberLowerAndUpperBound(3,4));
+        SendMoneyPage.get_phone_number_field_beneficiary().sendKeys(getRandomNumberLowerAndUpperBound(9,10));
         SendMoneyPage.click_outside_beneficiary_page1().click();
     }
 

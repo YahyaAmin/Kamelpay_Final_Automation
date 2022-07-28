@@ -11,6 +11,9 @@ public class MyCountry {
 
     public static WebDriverWait wait = new WebDriverWait(driver, 30);
 
+    public static String account_title_field = "//android.view.ViewGroup[2]/android.widget.EditText";
+
+    public static String iban_no_field = "//android.view.ViewGroup[3]/android.widget.EditText";
     public static String postpaid_button(String service_name){return "//android.widget.TextView[@text='"+service_name+"']";}
     public static String my_country_button = "//android.widget.TextView[@text='My Country']";
 
@@ -47,5 +50,9 @@ public class MyCountry {
     public static AndroidElement get_central_despoitory_company_pakistan(){return driver.findElement(By.xpath(central_despoitory_company_pakistan));}
 
     public static AndroidElement get_reference_field_financial_services(){return driver.findElement(By.xpath(reference_field_financial_services));}
+
+    public static AndroidElement get_account_title_field(){return driver.findElement(By.xpath(account_title_field));}
+
+    public static AndroidElement get_iban_no_field(){return driver.findElement(By.xpath(iban_no_field));}
 
 }
