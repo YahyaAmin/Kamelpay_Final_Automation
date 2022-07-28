@@ -225,7 +225,8 @@ public class MyCountry_Steps {
     @And("User enters Pakistani phone number of beneficiary")
     public void userEntersPakistaniPhoneNumberOfBeneficiary() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_beneficiary)));
-        SendMoneyPage.get_phone_number_field_beneficiary().sendKeys("345"+getRandomNumberLowerAndUpperBound(6,7));
+        SendMoneyPage.get_phone_number_field_beneficiary().clear();
+        SendMoneyPage.get_phone_number_field_beneficiary().sendKeys("345"+getRandomNumberLowerAndUpperBound(7,8));
         SendMoneyPage.click_outside_beneficiary_page1().click();
     }
 

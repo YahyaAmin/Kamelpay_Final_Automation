@@ -45,6 +45,21 @@ Feature: My Country Tests
     When User clicks on MY country button
     And User clicks on cash pickup button
     When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters the amount they want to send
+    And User scrolls down at exchange rate page
+    And User clicks on next button
+    When User enters first name of beneficiary
+    And User enters last name of beneficiary
+    And User enters Pakistani phone number of beneficiary
+    And User enters remittance purpose
+    And User clicks on next button at forgot password page
+    When User clicks I agree terms and conditions box
+    And User clicks on Send Money at confirmation screen
+    And User enters valid OTP at send money flow
+    And User clicks on next button at OTP screen
+    Then User should be able to successfully send money
+
 
 
   @MyCountryTest @MyCountryTest3
