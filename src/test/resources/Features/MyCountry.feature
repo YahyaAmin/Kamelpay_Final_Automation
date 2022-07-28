@@ -68,7 +68,23 @@ Feature: My Country Tests
     Given User scrolls to the right
     When User clicks on MY country button
     And User clicks on JazzCash at Popular Banks
-    And User clicks on next button
+    And User clicks the confirm button
+    When User enters the amount they want to send
+    And User scrolls down at exchange rate page
+    And User clicks on next button at forgot password page
+    When User enters first name of beneficiary
+    And User enters last name of beneficiary
+    And User enters Pakistani phone number of beneficiary
+    When User scrolls down at exchange rate page
+    And User enters a valid account title
+    And User enters a valid IBAN number
+    And User enters remittance purpose
+    And User clicks on next button at forgot password page
+    When User clicks I agree terms and conditions box
+    And User clicks on Send Money at confirmation screen
+    And User enters valid OTP at send money flow
+    And User clicks on next button at OTP screen
+    Then User should be able to successfully send money
 
 
   @MyCountryTest @MyCountryTest4
