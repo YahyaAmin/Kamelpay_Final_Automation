@@ -61,4 +61,6 @@ public class SettingsPage {
 
     public static AndroidElement get_update2_button(){return driver.findElement(By.xpath(update2_button));}
 
+
+
 }
