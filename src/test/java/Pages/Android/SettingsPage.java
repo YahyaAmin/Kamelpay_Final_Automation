@@ -20,7 +20,7 @@ public class SettingsPage {
 
     public static String building_number_field = "//android.view.ViewGroup[1]/android.widget.EditText";
 
-    public static String update_button = "//android.widget.TextView[@text='UPDATE']";
+    public static String update_button = "//android.widget.TextView[@text='Update']";
 
     public static String enter_old_password_field = "//android.view.ViewGroup[1]/android.widget.EditText";
 
