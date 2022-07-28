@@ -9,7 +9,7 @@ public class SettingsPage {
 
     public static String zip_code_field = "//android.view.ViewGroup[4]/android.widget.EditText";
 
-    public static String click_out = "//android.widget.TextView[@text='Zip code']";
+    public static String click_out = "//android.widget.TextView[@text='Zip Code']";
     public static String street_name = "//android.view.ViewGroup[3]/android.widget.EditText";
 
     public static String update2_button = "//android.widget.TextView[@text='Update']";
