@@ -319,4 +319,11 @@ public class SendMoney_Steps {
         SendMoneyPage.get_phone_number_field_beneficiary().sendKeys("345"+getRandomNumberLowerAndUpperBound(7,8));
         SendMoneyPage.click_outside_beneficiary_page1().click();
     }
+
+    @And("User enters phone number of beneficiary for a Bangladeshi number")
+    public void userEntersPhoneNumberOfBeneficiaryForABangladeshiNumber() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_beneficiary)));
+        SendMoneyPage.get_phone_number_field_beneficiary().sendKeys("15"+getRandomNumberLowerAndUpperBound(8,9));
+        SendMoneyPage.click_outside_beneficiary_page1().click();
+    }
 }

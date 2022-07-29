@@ -105,7 +105,7 @@ Feature: Send Money Tests
     And User clicks on next button at forgot password page
     When User enters first name of beneficiary
     And User enters last name of beneficiary
-    And User enters phone number of beneficiary for a Pakistani number
+    And User enters phone number of beneficiary for a Bangladeshi number
     When User scrolls down at exchange rate page
     And User enters remittance purpose
     And User clicks on next button at forgot password page
