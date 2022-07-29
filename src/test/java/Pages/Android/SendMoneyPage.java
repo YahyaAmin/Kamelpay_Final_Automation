@@ -15,6 +15,8 @@ public class SendMoneyPage {
 
     public static String last_name_beneficiary = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String last_name_beneficiary1 = "//android.view.ViewGroup[3]/android.widget.EditText";
+
+    public static String phone_num_temp = "//android.view.ViewGroup[4]/android.widget.EditText";
     public static String first_name_beneficiary = "//android.view.ViewGroup[1]/android.widget.EditText";
 
     public static String first_name_beneficiary1 = "//android.view.ViewGroup[2]/android.widget.EditText";
@@ -131,4 +133,6 @@ public class SendMoneyPage {
     public static AndroidElement get_add_new_beneficiary_button(){return driver.findElement(By.xpath(add_new_beneficiary));}
 
     public static AndroidElement get_save_beneficary_button(){return driver.findElement(By.xpath(save_beneficary_button));}
+
+    public static AndroidElement get_phone_num_temp(){return driver.findElement(By.xpath(phone_num_temp));}
 }

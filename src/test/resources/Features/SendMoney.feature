@@ -285,7 +285,7 @@ Feature: Send Money Tests
     When User enters first name of beneficiary
     When User enters first name of beneficiary at add beneficiary
     And User enters last name of beneficiary at add beneficiary
-    And User enters phone number of beneficiary for a Pakistani number
+    And User enters phone number of beneficiary for a Pakistani number for saved beneficiary
     When User scrolls down at exchange rate page
     And User enters account title at add beneficary
     When User enters Iban number at add beneficiary

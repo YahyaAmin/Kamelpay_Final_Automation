@@ -326,4 +326,11 @@ public class SendMoney_Steps {
         SendMoneyPage.get_phone_number_field_beneficiary().sendKeys("15"+getRandomNumberLowerAndUpperBound(8,9));
         SendMoneyPage.click_outside_beneficiary_page1().click();
     }
+
+    @And("User enters phone number of beneficiary for a Pakistani number for saved beneficiary")
+    public void userEntersPhoneNumberOfBeneficiaryForAPakistaniNumberForSavedBeneficiary() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_num_temp)));
+        SendMoneyPage.get_phone_num_temp().sendKeys("345"+getRandomNumberLowerAndUpperBound(7,8));
+        SendMoneyPage.click_outside_beneficiary_page1().click();
+    }
 }
