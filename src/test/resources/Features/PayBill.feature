@@ -15,8 +15,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest01
   Scenario: User successfully pays bill to KSEB
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -31,8 +31,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest02
   Scenario: User successfully pays bill to Tata Power Mumbai
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -47,8 +47,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest03
   Scenario: User successfully pays bill to Cignal TV
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Philippines
     When User clicks on Philippines
     And User clicks on Utility button at bill type
@@ -69,8 +69,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest04
   Scenario: User successfully pays bill to Pampanga I Electric Corp
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Philippines
     When User clicks on Philippines
     And User clicks on Utility button at bill type
@@ -91,8 +91,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest05
   Scenario: User successfully pays bill to Avantika Gas Ltd.
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -107,8 +107,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest06
   Scenario: User pays bill to Adani Gas Ltd. but bill is past
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -123,8 +123,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest07
   Scenario: User successfully pays bill to Gujarat Gas Ltd (India)
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -144,8 +144,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest08
   Scenario: User successfully pays bill to PLDT (Philipines)
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Philippines
     When User clicks on Philippines
     And User clicks on Utility button at bill type
@@ -166,8 +166,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest09
   Scenario: User pays bill to LESCO but bill is past
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Pakistan
     When User clicks on Pakistan
     And User clicks on Utility button at bill type
@@ -181,8 +181,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest10
   Scenario: User pay bill to PTCL Landline but biller is unavailable
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Pakistan
     When User clicks on Pakistan
     And User clicks on Utility button at bill type
@@ -196,8 +196,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest11
   Scenario: User pay bill to SSGC but request timed out
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Pakistan
     When User clicks on Pakistan
     And User clicks on Utility button at bill type
@@ -211,8 +211,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest12
   Scenario: User pay bill to KWSB but bill is past
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Pakistan
     When User clicks on Pakistan
     And User clicks on Utility button at bill type
@@ -226,8 +226,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest13
   Scenario: User pay bill to K-Electric but bill is past
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Pakistan
     When User clicks on Pakistan
     And User clicks on Utility button at bill type
@@ -241,8 +241,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest14
   Scenario: User pays bill to SNGPL but error in processing transactions
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Pakistan
     When User clicks on Pakistan
     And User clicks on Utility button at bill type
@@ -256,8 +256,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest15
   Scenario: User successfully pays bill to Zong Prepaid
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Pakistan
     When User clicks on Pakistan
     And User clicks on Mobile Prepaid button
@@ -277,8 +277,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest16
   Scenario: User pays bill to HESCO but account status is invalid
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Pakistan
     When User clicks on Pakistan
     And User clicks on Utility button at bill type
@@ -292,8 +292,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest17
   Scenario: User pays bill to Pampanga I and saves beneficiary
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Philippines
     When User clicks on Philippines
     When User clicks on Utility button at bill type
@@ -316,8 +316,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest18
   Scenario: User pays bill but forgets to enter mobile number for KSEB
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -331,8 +331,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest19
   Scenario: User pays bill but enters mobile number less than ten digits for KSEB
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -347,8 +347,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest20
   Scenario: User pays bill but enters mobile number more than ten digits for KSEB
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -363,8 +363,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest21
   Scenario: User pays bill but enters a random ten digit mobile number for KSEB
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -379,8 +379,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest22
   Scenario: User pays bill but forgets to enter consumer number
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -394,8 +394,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest23
   Scenario: User pays bill but consumer number is less than 13 digits
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -410,8 +410,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest24
   Scenario: User pays bill but consumer number is more than 13 digits
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -426,8 +426,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest25
   Scenario: User pays bill but consumer number is a random 13 digit number
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -443,8 +443,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest26
   Scenario: User pays bill but consumer number has spaces
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -459,8 +459,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest27
   Scenario: User pays bill but consumer number has special characters
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -475,8 +475,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest28
   Scenario: User pays bill but mobile number has spaces
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -491,8 +491,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest29
   Scenario: User pays bill but mobile number has special characters
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     When User searches for country at Pay Bill
     And User clicks on the searched country at Pay Bill
     And User clicks on Utility button at bill type
@@ -507,8 +507,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest30
   Scenario: User checks if they can save beneficiary but leaves beneficiary name empty
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Philippines
     When User clicks on Philippines
     When User clicks on Utility button at bill type
@@ -525,8 +525,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest31
   Scenario: User enters a valid promo code and gets a discount
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Philippines
     When User clicks on Philippines
     And User clicks on Utility button at bill type
@@ -549,8 +549,8 @@ Feature: Pay Bill
   @PayBillTest @PayBillTest32
   Scenario: User enters an invalid promo code and does not get a discount at pay bill
 
-    Given User clicks on utility bills
     And User clicks on pay new bill button
+    When User clicks on pay new bill button again
     And User searches for Philippines
     When User clicks on Philippines
     And User clicks on Utility button at bill type

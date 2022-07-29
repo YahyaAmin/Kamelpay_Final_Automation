@@ -34,7 +34,9 @@ public class PayBill {
     public static String search_field_at_pay_utility = "//android.widget.EditText";
     public static String pay_bill_button = "//android.widget.TextView[@text='Utility Bills']";
 
-    public static String pay_new_bill_button = "//android.widget.TextView[@text='Pay New Bill']";
+    public static String pay_new_bill_button = "//android.widget.TextView[@text='Pay Bills']";
+
+    public static String pay_bill = "//android.widget.TextView[@text='Pay New Bill']";
 
     public static String search_country_at_pay_bill = "//android.widget.EditText";
 
@@ -109,5 +111,7 @@ public class PayBill {
     public static AndroidElement get_promo_code_field(){return driver.findElement(By.xpath(promo_code_field));}
 
     public static AndroidElement get_apply_button(){return driver.findElement(By.xpath(apply_button));}
+
+    public static AndroidElement get_pay_bill(){return driver.findElement(By.xpath(pay_bill));}
 
 }

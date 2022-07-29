@@ -7,6 +7,8 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidElement;
+
+
 import java.net.URL;
 import java.io.File;
 
@@ -24,6 +26,8 @@ public class Base_Class {
         try {
 
         DesiredCapabilities caps = new DesiredCapabilities();
+
+        //System.out.println(caps);
 
         String projectpath = System.getProperty("user.dir");
         File f = new File("apps");
@@ -44,6 +48,9 @@ public class Base_Class {
         driver = new AndroidDriver<AndroidElement>(url, caps);
 
 
+           // System.out.println("before");
+            //System.out.println(driver.getCapabilities().getCapability("udid"));
+
 
         //driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
@@ -60,6 +67,8 @@ public class Base_Class {
 
 //    @Test
 //    public void SampleTest(){
+//        //DesiredCapabilities caps = new DesiredCapabilities();
+//        System.out.println(driver);
 //
 //    }
 

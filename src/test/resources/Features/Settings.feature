@@ -1,5 +1,5 @@
 @Settingsfeature
-Feature: Login Tests
+Feature: Settings Tests
 
   #User login steps in background
   Background:

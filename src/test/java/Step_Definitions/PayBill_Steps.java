@@ -43,7 +43,7 @@ public class PayBill_Steps {
     @And("User clicks on pay new bill button")
     public void userClicksOnPayNewBillButton() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(pay_new_bill_button)));
-        Thread.sleep(1000);
+        Thread.sleep(500);
         PayBill.get_pay_new_bill_button().click();
     }
 
@@ -655,5 +655,12 @@ public class PayBill_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(promo_code_field)));
         PayBill.get_promo_code_field().sendKeys(getRandomString(true,true,true,false,false,6));
         Thread.sleep(1000);
+    }
+
+    @When("User clicks on pay new bill button again")
+    public void userClicksOnPayNewBillButtonAgain() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(pay_bill)));
+        Thread.sleep(500);
+        PayBill.get_pay_bill().click();
     }
 }
