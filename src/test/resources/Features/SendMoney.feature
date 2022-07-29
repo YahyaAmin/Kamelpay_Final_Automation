@@ -28,7 +28,7 @@ Feature: Send Money Tests
     And User clicks on next button at forgot password page
     When User enters first name of beneficiary
     And User enters last name of beneficiary
-    And User enters phone number of beneficiary
+    And User enters phone number of beneficiary for a Pakistani number
     When User scrolls down at exchange rate page
     And User enters account title
     When User enters Iban number
@@ -78,7 +78,7 @@ Feature: Send Money Tests
     And User clicks on next button at forgot password page
     When User enters first name of beneficiary
     And User enters last name of beneficiary
-    And User enters phone number of beneficiary
+    And User enters phone number of beneficiary for a Pakistani number
     When User scrolls down at exchange rate page
     And User enters remittance purpose
     And User clicks on next button at forgot password page
@@ -105,7 +105,7 @@ Feature: Send Money Tests
     And User clicks on next button at forgot password page
     When User enters first name of beneficiary
     And User enters last name of beneficiary
-    And User enters phone number of beneficiary
+    And User enters phone number of beneficiary for a Pakistani number
     When User scrolls down at exchange rate page
     And User enters remittance purpose
     And User clicks on next button at forgot password page
@@ -141,7 +141,7 @@ Feature: Send Money Tests
     And User clicks on next button at forgot password page
     When User leaves beneficiary first name empty
     And User enters last name of beneficiary
-    And User enters phone number of beneficiary
+    And User enters phone number of beneficiary for a Pakistani number
     When User scrolls down at exchange rate page
     And User enters account title
     When User enters Iban number
@@ -166,7 +166,7 @@ Feature: Send Money Tests
     And User scrolls down at exchange rate page
     And User clicks on next button at forgot password page
     When User enters first name of beneficiary
-    And User enters phone number of beneficiary
+    And User enters phone number of beneficiary for a Pakistani number
     When User scrolls down at exchange rate page
     And User enters account title
     When User enters Iban number
@@ -215,7 +215,7 @@ Feature: Send Money Tests
     And User clicks on next button at forgot password page
     When User enters first name of beneficiary
     And User enters last name of beneficiary
-    When User enters phone number of beneficiary
+    And User enters phone number of beneficiary for a Pakistani number
     When User scrolls down at exchange rate page
     When User enters Iban number
     And User enters remittance purpose
@@ -239,7 +239,7 @@ Feature: Send Money Tests
     And User clicks on next button at forgot password page
     When User enters first name of beneficiary
     And User enters last name of beneficiary
-    When User enters phone number of beneficiary
+    And User enters phone number of beneficiary for a Pakistani number
     When User scrolls down at exchange rate page
     And User enters account title
     And User enters remittance purpose
@@ -263,7 +263,7 @@ Feature: Send Money Tests
     And User clicks on next button at forgot password page
     When User enters first name of beneficiary
     And User enters last name of beneficiary
-    When User enters phone number of beneficiary
+    And User enters phone number of beneficiary for a Pakistani number
     When User scrolls down at exchange rate page
     And User enters account title
     When User enters Iban number
@@ -285,7 +285,7 @@ Feature: Send Money Tests
     When User enters first name of beneficiary
     When User enters first name of beneficiary at add beneficiary
     And User enters last name of beneficiary at add beneficiary
-    When User enters phone number of beneficiary at add beneficary
+    And User enters phone number of beneficiary for a Pakistani number
     When User scrolls down at exchange rate page
     And User enters account title at add beneficary
     When User enters Iban number at add beneficiary
@@ -309,7 +309,7 @@ Feature: Send Money Tests
     And User clicks the confirm button
     When User enters first name of beneficiary at add beneficiary
     And User enters last name of beneficiary at add beneficiary
-    When User enters phone number of beneficiary at add beneficary
+    And User enters phone number of beneficiary for a Pakistani number
     When User scrolls down at exchange rate page
     And User enters account title at add beneficary
     When User enters Iban number at add beneficiary
