@@ -307,4 +307,8 @@ public class LoginSteps {
     }
 
 
+    @When("User enters their valid E-id")
+    public void userEntersTheirValidEId() {
+        LoginPage.get_eid_field_forgot_pass().sendKeys("784197848020307");
+    }
 }

@@ -21,6 +21,7 @@ public class LoginPage{
 
     private static String password_on_mainscreen_xpath = "//android.widget.EditText[@text='Enter your Password']";
 
+    public static String eid_field_forgot_pass = "//android.widget.EditText[@index='1']";
     public static String dont_allow_biometric_button_xpath = "//android.widget.TextView[@text='No, Only Password Access']";
 
     public static String three_lines_home_button_at_homescreen = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
@@ -166,6 +167,7 @@ public class LoginPage{
 
     public static AndroidElement getnextbutton_forgotpasswordfield(){return driver.findElement(By.xpath(next_button_at_forgot_password_screen));}
 
+    public static AndroidElement get_eid_field_forgot_pass(){return driver.findElement(By.xpath(eid_field_forgot_pass));}
 
     public static AndroidElement getotp1stdigit_forgotpasswordflow() {return driver.findElement(By.xpath(otp_1st_digit_at_forgot_password_flow));}
 

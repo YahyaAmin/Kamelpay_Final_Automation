@@ -44,6 +44,7 @@ Feature: Login Tests
         And User enters a valid phone number
         When User clicks on next button at forgot password page
         And User enters valid last four digits of their card
+        When User enters their valid E-id
         And User clicks on proceed button
         And User enters valid OTP
         And User clicks on next button at OTP screen
