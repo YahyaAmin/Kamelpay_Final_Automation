@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidElement;
@@ -11,6 +12,8 @@ import io.appium.java_client.android.AndroidElement;
 
 import java.net.URL;
 import java.io.File;
+
+import static Hooks.CLI.executeCommand;
 
 
 public class Base_Class {
@@ -77,6 +80,20 @@ public class Base_Class {
     public void teardown(){
 
         driver.quit();
+    }
+
+    @AfterAll
+    public static void afterall(){
+
+        String projectpath = System.getProperty("user.dir");
+
+        String[] cmdArray = new String[3];
+        cmdArray[0] = "cmd.exe";
+        cmdArray[1] = projectpath + '/';
+        cmdArray[2] = "mvn verify -DskipTests";
+
+        executeCommand(cmdArray);
+
     }
 
 }
