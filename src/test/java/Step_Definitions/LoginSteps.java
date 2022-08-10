@@ -295,7 +295,6 @@ public class LoginSteps {
         LoginPage.get_submitbutton_pinlogin().click();
         Thread.sleep(3000);
 
-
     }
 
 
@@ -303,7 +302,7 @@ public class LoginSteps {
     public void userEntersValidLastFourDigitsOfTheirCard() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(last_four_card_digits_forgot_password_flow)));
         Thread.sleep(500);
-        get_last_four_card_digits_forgot_password_flow().sendKeys("0123");
+        get_last_four_card_digits_forgot_password_flow().sendKeys("0001");
     }
 
 

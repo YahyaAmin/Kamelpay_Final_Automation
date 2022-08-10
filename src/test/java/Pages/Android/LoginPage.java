@@ -96,15 +96,15 @@ public class LoginPage{
 
     public static String skip_button = "//android.widget.TextView[@text='Skip']";
 
-    public static String old_password_field_at_change_password = "//android.widget.EditText[@text='Enter your Old password']";
+    public static String old_password_field_at_change_password = "//android.view.ViewGroup[1]/android.widget.EditText";
 
     public static String passwords_and_biometrics_button = "//android.widget.TextView[@text='Passwords & Biometrics']";
 
     private static String view_password_forgot_password_flow = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.widget.TextView";
 
-    private static String enter_confirm_password_field = "//android.widget.EditText[@text='Enter your confirm new password']";
+    private static String enter_confirm_password_field = "//android.view.ViewGroup[3]/android.widget.EditText";
 
-    private static String new_password_field_at_change_password = "//android.widget.EditText[@text='Enter your New password']";
+    private static String new_password_field_at_change_password = "//android.view.ViewGroup[2]/android.widget.EditText";
 
     public static String last_four_card_digits_forgot_password_flow = "//android.view.ViewGroup[1]/android.widget.EditText";
 

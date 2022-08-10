@@ -12,95 +12,163 @@ Feature: My Country Tests
     Then User should successfully login
 
 
+  #@MyCountryTest @MyCountryTest1
+  #Scenario: User successfully sends money by Bank Account through My Country
+
+    #Given User scrolls to the right
+    #When User clicks on MY country button
+    #And User clicks on the bank account button
+    #When User selects the first bank in the list
+    #And User clicks the confirm button
+    #When User enters the amount they want to send
+    #And User scrolls down at exchange rate page
+    #And User clicks on next button at forgot password page
+    #When User enters first name of beneficiary
+    #And User enters last name of beneficiary
+    #And User enters Pakistani phone number of beneficiary
+    #When User scrolls down at exchange rate page
+    #And User enters a valid account title
+    #And User enters a valid IBAN number
+    #And User enters remittance purpose
+    #And User clicks on next button at forgot password page
+    #When User clicks I agree terms and conditions box
+    #And User clicks on Send Money at confirmation screen
+    #And User enters valid OTP at send money flow
+    #And User clicks on next button at OTP screen
+    #Then User should be able to successfully send money
+
+
+  #@MyCountryTest @MyCountryTest2
+  #Scenario: User successfully sends money by Cash Pickup through My Country
+
+   # Given User scrolls to the right
+   # When User clicks on MY country button
+   # And User clicks on cash pickup button
+   # When User selects the first bank in the list
+   # And User clicks the confirm button
+   # When User enters the amount they want to send
+   # And User scrolls down at exchange rate page
+   # And User clicks on next button
+   # When User enters first name of beneficiary
+   # And User enters last name of beneficiary
+   # And User enters Pakistani phone number of beneficiary
+   # And User enters remittance purpose
+   # And User clicks on next button at forgot password page
+   # When User clicks I agree terms and conditions box
+   # And User clicks on Send Money at confirmation screen
+   # And User enters valid OTP at send money flow
+   # And User clicks on next button at OTP screen
+   # Then User should be able to successfully send money
+
+
+
+  #@MyCountryTest @MyCountryTest3
+  #Scenario: User successfully sends money by Popular Banks Option at My Country
+
+   # Given User scrolls to the right
+    #When User clicks on MY country button
+    #And User clicks on JazzCash at Popular Banks
+    #And User clicks the confirm button
+    #When User enters the amount they want to send
+    #And User scrolls down at exchange rate page
+    #And User clicks on next button at forgot password page
+    #When User enters first name of beneficiary
+    #And User enters last name of beneficiary
+    #And User enters Pakistani phone number of beneficiary
+    #When User scrolls down at exchange rate page
+    #And User enters a valid account title
+    #And User enters a valid IBAN number
+    #And User enters remittance purpose
+    #And User clicks on next button at forgot password page
+    #When User clicks I agree terms and conditions box
+    #And User clicks on Send Money at confirmation screen
+    #And User enters valid OTP at send money flow
+    #And User clicks on next button at OTP screen
+    #Then User should be able to successfully send money
+
+
+  #@MyCountryTest @MyCountryTest4
+  #Scenario: User sends money by Cash Pickup at My Country module but using Centiv card
+
+   # When User clicks on MY country button
+   # And User clicks on cash pickup button
+   # Then User should see error message that this feature is only for PayD Card
+
+
+  #@MyCountryTest @MyCountryTest5
+  #Scenario: User selects popular banks in their country but tries sending money through Centiv card
+
+   # When User clicks on MY country button
+    #And User clicks on JazzCash at Popular Banks
+    #Then User should see error message that this feature is only for PayD Card
+
   @MyCountryTest @MyCountryTest1
-  Scenario: User successfully sends money by Bank Account through My Country
+  Scenario: User pays Financial Service but invalid reference with PAYD CARD
 
     Given User scrolls to the right
     When User clicks on MY country button
-    And User clicks on the bank account button
-    When User selects the first bank in the list
-    And User clicks the confirm button
-    When User enters the amount they want to send
-    And User scrolls down at exchange rate page
-    And User clicks on next button at forgot password page
-    When User enters first name of beneficiary
-    And User enters last name of beneficiary
-    And User enters Pakistani phone number of beneficiary
-    When User scrolls down at exchange rate page
-    And User enters a valid account title
-    And User enters a valid IBAN number
-    And User enters remittance purpose
-    And User clicks on next button at forgot password page
-    When User clicks I agree terms and conditions box
-    And User clicks on Send Money at confirmation screen
-    And User enters valid OTP at send money flow
-    And User clicks on next button at OTP screen
-    Then User should be able to successfully send money
+    And User scrolls down at My country page
+    When User clicks on Central Depositary Company Pakistan
+    And User enters a reference number at financial services
+    And User clicks on next button
+    Then User should see invalid reference
 
 
   @MyCountryTest @MyCountryTest2
-  Scenario: User successfully sends money by Cash Pickup through My Country
+  Scenario: User pays bill at SNGPL but error processing transaction with PAYD CARD
 
     Given User scrolls to the right
     When User clicks on MY country button
-    And User clicks on cash pickup button
-    When User selects the first bank in the list
-    And User clicks the confirm button
-    When User enters the amount they want to send
-    And User scrolls down at exchange rate page
+    And User scrolls down at My country page
+    When User clicks on SNGPL at MyCountry
+    When User enters a valid consumer number for SNGPL
     And User clicks on next button
-    When User enters first name of beneficiary
-    And User enters last name of beneficiary
-    And User enters Pakistani phone number of beneficiary
-    And User enters remittance purpose
-    And User clicks on next button at forgot password page
-    When User clicks I agree terms and conditions box
-    And User clicks on Send Money at confirmation screen
-    And User enters valid OTP at send money flow
-    And User clicks on next button at OTP screen
-    Then User should be able to successfully send money
-
+    Then User should see error processing transaction
 
 
   @MyCountryTest @MyCountryTest3
-  Scenario: User successfully sends money by Popular Banks Option at My Country
+  Scenario: User pays bill at LESCO but bill is past with PAYD CARD
 
     Given User scrolls to the right
     When User clicks on MY country button
-    And User clicks on JazzCash at Popular Banks
-    And User clicks the confirm button
-    When User enters the amount they want to send
-    And User scrolls down at exchange rate page
-    And User clicks on next button at forgot password page
-    When User enters first name of beneficiary
-    And User enters last name of beneficiary
-    And User enters Pakistani phone number of beneficiary
-    When User scrolls down at exchange rate page
-    And User enters a valid account title
-    And User enters a valid IBAN number
-    And User enters remittance purpose
-    And User clicks on next button at forgot password page
-    When User clicks I agree terms and conditions box
-    And User clicks on Send Money at confirmation screen
-    And User enters valid OTP at send money flow
-    And User clicks on next button at OTP screen
-    Then User should be able to successfully send money
+    And User scrolls down at My country page
+    When User clicks on LESCO at MyCountry
+    When User enters a valid referrence number
+    And User clicks on next button
+    Then User should see bill is past
+
 
 
   @MyCountryTest @MyCountryTest4
-  Scenario: User sends money by Cash Pickup at My Country module but using Centiv card
+  Scenario: User successfully pays Mobile Prepaid recharge with PAYD CARD
 
+    Given User scrolls to the right
     When User clicks on MY country button
-    And User clicks on cash pickup button
-    Then User should see error message that this feature is only for PayD Card
+    And User scrolls down at My country page
+    When User clicks on Zong Prepaid Button
+    And User selects a recharge package of 2 USD
+    When User clicks on next button at forgot password page
+    And User enters their mobile number for Zong
+    And User clicks on next button at forgot password page
+    When User clicks on next button at forgot password page
+    And User enters agree terms and conditions
+    And User clicks on pay now button
+    When User enters OTP at pay bill flow
+    And User clicks on next button at OTP screen
+    Then User should be successfully able to pay bill
 
 
   @MyCountryTest @MyCountryTest5
-  Scenario: User selects popular banks in their country but tries sending money through Centiv card
+  Scenario: User pays bill by PAYD CARD through Mobile Postpaid at Ufone but bill is past
 
+    Given User scrolls to the right
     When User clicks on MY country button
-    And User clicks on JazzCash at Popular Banks
-    Then User should see error message that this feature is only for PayD Card
+    And User scrolls down at My country page
+    And User scrolls to the right at my country page
+    When User clicks on Ufone Postpaid
+    And User enters a valid phone number for Ufone
+    When User clicks on next button
+    Then User should see bill is past
 
 
   @MyCountryTest @MyCountryTest6

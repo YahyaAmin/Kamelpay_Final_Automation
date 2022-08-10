@@ -12,27 +12,26 @@ Feature: Login Tests
     And User clicks on dont allow biometric button
     Then User should successfully login
 
+#@Logintest @Logintest02
+    #Scenario: Login with correct pin after setting pin
 
-    @Logintest @Logintest02
-    Scenario: Login with correct pin after setting pin
-
-      Given User is on Login Page
-      And User clicks on skip button
-      When User enters correct phone number
-      And User enters correct password
-      And User clicks on login button
-      And User clicks on dont allow biometric button
-      Then User should successfully login
-      And User clicks on My Profile button
-      When User clicks on Passwords and Biometrics Button
-      And User clicks on setup pin login button
-      When User enters pin to setup pin
-      And User enters the same confirm pin
-      And User clicks on submit button at pin setup screen
-      And User clicks on back button at the top left
-      And User clicks on logout button
-      When User enters their correct pin
-      Then User should successfully login
+     # Given User is on Login Page
+      #And User clicks on skip button
+    #  When User enters correct phone number
+     # And User enters correct password
+      #And User clicks on login button
+      #And User clicks on dont allow biometric button
+      #Then User should successfully login
+      #And User clicks on My Profile button
+      #When User clicks on Passwords and Biometrics Button
+      #And User clicks on setup pin login button
+      #When User enters pin to setup pin
+      #And User enters the same confirm pin
+      #And User clicks on submit button at pin setup screen
+      #And User clicks on back button at the top left
+      #And User clicks on logout button
+      #When User enters their correct pin
+      #Then User should successfully login
 
 
       @Logintest @Logintest04
@@ -44,7 +43,6 @@ Feature: Login Tests
         And User enters a valid phone number
         When User clicks on next button at forgot password page
         And User enters valid last four digits of their card
-        When User enters their valid E-id
         And User clicks on proceed button
         And User enters valid OTP
         And User clicks on next button at OTP screen
@@ -82,26 +80,26 @@ Feature: Login Tests
         Then User shouldn't be able to login
 
 
-      @Logintest @Logintest07
-      Scenario: Login with incorrect pin and user is unable to login
+      #@Logintest @Logintest07
+      #Scenario: Login with incorrect pin and user is unable to login
 
-        Given User is on Login Page
-        And User clicks on skip button
-        When User enters correct phone number
-        And User enters correct password
-        And User clicks on login button
-        And User clicks on dont allow biometric button
-        Then User should successfully login
-        And User clicks on My Profile button
-        When User clicks on Passwords and Biometrics Button
-        And User clicks on setup pin login button
-        When User enters pin to setup pin
-        And User enters the same confirm pin
-        And User clicks on submit button at pin setup screen
-        And User clicks on back button at the top left
-        And User clicks on logout button
-        When User enters incorrect pin for login
-        Then User shouldn't be able to login
+       # Given User is on Login Page
+        #And User clicks on skip button
+        #When User enters correct phone number
+        #And User enters correct password
+        #And User clicks on login button
+        #And User clicks on dont allow biometric button
+        #Then User should successfully login
+        #And User clicks on My Profile button
+        #When User clicks on Passwords and Biometrics Button
+        #And User clicks on setup pin login button
+        #When User enters pin to setup pin
+        #And User enters the same confirm pin
+        #And User clicks on submit button at pin setup screen
+        #And User clicks on back button at the top left
+        #And User clicks on logout button
+        #When User enters incorrect pin for login
+        #Then User shouldn't be able to login
 
 
       @Logintest @Logintest09
@@ -115,30 +113,30 @@ Feature: Login Tests
         Then User shouldn't be able to change password
 
 
-      @Logintest @Logintest10
-      Scenario: User clicks on can't login button at enter pin page and then logs in with phone no. and password
+      #@Logintest @Logintest10
+      #Scenario: User clicks on can't login button at enter pin page and then logs in with phone no. and password
 
-        Given User is on Login Page
-        And User clicks on skip button
-        When User enters correct phone number
-        And User enters correct password
-        And User clicks on login button
-        And User clicks on dont allow biometric button
-        Then User should successfully login
-        And User clicks on My Profile button
-        When User clicks on Passwords and Biometrics Button
-        And User clicks on setup pin login button
-        When User enters pin to setup pin
-        And User enters the same confirm pin
-        And User clicks on submit button at pin setup screen
-        And User clicks on back button at the top left
-        And User clicks on logout button
-        When User clicks on cant login button
-        Given User is on Login Page
-        When User enters correct phone number
-        And User enters correct password
-        And User clicks on login button
-        Then User should successfully login
+        #Given User is on Login Page
+        #And User clicks on skip button
+        #When User enters correct phone number
+        #And User enters correct password
+        #And User clicks on login button
+        #And User clicks on dont allow biometric button
+        #Then User should successfully login
+        #And User clicks on My Profile button
+      #  #When User clicks on Passwords and Biometrics Button
+        #And User clicks on setup pin login button
+        #When User enters pin to setup pin
+        #And User enters the same confirm pin
+        #And User clicks on submit button at pin setup screen
+        #And User clicks on back button at the top left
+       # And User clicks on logout button
+        #When User clicks on cant login button
+        #Given User is on Login Page
+        #When User enters correct phone number
+        #And User enters correct password
+        #And User clicks on login button
+        #Then User should successfully login
 
 
 
