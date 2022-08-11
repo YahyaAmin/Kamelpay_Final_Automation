@@ -13,7 +13,7 @@ import io.appium.java_client.android.AndroidElement;
 import java.net.URL;
 import java.io.File;
 
-import static Hooks.CLI.executeCommand;
+import static Hooks.RunnerForGoodWindows.mvnCommandRunner;
 
 
 public class Base_Class {
@@ -85,14 +85,7 @@ public class Base_Class {
     @AfterAll
     public static void afterall(){
 
-        String projectpath = System.getProperty("user.dir");
-
-        String[] cmdArray = new String[3];
-        cmdArray[0] = "cmd.exe";
-        cmdArray[1] = projectpath + '/';
-        cmdArray[2] = "mvn verify -DskipTests";
-
-        executeCommand(cmdArray);
+        mvnCommandRunner();
 
     }
 
