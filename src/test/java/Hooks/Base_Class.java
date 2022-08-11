@@ -84,8 +84,7 @@ public class Base_Class {
 
     @AfterAll
     public static void afterall() throws InterruptedException {
-
-        Thread.sleep(10000);
+        
         mvnCommandRunner();
 
     }
