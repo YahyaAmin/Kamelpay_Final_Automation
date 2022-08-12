@@ -15,7 +15,7 @@ public class LoginPage{
 
     public static String setup_pin_login_button = "//android.view.ViewGroup[@index='3']";
 
-    private static String login_button_mainscreen = "//android.view.ViewGroup[@index='7']";
+    private static String login_button_mainscreen = "//android.widget.TextView[@text='Login']";
 
     public static String phone_no_on_mainscreen = "//android.view.ViewGroup[1]/android.widget.EditText";
 
