@@ -22,7 +22,7 @@ public class MobileTopUpPage {
 
     public static String existing_beneficary = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup";
 
-    public static String second_recharge_package = "//android.widget.TextView[@text='20.00 AED Recharge']";
+    public static String second_recharge_package = "//android.widget.TextView[@text='25.00 AED Recharge']";
 
     public static String phone_number_field_at_mobile_topup = "//android.view.ViewGroup[1]/android.widget.EditText";
 
