@@ -13,6 +13,7 @@ import io.appium.java_client.android.AndroidElement;
 import java.net.URL;
 import java.io.File;
 
+import static Hooks.RunnerForGoodWindows.mvnCleanVerify;
 import static Hooks.RunnerForGoodWindows.mvnCommandRunner;
 
 
@@ -85,6 +86,8 @@ public class Base_Class {
     @AfterAll
     public static void afterall() throws InterruptedException {
 
+        
+        //mvnCleanVerify();
         mvnCommandRunner();
 
     }
