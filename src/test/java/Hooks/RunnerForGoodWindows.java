@@ -22,6 +22,7 @@ public class RunnerForGoodWindows {
         GoodWindowsExec.main(new String[] {"jmeter.bat"}, dirtest );
     }
 
+
     public static void main(String[] args) {
         mvnCommandRunner();
 

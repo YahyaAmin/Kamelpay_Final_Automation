@@ -50,7 +50,7 @@ public class MobileTopUp_Steps {
     @When("User selects a recharge package")
     public void userSelectsARechargePackage() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(second_recharge_package)));
-        MobileTopUpPage.get_second_recharge_package("20.00").click();
+        MobileTopUpPage.get_second_recharge_package("25.00").click();
     }
 
     @When("User clicks on I agree terms and conditions checkbox at Mobile Top Up")

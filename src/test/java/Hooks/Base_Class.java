@@ -84,7 +84,7 @@ public class Base_Class {
 
     @AfterAll
     public static void afterall() throws InterruptedException {
-        
+
         mvnCommandRunner();
 
     }
