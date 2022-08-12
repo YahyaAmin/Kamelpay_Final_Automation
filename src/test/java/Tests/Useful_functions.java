@@ -65,7 +65,7 @@ public static int getRandomDigit(int upperbound) {
         Dimension size = driver.manage().window().getSize();
 
         //x position set to mid-screen horizontally
-        int height = (int) (size.height / 2.1);
+        int height = (int) (size.height / 1.8);    //2.1
 
         //Starting y location set to 80% of the height (near bottom)
         int startPoint = (int) (size.getWidth() * 0.80);

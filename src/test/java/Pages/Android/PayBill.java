@@ -25,7 +25,7 @@ public class PayBill {
     public static String agree_terms_and_conditions_cignal_tv = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]";
     public static String enter_amount_field_cignal_tv = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String account_number_field_cignal_tv = "//android.view.ViewGroup[3]/android.widget.EditText";
-    public static String subscriber_name_field = "//android.view.ViewGroup[3]/android.widget.EditText";
+    public static String subscriber_name_field = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String utility_button = "//android.widget.TextView[@text='Utility']";
 
     public static String account_number_field_pampanga = "//android.view.ViewGroup[2]/android.widget.EditText";
