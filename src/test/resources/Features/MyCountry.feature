@@ -110,7 +110,7 @@ Feature: My Country Tests
     Given User scrolls to the right
     When User clicks on MY country button
     And User scrolls down at My country page
-    When User clicks on Central Depositary Company Pakistan
+    When User clicks on UBL Fund Management
     And User enters a reference number at financial services
     And User clicks on next button
     Then User should see invalid reference
@@ -129,12 +129,12 @@ Feature: My Country Tests
 
 
   @MyCountryTest @MyCountryTest3
-  Scenario: User pays bill at LESCO but bill is past with PAYD CARD
+  Scenario: User pays bill at HESCO but bill is past with PAYD CARD
 
     Given User scrolls to the right
     When User clicks on MY country button
     And User scrolls down at My country page
-    When User clicks on LESCO at MyCountry
+    When User clicks on HESCO at My Country
     When User enters a valid referrence number
     And User clicks on next button
     Then User should see bill is past
@@ -384,11 +384,11 @@ Feature: My Country Tests
 
 
   @MyCountryTest @MyCountryTest21
-  Scenario: User pays bill at LESCO but bill is past
+  Scenario: User pays bill at HESCO but bill is past
 
     When User clicks on MY country button
     And User scrolls down at My country page
-    When User clicks on LESCO at MyCountry
+    When User clicks on HESCO at My Country
     When User enters a valid referrence number
     And User clicks on next button
     Then User should see bill is past
@@ -410,7 +410,7 @@ Feature: My Country Tests
 
     When User clicks on MY country button
     And User scrolls down at My country page
-    When User clicks on Central Depositary Company Pakistan
+    When User clicks on UBL Fund Management
     And User enters a reference number at financial services
     And User clicks on next button
     Then User should see invalid reference

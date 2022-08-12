@@ -204,7 +204,7 @@ public class PayBill_Steps {
 
     @And("User enters a valid account number at Pampanga I")
     public void userEntersAValidAccountNumberAtPampangaI() {
-        PayBill.get_account_number_field_cignal_tv().sendKeys("06066679");
+        PayBill.get_account_number_field_pampanga().sendKeys("06066679");
     }
 
     @When("User searches for company Aavantika")

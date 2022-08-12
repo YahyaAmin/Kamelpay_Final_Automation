@@ -37,8 +37,8 @@ public class RunnerForGoodWindows {
 
     public static void main(String[] args) {
         //mvnCleanVerify();
-        //mvnCommandRunner();
-        notepadrun();
+        mvnCommandRunner();
+        //notepadrun();
         //testingCLI();
 
     }

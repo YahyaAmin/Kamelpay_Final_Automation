@@ -242,4 +242,16 @@ public class MyCountry_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(iban_no_field)));
         MyCountry.get_iban_no_field().sendKeys(getRandomString(true,false,true,false,false,24));
     }
+
+    @When("User clicks on UBL Fund Management")
+    public void userClicksOnUBLFundManagement() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ubl_fund_manage)));
+        MyCountry.get_ubl_fund_manage().click();
+    }
+
+    @When("User clicks on HESCO at My Country")
+    public void userClicksOnHESCOAtMyCountry() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HESCO_button)));
+        MyCountry.get_HESCO_button().click();
+    }
 }

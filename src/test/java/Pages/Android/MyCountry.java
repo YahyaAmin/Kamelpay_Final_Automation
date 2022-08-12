@@ -21,9 +21,12 @@ public class MyCountry {
 
     public static String central_despoitory_company_pakistan = "//android.widget.TextView[@text='Central Depositary Company Pakistan']";
 
+    public static String ubl_fund_manage = "//android.widget.TextView[@text='UBL Fund Management']";
     public static String ufone_mobile_number_field = "//android.view.ViewGroup[2]/android.widget.EditText";
 
     public static String LESCO_button = "//android.widget.TextView[@text='LESCO (Lahore Electricity Corporate)']";
+
+    public static String HESCO_button = "//android.widget.TextView[@text='HESCO (Hyderabad Electric Supply Corporation)']";
 
     public static String SNGPL_button = "//android.widget.TextView[@text='SNGPL (Sui Northern Gas Company)']";
     public static String wait_for_popular_bank(String bank_name){return "//android.widget.TextView[@text='"+bank_name+"']";}
@@ -54,5 +57,9 @@ public class MyCountry {
     public static AndroidElement get_account_title_field(){return driver.findElement(By.xpath(account_title_field));}
 
     public static AndroidElement get_iban_no_field(){return driver.findElement(By.xpath(iban_no_field));}
+
+    public static AndroidElement get_ubl_fund_manage(){return driver.findElement(By.xpath(ubl_fund_manage));}
+
+    public static AndroidElement get_HESCO_button(){return driver.findElement(By.xpath(HESCO_button));}
 
 }
