@@ -6,9 +6,10 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
-import org.junit.AfterClass;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidElement;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 
 
 import java.net.URL;
@@ -84,11 +85,12 @@ public class Base_Class {
         driver.quit();
     }
 
-//    @AfterAll
-//    public static void afterall() throws InterruptedException {
-//
-//        mvnCommandRunner();
-//    }
+    @AfterAll
+    public static void afterall() throws InterruptedException {
+        Thread.sleep(15000);
+        mvnCommandRunner();
+    }
+
 
 
 
