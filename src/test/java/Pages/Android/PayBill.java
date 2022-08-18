@@ -28,6 +28,8 @@ public class PayBill {
     public static String enter_amount_field_cignal_tv = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String account_number_field_cignal_tv = "//android.view.ViewGroup[3]/android.widget.EditText";
     public static String subscriber_name_field = "//android.view.ViewGroup[3]/android.widget.EditText";
+
+    public static String subscriber_name_field_cignal_tv = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String utility_button = "//android.widget.TextView[@text='Utility']";
 
     public static String account_number_field_pampanga = "//android.view.ViewGroup[2]/android.widget.EditText";
@@ -121,4 +123,7 @@ public class PayBill {
     public static AndroidElement get_account_number_field_pampanga(){return driver.findElement(By.xpath(account_number_field_pampanga)); }
 
     public static AndroidElement get_zong_recharge_package(){return driver.findElement(By.xpath(zong_recharge_package));}
+
+    public static AndroidElement get_subscriber_name_field_cignal_tv(){return driver.findElement(By.xpath(subscriber_name_field_cignal_tv));}
+
 }

@@ -54,7 +54,7 @@ Feature: Pay Bill
     And User clicks on Utility button at bill type
     And User searches for company Cignal TV
     And User clicks on Cignal TV
-    When User enters a valid subscriber name at Cignal TV
+    When User enters a valid subscriber name at Cignal TV for successful transaction
     And User enters a valid account number at Cignal TV
     When User clicks on next button at forgot password page
     And User enters amount at Cignal TV

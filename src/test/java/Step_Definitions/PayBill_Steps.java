@@ -670,4 +670,10 @@ public class PayBill_Steps {
         PayBill.get_zong_recharge_package().click();
 
     }
+
+    @When("User enters a valid subscriber name at Cignal TV for successful transaction")
+    public void userEntersAValidSubscriberNameAtCignalTVForSuccessfulTransaction() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(subscriber_name_field_cignal_tv)));
+        PayBill.get_subscriber_name_field_cignal_tv().sendKeys("JOHN DOE");
+    }
 }
