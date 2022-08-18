@@ -318,4 +318,9 @@ public class SignupSteps {
     }
 
 
+    @And("User enters a valid twelve digit EID")
+    public void userEntersAValidTwelveDigitEID() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(eid_field_before_scan_id)));
+        SignupPage.get_eid_field_before_scan_id().sendKeys(getRandomNumberLowerAndUpperBound(12,13));
+    }
 }

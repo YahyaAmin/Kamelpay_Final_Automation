@@ -12,6 +12,7 @@ public class SignupPage {
 
     public WebDriverWait wait = new WebDriverWait(driver, 30);
 
+    public static String eid_field_before_scan_id = "//android.widget.EditText[@text='784']";
     public static String enter_card_last_digits = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText";
 
     private static String proceed_button = "//android.widget.TextView[@text='Proceed']";
@@ -122,5 +123,7 @@ public class SignupPage {
     public static AndroidElement getverify_button_after_signup(){return driver.findElement(By.xpath(verify_button_after_signup));}
 
     public static AndroidElement getproceed_button(){return driver.findElement(By.xpath(proceed_button));}
+
+    public static AndroidElement get_eid_field_before_scan_id(){return driver.findElementById(eid_field_before_scan_id);}
 
 }

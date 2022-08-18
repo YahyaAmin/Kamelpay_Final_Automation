@@ -81,17 +81,16 @@ public class Base_Class {
 
     @After
     public void teardown(){
-
         driver.quit();
     }
 
-    @AfterAll
-    public static void afterall() throws InterruptedException {
-        Thread.sleep(15000);
-        mvnCommandRunner();
-    }
 
 
+
+//    @AfterAll
+//    public static void afterall() throws InterruptedException {
+//        mvnCommandRunner();
+//    }
 
 
 }

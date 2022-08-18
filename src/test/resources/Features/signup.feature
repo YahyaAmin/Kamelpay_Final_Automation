@@ -318,6 +318,7 @@ Feature: Sign Up Tests
     Then User should be able to sign up successfully
     And User clicks on verify button after signup
     When User enters their last four digits of card
+    And User enters a valid twelve digit EID
     And User clicks on proceed button
     Then User should move to scan ID page
 
