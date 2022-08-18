@@ -13,7 +13,9 @@ public class PayBill {
     public static String add_account_to_beneficiary_button = "//android.view.ViewGroup/android.view.ViewGroup[4]";
     public static String reference_number_hesco = "//android.widget.EditText";
     public static String mobile_number_field_zong = "//android.widget.EditText";
-    public static String get_recharge_usd(String amount){return "//android.widget.TextView[@text='"+amount+" USD Recharge']";}
+
+    public static String zong_recharge_package = "//android.widget.TextView[@text='Zong USD $1 (PKR 119)']";
+    public static String get_recharge_usd(String amount){return "//android.widget.TextView[@text='"+amount+"']";}
     public static String zong_prepaid_button = "//android.widget.TextView[@text='Zong Prepaid']";
     public static String mobile_prepaid_button = "//android.widget.TextView[@text='Mobile Prepaid']";
     public static String reference_number_LESCO = "//android.view.ViewGroup[2]/android.widget.EditText";
@@ -25,7 +27,7 @@ public class PayBill {
     public static String agree_terms_and_conditions_cignal_tv = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]";
     public static String enter_amount_field_cignal_tv = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String account_number_field_cignal_tv = "//android.view.ViewGroup[3]/android.widget.EditText";
-    public static String subscriber_name_field = "//android.view.ViewGroup[2]/android.widget.EditText";
+    public static String subscriber_name_field = "//android.view.ViewGroup[3]/android.widget.EditText";
     public static String utility_button = "//android.widget.TextView[@text='Utility']";
 
     public static String account_number_field_pampanga = "//android.view.ViewGroup[2]/android.widget.EditText";
@@ -42,8 +44,8 @@ public class PayBill {
 
     public static String search_country_at_pay_bill = "//android.widget.EditText";
 
-    public static String consumer_number_at_pay_bill = "//android.view.ViewGroup[3]/android.widget.EditText";
-    public static String mobile_number_field_at_pay_bill = "//android.view.ViewGroup[2]/android.widget.EditText";
+    public static String consumer_number_at_pay_bill = "//android.view.ViewGroup[2]/android.widget.EditText";
+    public static String mobile_number_field_at_pay_bill = "//android.view.ViewGroup[3]/android.widget.EditText";
     public static String first_company_in_list = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup";
 
     public static String customer_number_field = "//android.view.ViewGroup[2]/android.widget.EditText";
@@ -100,7 +102,7 @@ public class PayBill {
 
     public static AndroidElement get_zong_prepaid_button(){return driver.findElement(By.xpath(zong_prepaid_button));}
 
-    public static AndroidElement get_get_recharge_usd(String amount){return driver.findElement(By.xpath("//android.widget.TextView[@text='"+amount+" USD Recharge']"));}
+    public static AndroidElement get_get_recharge_usd(String amount){return driver.findElement(By.xpath("//android.widget.TextView[@text='"+amount+"Zong USD $1 (PKR 119)']"));}
 
     public static AndroidElement get_mobile_number_field_zong(){return driver.findElement(By.xpath(mobile_number_field_zong));}
 
@@ -118,4 +120,5 @@ public class PayBill {
 
     public static AndroidElement get_account_number_field_pampanga(){return driver.findElement(By.xpath(account_number_field_pampanga)); }
 
+    public static AndroidElement get_zong_recharge_package(){return driver.findElement(By.xpath(zong_recharge_package));}
 }

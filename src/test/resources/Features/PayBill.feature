@@ -262,7 +262,7 @@ Feature: Pay Bill
     When User clicks on Pakistan
     And User clicks on Mobile Prepaid button
     And User clicks on Zong Prepaid Button
-    And User selects a recharge package of 2 USD
+    And User selects a recharge package of 1 USD for Zong Prepaid
     When User clicks on next button at forgot password page
     And User enters their mobile number for Zong
     And User clicks on next button at forgot password page

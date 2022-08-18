@@ -663,4 +663,11 @@ public class PayBill_Steps {
         Thread.sleep(500);
         PayBill.get_pay_bill().click();
     }
+
+    @And("User selects a recharge package of {int} USD for Zong Prepaid")
+    public void userSelectsARechargePackageOfUSDForZongPrepaid(int arg0) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(zong_recharge_package)));
+        PayBill.get_zong_recharge_package().click();
+
+    }
 }
