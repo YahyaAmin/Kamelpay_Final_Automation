@@ -17,6 +17,7 @@ Feature: Mobile Top Up
 
     When User clicks on Mobile Top Up button
     And User clicks on Add Topup button
+    And User selects "United Arab Emirates" as their country
     When User enters a valid phone number at topup
     And User clicks on next button at recharge page
     And User selects the first service provider
@@ -34,6 +35,7 @@ Feature: Mobile Top Up
 
     When User clicks on Mobile Top Up button
     And User clicks on Add Topup button
+    And User selects "United Arab Emirates" as their country
     When User enters an invalid phone number at topup
     And User clicks on next button at recharge page
     Then User shouldnt be able to topup
@@ -45,7 +47,8 @@ Feature: Mobile Top Up
 
     When User clicks on Mobile Top Up button
     And User clicks on Add Topup button
-    When User enters an invalid phone number at topup
+    And User selects "United Arab Emirates" as their country
+    When User enters a valid phone number at topup
     And User clicks on save beneficiary button at topup
     And User clicks on next button at recharge page
     Then User shouldnt be able to topup
@@ -56,6 +59,7 @@ Feature: Mobile Top Up
 
     When User clicks on Mobile Top Up button
     And User clicks on Add Topup button
+    And User selects "United Arab Emirates" as their country
     When User clicks on country code
     And User searches for first country
     When User clicks on their searched country
@@ -67,7 +71,7 @@ Feature: Mobile Top Up
 
     When User clicks on Mobile Top Up button
     And User clicks on the first existing beneficiary
-    When User selects a recharge package of 55 AED
+    When User selects a recharge package for existing beneficiary
     And User clicks on next button at recharge page
     When User clicks on I agree terms and conditions checkbox at Mobile Top Up
     And User clicks on pay now button
@@ -87,6 +91,7 @@ Feature: Mobile Top Up
 
     When User clicks on Mobile Top Up button
     And User clicks on Add Topup button
+    And User selects "United Arab Emirates" as their country
     When User enters a valid phone number at topup
     And User clicks on next button at recharge page
     And User searches for different service providers
@@ -98,6 +103,7 @@ Feature: Mobile Top Up
 
     When User clicks on Mobile Top Up button
     And User clicks on Add Topup button
+    And User selects "United Arab Emirates" as their country
     When User leaves phone number empty at topup
     And User clicks on next button at recharge page
     Then User shouldnt be able to proceed

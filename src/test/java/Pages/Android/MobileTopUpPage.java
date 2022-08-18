@@ -22,13 +22,16 @@ public class MobileTopUpPage {
 
     public static String existing_beneficary = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup";
 
-    public static String second_recharge_package = "//android.widget.TextView[@text='25.00 AED Recharge']";
+    public static String recharge_package_for_existing_beneficiary = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView";
+    public static String second_recharge_package = "//android.view.ViewGroup[3]/android.widget.TextView";
 
     public static String phone_number_field_at_mobile_topup = "//android.view.ViewGroup[1]/android.widget.EditText";
 
     public static String agree_terms_checkbox = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]";
 
     public static String save_account_to_beneficary = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]";
+
+    public static String country_selector_function(String user_defined_country) {return "//android.widget.TextView[@text='"+user_defined_country + "']";}
 
     public static String country_code = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup";
 
@@ -43,9 +46,9 @@ public class MobileTopUpPage {
 
     public static AndroidElement get_first_service_provider(){return driver.findElement(By.xpath(first_service_provider));}
 
-    public static AndroidElement get_second_recharge_package(String amount){return driver.findElement(By.xpath("//android.widget.TextView[@text='"+amount+" AED Recharge']"));}
+    public static AndroidElement get_second_recharge_package(String amount){return driver.findElement(By.xpath("//android.widget.TextView[@text='"+amount+" AED Data Recharge']"));}
 
-    public static String get_country_xpath(String amount){return "//android.widget.TextView[@text='"+amount+" AED Recharge']";}
+    public static String get_country_xpath(String amount){return "//android.widget.TextView[@text='"+amount+" AED Data Recharge']";}
 
     public static AndroidElement get_agree_terms_checkbox(){return driver.findElement(By.xpath(agree_terms_checkbox));}
 
@@ -66,5 +69,11 @@ public class MobileTopUpPage {
     public static AndroidElement get_search_existing_beneficiaries(){return driver.findElement(By.xpath(search_existing_beneficiaries));}
 
     public static AndroidElement get_search_service_providers(){return driver.findElement(By.xpath(search_service_providers));}
+
+    public static AndroidElement get_country_selector_function(String user_defined_country){return driver.findElement(By.xpath(country_selector_function(user_defined_country)));}
+
+    public static AndroidElement get_rechrg_package(){return driver.findElement(By.xpath(second_recharge_package));}
+
+    public static AndroidElement get_recharge_package_for_existing_beneficiary(){return driver.findElement(By.xpath(recharge_package_for_existing_beneficiary));}
 
 }

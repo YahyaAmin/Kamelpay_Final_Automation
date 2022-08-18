@@ -50,7 +50,7 @@ public class MobileTopUp_Steps {
     @When("User selects a recharge package")
     public void userSelectsARechargePackage() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(second_recharge_package)));
-        MobileTopUpPage.get_second_recharge_package("25.00").click();
+        MobileTopUpPage.get_rechrg_package().click();
     }
 
     @When("User clicks on I agree terms and conditions checkbox at Mobile Top Up")
@@ -135,7 +135,7 @@ public class MobileTopUp_Steps {
     @When("User selects a recharge package of {int} AED")
     public void userSelectsARechargePackageOfAED(int arg0) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(get_country_xpath("55.00"))));
-        MobileTopUpPage.get_second_recharge_package("55.00").click();
+        MobileTopUpPage.get_second_recharge_package("55").click();
     }
 
     @And("User searches for existing beneficiaries")
@@ -187,4 +187,15 @@ public class MobileTopUp_Steps {
     }
 
 
+    @And("User selects {string} as their country")
+    public void userSelectsAsTheirCountry(String country_select) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(country_selector_function(country_select))));
+        MobileTopUpPage.get_country_selector_function(country_select).click();
+    }
+
+    @When("User selects a recharge package for existing beneficiary")
+    public void userSelectsARechargePackageForExistingBeneficiary() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(recharge_package_for_existing_beneficiary)));
+        MobileTopUpPage.get_recharge_package_for_existing_beneficiary().click();
+    }
 }
