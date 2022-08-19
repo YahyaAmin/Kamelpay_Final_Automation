@@ -9,7 +9,7 @@ import static Hooks.Base_Class.driver;
 public class SendMoneyPage {
 
     public static String other_field = "//android.view.ViewGroup[5]/android.widget.EditText";
-    public static String save_beneficary_button = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup";
+    public static String save_beneficary_button = "//android.widget.TextView[@text='Save Beneficiary']";
     public static String add_new_beneficiary_button = "//android.widget.TextView[@text='Add New Beneficiary']";
     public static String cash_pickup_button = "//android.widget.TextView[@text='Cash Pickup']";
     public static String otp_first_digit_field_send_money = "//android.view.ViewGroup[1]/android.widget.EditText";

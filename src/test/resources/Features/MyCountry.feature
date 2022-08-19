@@ -110,6 +110,7 @@ Feature: My Country Tests
     Given User scrolls to the right
     When User clicks on MY country button
     And User scrolls down at My country page
+    And User scrolls down at My country page again
     When User clicks on UBL Fund Management
     And User enters a reference number at financial services
     And User clicks on next button
@@ -148,7 +149,7 @@ Feature: My Country Tests
     When User clicks on MY country button
     And User scrolls down at My country page
     When User clicks on Zong Prepaid Button
-    And User selects a recharge package of 2 USD
+    And User selects a recharge package of 1 USD for Zong Prepaid
     When User clicks on next button at forgot password page
     And User enters their mobile number for Zong
     And User clicks on next button at forgot password page
@@ -247,7 +248,7 @@ Feature: My Country Tests
     When User clicks on MY country button
     And User scrolls down at My country page
     When User clicks on Zong Prepaid Button
-    And User selects a recharge package of 2 USD
+    And User selects a recharge package of 1 USD for Zong Prepaid
     When User clicks on next button at forgot password page
     And User enters their mobile number for Zong
     And User clicks on next button at forgot password page
@@ -265,7 +266,7 @@ Feature: My Country Tests
     When User clicks on MY country button
     And User scrolls down at My country page
     When User clicks on Zong Prepaid Button
-    And User selects a recharge package of 2 USD
+    And User selects a recharge package of 1 USD for Zong Prepaid
     When User clicks on next button at forgot password page
     And User enters mobile number less than twelve digits
     And User clicks on next button
@@ -278,7 +279,7 @@ Feature: My Country Tests
     When User clicks on MY country button
     And User scrolls down at My country page
     When User clicks on Zong Prepaid Button
-    And User selects a recharge package of 2 USD
+    And User selects a recharge package of 1 USD for Zong Prepaid
     When User clicks on next button at forgot password page
     And User enters mobile number more than twelve digits
     And User clicks on next button
@@ -291,7 +292,7 @@ Feature: My Country Tests
     When User clicks on MY country button
     And User scrolls down at My country page
     When User clicks on Zong Prepaid Button
-    And User selects a recharge package of 2 USD
+    And User selects a recharge package of 1 USD for Zong Prepaid
     When User clicks on next button at forgot password page
     And User enters mobile number has spaces
     And User clicks on next button
@@ -304,7 +305,7 @@ Feature: My Country Tests
     When User clicks on MY country button
     And User scrolls down at My country page
     When User clicks on Zong Prepaid Button
-    And User selects a recharge package of 2 USD
+    And User selects a recharge package of 1 USD for Zong Prepaid
     When User clicks on next button at forgot password page
     And User enters mobile number has special characters
     And User clicks on next button
@@ -317,7 +318,7 @@ Feature: My Country Tests
     When User clicks on MY country button
     And User scrolls down at My country page
     When User clicks on Zong Prepaid Button
-    And User selects a recharge package of 2 USD
+    And User selects a recharge package of 1 USD for Zong Prepaid
     When User clicks on next button at forgot password page
     And User enters their mobile number for Zong
     And User clicks on next button at forgot password page
@@ -335,7 +336,7 @@ Feature: My Country Tests
     When User clicks on MY country button
     And User scrolls down at My country page
     When User clicks on Zong Prepaid Button
-    And User selects a recharge package of 2 USD
+    And User selects a recharge package of 1 USD for Zong Prepaid
     When User clicks on next button at forgot password page
     And User enters their mobile number for Zong
     And User clicks on next button at forgot password page
@@ -353,7 +354,7 @@ Feature: My Country Tests
     When User clicks on MY country button
     And User scrolls down at My country page
     When User clicks on Zong Prepaid Button
-    And User selects a recharge package of 2 USD
+    And User selects a recharge package of 1 USD for Zong Prepaid
     When User clicks on next button at forgot password page
     And User enters their mobile number for Zong
     And User clicks on next button at forgot password page
@@ -371,7 +372,7 @@ Feature: My Country Tests
     When User clicks on MY country button
     And User scrolls down at My country page
     When User clicks on Zong Prepaid Button
-    And User selects a recharge package of 2 USD
+    And User selects a recharge package of 1 USD for Zong Prepaid
     When User clicks on next button at forgot password page
     And User enters their mobile number for Zong
     And User clicks on next button at forgot password page

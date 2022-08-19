@@ -254,4 +254,10 @@ public class MyCountry_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HESCO_button)));
         MyCountry.get_HESCO_button().click();
     }
+
+    @And("User scrolls down at My country page again")
+    public void userScrollsDownAtMyCountryPageAgain() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HESCO_button)));
+        scrollDown();
+    }
 }

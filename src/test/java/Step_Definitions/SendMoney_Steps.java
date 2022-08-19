@@ -307,9 +307,16 @@ public class SendMoney_Steps {
 
     @And("User clicks on save beneficiary button")
     public void userClicksOnSaveBeneficiaryButton() throws InterruptedException {
-        Thread.sleep(1000);
-        SendMoneyPage.get_save_beneficary_button().click();
-        Thread.sleep(3000);
+        try {
+            Thread.sleep(1000);
+            SendMoneyPage.get_save_beneficary_button().click();
+            Thread.sleep(3000);
+        }
+        catch(Exception exp){
+            System.out.println("Cause is: " + exp.getCause());
+            System.out.println("Message is: " + exp.getMessage());
+            exp.printStackTrace();
+        }
     }
 
     @Then("User should successfully add beneficiary")
