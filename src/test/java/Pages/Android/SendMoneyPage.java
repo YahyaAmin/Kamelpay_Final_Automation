@@ -8,6 +8,7 @@ import static Hooks.Base_Class.driver;
 
 public class SendMoneyPage {
 
+    public static String other_field = "//android.view.ViewGroup[5]/android.widget.EditText";
     public static String save_beneficary_button = "//android.widget.TextView[@text='Save Beneficiary']";
     public static String add_new_beneficiary_button = "//android.widget.TextView[@text='Add New Beneficiary']";
     public static String cash_pickup_button = "//android.widget.TextView[@text='Cash Pickup']";
@@ -16,7 +17,7 @@ public class SendMoneyPage {
     public static String last_name_beneficiary = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String last_name_beneficiary1 = "//android.view.ViewGroup[3]/android.widget.EditText";
 
-    public static String phone_num_temp = "//android.view.ViewGroup[4]/android.widget.EditText";
+    public static String phone_num_temp = "//android.view.ViewGroup[3]/android.widget.EditText";
     public static String first_name_beneficiary = "//android.view.ViewGroup[1]/android.widget.EditText";
 
     public static String first_name_beneficiary1 = "//android.view.ViewGroup[2]/android.widget.EditText";
@@ -61,6 +62,8 @@ public class SendMoneyPage {
     public static String click_outside_beneficary2 = "//android.widget.TextView[@text='IBAN / Account Number']";
 
     public static String family_support_option_at_reason_to_pay = "//android.widget.TextView[@text='Family Support']";
+
+    public static String other_option_at_reason_to_pay = "//android.widget.TextView[@text='Other']";
     public static String remittance_purpose_field_beneficiary = "//android.view.ViewGroup[5]/android.view.ViewGroup[1]";
 
     public static String remittance_purpose_field_beneficiary1 = "//android.view.ViewGroup[6]/android.widget.EditText";
@@ -86,6 +89,8 @@ public class SendMoneyPage {
     public static AndroidElement get_first_bank_in_list(){return driver.findElement(By.xpath(first_bank_in_list));}
 
     public static AndroidElement get_confirm_button(){return driver.findElement(By.xpath(confirm_button));}
+
+    public static AndroidElement get_other_field(){return driver.findElement(By.xpath(other_field));}
 
     public static AndroidElement get_sender_amount_field(){return driver.findElement(By.xpath(sender_amount_field));}
 
@@ -139,4 +144,5 @@ public class SendMoneyPage {
 
     public static AndroidElement get_family_support_option_at_reason_to_pay(){return driver.findElement(By.xpath(family_support_option_at_reason_to_pay));}
 
+    public static AndroidElement get_other_option_at_reason_to_pay(){return driver.findElement(By.xpath(other_option_at_reason_to_pay));}
 }

@@ -336,4 +336,23 @@ public class SendMoney_Steps {
         SendMoneyPage.get_phone_num_temp().sendKeys("345"+getRandomNumberLowerAndUpperBound(7,8));
         SendMoneyPage.click_outside_beneficiary_page1().click();
     }
+
+    @And("User enters remittance purpose as other remittance purpose")
+    public void userEntersRemittancePurposeAsOtherRemittancePurpose() {
+        SendMoneyPage.get_remittance_purpose_field_beneficiary().click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(other_option_at_reason_to_pay)));
+        SendMoneyPage.get_other_option_at_reason_to_pay().click();
+    }
+
+    @And("User enters the reason for sending money")
+    public void userEntersTheReasonForSendingMoney() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(other_field)));
+        SendMoneyPage.get_other_field().sendKeys(getRandomString(false,true,true,false,false,8));
+    }
+
+    @When("User scrolls down at send money page again")
+    public void userScrollsDownAtSendMoneyPageAgain() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_num_temp)));
+        scrollDown_CardManagement();
+    }
 }

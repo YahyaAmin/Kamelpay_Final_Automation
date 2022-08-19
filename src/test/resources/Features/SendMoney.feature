@@ -284,38 +284,37 @@ Feature: Send Money Tests
     And User clicks the confirm button
     When User enters first name of beneficiary
     When User enters first name of beneficiary at add beneficiary
-    And User enters last name of beneficiary at add beneficiary
     And User enters phone number of beneficiary for a Pakistani number for saved beneficiary
     When User scrolls down at exchange rate page
     And User enters account title at add beneficary
     When User enters Iban number at add beneficiary
-    And User enters remittance purpose at add beneficiary
+    And User enters remittance purpose
     And User clicks on save beneficiary button
     Then User enters valid OTP at send money flow
     And User clicks on next button at OTP screen
     Then User should successfully add beneficiary
 
 
-  @Sendmoney @Sendmoney14
-  Scenario: User adds new beneficiary at bank transfer but leaves beneficiary name empty
+  #@Sendmoney @Sendmoney14
+  #Scenario: User adds new beneficiary at bank transfer but leaves beneficiary name empty
 
-    When User scrolls to the right
-    And User clicks on Send Money Button
-    And User clicks on add new beneficary button
-    When User searches for country
-    And User clicks on country they searched for
-    And User clicks on the bank account button
-    When User selects the first bank in the list
-    And User clicks the confirm button
-    When User enters first name of beneficiary at add beneficiary
-    And User enters last name of beneficiary at add beneficiary
-    And User enters phone number of beneficiary for a Pakistani number for saved beneficiary
-    When User scrolls down at exchange rate page
-    And User enters account title at add beneficary
-    When User enters Iban number at add beneficiary
-    And User enters remittance purpose at add beneficiary
-    And User clicks on save beneficiary button
-    Then User shouldnt be able to send money
+   # When User scrolls to the right
+   # And User clicks on Send Money Button
+    #And User clicks on add new beneficary button
+    #When User searches for country
+    #And User clicks on country they searched for
+   # And User clicks on the bank account button
+    #When User selects the first bank in the list
+   # And User clicks the confirm button
+    #When User enters first name of beneficiary at add beneficiary
+    #And User enters last name of beneficiary at add beneficiary
+    #And User enters phone number of beneficiary for a Pakistani number for saved beneficiary
+    #When User scrolls down at exchange rate page
+    #And User enters account title at add beneficary
+    #When User enters Iban number at add beneficiary
+    #And User enters remittance purpose at add beneficiary
+    #And User clicks on save beneficiary button
+    #Then User shouldnt be able to send money
 
 
 
@@ -333,3 +332,35 @@ Feature: Send Money Tests
     When User enters the amount to zero
     And User scrolls down at exchange rate page
     And User clicks on next button at forgot password page
+
+
+
+  @Sendmoney @Sendmoney16
+  Scenario: User successfully sends money through bank transfer and enters other reason to send money
+
+    When User scrolls to the right
+    And User clicks on Send Money Button
+    And User clicks on Send Money at Send Money screen
+    When User searches for country
+    And User clicks on country they searched for
+    And User clicks on the bank account button
+    When User selects the first bank in the list
+    And User clicks the confirm button
+    When User enters the amount they want to send
+    And User scrolls down at exchange rate page
+    And User clicks on next button at forgot password page
+    When User enters first name of beneficiary
+    And User enters last name of beneficiary
+    And User enters phone number of beneficiary for a Pakistani number
+    When User scrolls down at exchange rate page
+    And User enters account title
+    When User enters Iban number
+    And User enters remittance purpose as other remittance purpose
+    When User scrolls down at send money page again
+    And User enters the reason for sending money
+    And User clicks on next button at forgot password page
+    When User clicks I agree terms and conditions box
+    And User clicks on Send Money at confirmation screen
+    And User enters valid OTP at send money flow
+    And User clicks on next button at OTP screen
+    Then User should be able to successfully send money
