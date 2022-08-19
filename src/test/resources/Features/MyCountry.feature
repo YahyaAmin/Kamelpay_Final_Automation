@@ -411,6 +411,7 @@ Feature: My Country Tests
 
     When User clicks on MY country button
     And User scrolls down at My country page
+    And User scrolls down at My country page again
     When User clicks on UBL Fund Management
     And User enters a reference number at financial services
     And User clicks on next button
