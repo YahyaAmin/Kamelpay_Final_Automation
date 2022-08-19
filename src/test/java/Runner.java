@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
 //@Signuptest or @Logintest or @CardManagement or @MobileTopUpCase or @PayBillTest or @Sendmoney or @Settingstest or @MyCountryTest
 
 //@Logintest @Signuptest @CardManagement @MobileTopUpCase
-//@PayBillTest @Settingstest
+//@PayBillTest @Settingstest @Sendmoney
 
 
 public class Runner  {
