@@ -288,7 +288,7 @@ Feature: Send Money Tests
     When User scrolls down at exchange rate page
     And User enters account title at add beneficary
     When User enters Iban number at add beneficiary
-    And User enters remittance purpose
+    And User enters remittance purpose for adding new beneficiary
     And User clicks on save beneficiary button
     Then User enters valid OTP at send money flow
     And User clicks on next button at OTP screen
