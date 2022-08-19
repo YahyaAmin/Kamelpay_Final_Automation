@@ -358,7 +358,7 @@ public class SendMoney_Steps {
 
     @And("User enters remittance purpose for adding new beneficiary")
     public void userEntersRemittancePurposeForAddingNewBeneficiary() {
-        SendMoneyPage.get_remittance_purpose_field_beneficiary().click();
+        SendMoneyPage.get_remittance_purpose_for_saved_beneficiary().click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(family_support_option_at_reason_to_pay)));
         SendMoneyPage.get_family_support_option_at_reason_to_pay().click();
     }

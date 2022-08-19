@@ -66,6 +66,7 @@ public class SendMoneyPage {
     public static String other_option_at_reason_to_pay = "//android.widget.TextView[@text='Other']";
     public static String remittance_purpose_field_beneficiary = "//android.view.ViewGroup[5]/android.view.ViewGroup[1]";
 
+    public static String remittance_purpose_for_saved_beneficiary = "//android.view.ViewGroup[6]/android.view.ViewGroup[1]";
     public static String remittance_purpose_field_beneficiary1 = "//android.view.ViewGroup[6]/android.widget.EditText";
 
     public static String send_money_at_confirmation = "//android.widget.TextView[@text='Send Money']";
@@ -145,4 +146,7 @@ public class SendMoneyPage {
     public static AndroidElement get_family_support_option_at_reason_to_pay(){return driver.findElement(By.xpath(family_support_option_at_reason_to_pay));}
 
     public static AndroidElement get_other_option_at_reason_to_pay(){return driver.findElement(By.xpath(other_option_at_reason_to_pay));}
+
+    public static AndroidElement get_remittance_purpose_for_saved_beneficiary(){return driver.findElement(By.xpath(remittance_purpose_for_saved_beneficiary));}
+
 }
