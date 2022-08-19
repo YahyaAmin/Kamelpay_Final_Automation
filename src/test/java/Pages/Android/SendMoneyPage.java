@@ -60,7 +60,8 @@ public class SendMoneyPage {
 
     public static String click_outside_beneficary2 = "//android.widget.TextView[@text='IBAN / Account Number']";
 
-    public static String remittance_purpose_field_beneficiary = "//android.view.ViewGroup[5]/android.widget.EditText";
+    public static String family_support_option_at_reason_to_pay = "//android.widget.TextView[@text='Family Support']";
+    public static String remittance_purpose_field_beneficiary = "//android.view.ViewGroup[5]/android.view.ViewGroup[1]";
 
     public static String remittance_purpose_field_beneficiary1 = "//android.view.ViewGroup[6]/android.widget.EditText";
 
@@ -135,4 +136,7 @@ public class SendMoneyPage {
     public static AndroidElement get_save_beneficary_button(){return driver.findElement(By.xpath(save_beneficary_button));}
 
     public static AndroidElement get_phone_num_temp(){return driver.findElement(By.xpath(phone_num_temp));}
+
+    public static AndroidElement get_family_support_option_at_reason_to_pay(){return driver.findElement(By.xpath(family_support_option_at_reason_to_pay));}
+
 }

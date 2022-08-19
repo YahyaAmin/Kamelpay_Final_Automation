@@ -138,7 +138,10 @@ public class SendMoney_Steps {
 
     @And("User enters remittance purpose")
     public void userEntersRemittancePurpose() {
-        SendMoneyPage.get_remittance_purpose_field_beneficiary().sendKeys(getRandomString(false,true,true,false,true,9));
+        SendMoneyPage.get_remittance_purpose_field_beneficiary().click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(family_support_option_at_reason_to_pay)));
+        SendMoneyPage.get_family_support_option_at_reason_to_pay().click();
+
     }
 
     @When("User clicks I agree terms and conditions box")
