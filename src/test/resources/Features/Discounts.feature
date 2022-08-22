@@ -103,3 +103,23 @@ Feature: Discounts Tests
     And User clicks I agree terms and conditions box
     And User clicks on redeem button
     Then User should see successfully avail the offer
+
+
+
+  @Discountstest @Discountstest08
+  Scenario: Successful Discount Flow at UAT from PAYD Card
+
+    Given User scrolls to the right
+    And User clicks on the discounts button at home page
+    And User selects category "Personal Care"
+    When User selects their sub-category "Gym"
+    And User searches for the desired vendor "Mr and Mrs Fitness"
+    When User clicks on the desired vendor "Mr and Mrs Fitness"
+    And User clicks on the second offer available
+    When User enters a valid six digit merchant pin for UAT
+    And User clicks on verify button after signup
+    When User enters the amount they want
+    And User clicks on the submit button
+    And User clicks I agree terms and conditions box
+    And User clicks on redeem button
+    Then User should see successfully avail the offer
