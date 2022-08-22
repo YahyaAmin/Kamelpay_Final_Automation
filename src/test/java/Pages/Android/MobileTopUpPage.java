@@ -7,6 +7,8 @@ import static Hooks.Base_Class.driver;
 
 public class MobileTopUpPage {
 
+    public static String top_up_etisalat_button = "//android.widget.TextView[@text='Top Up Etisalat']";
+    public static String top_up_du_prepaid_button = "//android.widget.TextView[@text='Top Up Du']";
     public static String search_existing_beneficiaries = "//android.widget.EditText";
 
     public static String search_service_providers = "//android.widget.EditText";
@@ -14,6 +16,7 @@ public class MobileTopUpPage {
     public static String next_button = "//android.widget.TextView[@text='Next']";
     public static String pay_now_button = "//android.widget.TextView[@text='Pay Now']";
 
+    public static String second_service_provider = "//android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.TextView[1]";
     public static String search_country = "//android.widget.EditText";
     public static String first_service_provider = "//android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.TextView[1]";
     public static String mobile_topup_button = "//android.widget.TextView[@text='Mobile Topup']";
@@ -75,5 +78,11 @@ public class MobileTopUpPage {
     public static AndroidElement get_rechrg_package(){return driver.findElement(By.xpath(second_recharge_package));}
 
     public static AndroidElement get_recharge_package_for_existing_beneficiary(){return driver.findElement(By.xpath(recharge_package_for_existing_beneficiary));}
+
+    public static AndroidElement get_top_up_du_prepaid_button(){return driver.findElement(By.xpath(top_up_du_prepaid_button));}
+
+    public static AndroidElement get_top_up_etisalat_button(){return driver.findElement(By.xpath(top_up_etisalat_button));}
+
+    public static AndroidElement get_second_service_provider(){return driver.findElement(By.xpath(second_service_provider));}
 
 }

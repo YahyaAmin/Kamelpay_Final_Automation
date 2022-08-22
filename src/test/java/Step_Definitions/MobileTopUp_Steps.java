@@ -1,6 +1,7 @@
 package Step_Definitions;
 
 import Pages.Android.MobileTopUpPage;
+import Pages.Android.MyCountry;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -200,4 +201,21 @@ public class MobileTopUp_Steps {
     }
 
 
+    @When("User clicks on Du Prepaid button")
+    public void userClicksOnDuPrepaidButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(top_up_du_prepaid_button)));
+        MobileTopUpPage.get_top_up_du_prepaid_button().click();
+    }
+
+    @When("User clicks on Top up Etisalat button")
+    public void userClicksOnTopUpEtisalatButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(top_up_etisalat_button)));
+        MobileTopUpPage.get_top_up_etisalat_button().click();
+    }
+
+    @And("User selects the second service provider")
+    public void userSelectsTheSecondServiceProvider() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(second_service_provider)));
+        MobileTopUpPage.get_second_service_provider().click();
+    }
 }

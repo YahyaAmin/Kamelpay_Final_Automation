@@ -440,4 +440,4 @@ Feature: My Country Tests
     And User clicks on Send Money at confirmation screen
     Then User should be able to successfully send money
 
-    
+
