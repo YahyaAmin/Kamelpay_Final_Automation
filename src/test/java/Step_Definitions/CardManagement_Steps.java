@@ -66,9 +66,10 @@ public class CardManagement_Steps {
     }
 
     @When("User scrolls to the right")
-    public void userScrollsToTheRight() {
+    public void userScrollsToTheRight() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(card_management_button)));
         scrollRight();
+        Thread.sleep(1000);
     }
 
     @And("User clicks on Payd card")
