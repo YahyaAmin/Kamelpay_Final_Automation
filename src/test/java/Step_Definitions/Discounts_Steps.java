@@ -92,4 +92,64 @@ public class Discounts_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(merchant_pin_field)));
         DiscountsPage.get_merchant_pin_field().sendKeys("");
     }
+
+    @Given("User clicks on the cafeteria button at home page")
+    public void userClicksOnTheCafeteriaButtonAtHomePage() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cafeteria_button)));
+        DiscountsPage.get_cafeteria_button().click();
+    }
+
+    @Given("User clicks on the discounts button at home page")
+    public void userClicksOnTheDiscountsButtonAtHomePage() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(discounts_button)));
+        DiscountsPage.get_discounts_button().click();
+    }
+
+    @And("User selects category {string}")
+    public void userSelectsCategory(String category) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(category_selector(category))));
+        DiscountsPage.get_category_selector(category).click();
+    }
+
+    @When("User selects their sub-category {string}")
+    public void userSelectsTheirSubCategory(String sub_ctgry) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(sub_category_selector(sub_ctgry))));
+        DiscountsPage.get_sub_category_selector(sub_ctgry).click();
+    }
+
+    @And("User clicks on the second offer available")
+    public void userClicksOnTheSecondOfferAvailable() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(offers_wait)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_offer)));
+        DiscountsPage.get_second_offer().click();
+    }
+
+    @When("User enters a valid six digit merchant pin for UAT")
+    public void userEntersAValidSixDigitMerchantPinForUAT() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(merchant_pin_field)));
+        DiscountsPage.get_merchant_pin_field().sendKeys("122418");
+    }
+
+    @When("User enters the amount they want")
+    public void userEntersTheAmountTheyWant() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(enter_amount_field_wait)));
+        DiscountsPage.get_amount_field().sendKeys(getRandomNumberLowerAndUpperBound(2,3));
+    }
+
+    @And("User clicks on the submit button")
+    public void userClicksOnTheSubmitButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(submit_button)));
+        DiscountsPage.get_submit_button().click();
+    }
+
+    @And("User clicks on redeem button")
+    public void userClicksOnRedeemButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(redeem_button)));
+        DiscountsPage.get_redeem_button().click();
+    }
+
+    @Then("User should see successfully avail the offer")
+    public void userShouldSeeSuccessfullyAvailTheOffer() throws InterruptedException {
+        Thread.sleep(4000);
+    }
 }
