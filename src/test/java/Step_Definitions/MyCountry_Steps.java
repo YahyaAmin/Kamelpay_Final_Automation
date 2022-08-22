@@ -271,4 +271,10 @@ public class MyCountry_Steps {
     public void userShouldSeeThatThisFunctionIsOnlyAvailableForPAYDCard() throws InterruptedException {
         Thread.sleep(4000);
     }
+
+    @And("User clicks on the first existing beneficiary at My Country")
+    public void userClicksOnTheFirstExistingBeneficiaryAtMyCountry() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_beneficiary_at_my_country)));
+        MyCountry.get_first_beneficiary_at_my_country().click();
+    }
 }

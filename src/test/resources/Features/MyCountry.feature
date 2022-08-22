@@ -429,6 +429,15 @@ Feature: My Country Tests
   @MyCountryTest @MyCountryTest25
   Scenario: User pays bill through My Beneficiary by PAYD Card
 
-    When User clicks on MY country button
-    And User scrolls to the right
-    And User clicks on My Beneficiaries Button
+    Given User scrolls to the right
+    And User clicks on MY country button
+    When User clicks on My Beneficiaries Button
+    And User clicks on the first existing beneficiary at My Country
+    When User enters the amount they want to send
+    And User scrolls down at exchange rate page
+    And User clicks on next button at forgot password page
+    When User clicks I agree terms and conditions box
+    And User clicks on Send Money at confirmation screen
+    Then User should be able to successfully send money
+
+    

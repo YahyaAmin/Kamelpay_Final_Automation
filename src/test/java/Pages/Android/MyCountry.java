@@ -11,6 +11,8 @@ public class MyCountry {
 
     public static WebDriverWait wait = new WebDriverWait(driver, 30);
 
+    public static String first_beneficiary_at_my_country = "//android.view.ViewGroup[3]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup";
+
     public static String my_beneficiaries_button = "//android.widget.TextView[@text='My Beneficiaries']";
 
     public static String account_title_field = "//android.view.ViewGroup[2]/android.widget.EditText";
@@ -65,5 +67,7 @@ public class MyCountry {
     public static AndroidElement get_HESCO_button(){return driver.findElement(By.xpath(HESCO_button));}
 
     public static AndroidElement get_my_beneficiaries_button(){return driver.findElement(By.xpath(my_beneficiaries_button));}
+
+    public static AndroidElement get_first_beneficiary_at_my_country(){return driver.findElement(By.xpath(first_beneficiary_at_my_country));}
 
 }
