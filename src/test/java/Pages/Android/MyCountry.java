@@ -11,6 +11,8 @@ public class MyCountry {
 
     public static WebDriverWait wait = new WebDriverWait(driver, 30);
 
+    public static String my_beneficiaries_button = "//android.widget.TextView[@text='My Beneficiaries']";
+
     public static String account_title_field = "//android.view.ViewGroup[2]/android.widget.EditText";
 
     public static String iban_no_field = "//android.view.ViewGroup[3]/android.widget.EditText";
@@ -61,5 +63,7 @@ public class MyCountry {
     public static AndroidElement get_ubl_fund_manage(){return driver.findElement(By.xpath(ubl_fund_manage));}
 
     public static AndroidElement get_HESCO_button(){return driver.findElement(By.xpath(HESCO_button));}
+
+    public static AndroidElement get_my_beneficiaries_button(){return driver.findElement(By.xpath(my_beneficiaries_button));}
 
 }

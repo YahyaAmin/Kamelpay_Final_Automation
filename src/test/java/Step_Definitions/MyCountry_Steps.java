@@ -260,4 +260,15 @@ public class MyCountry_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HESCO_button)));
         scrollDown();
     }
+
+    @And("User clicks on My Beneficiaries Button")
+    public void userClicksOnMyBeneficiariesButton() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(my_beneficiaries_button)));
+        MyCountry.get_my_beneficiaries_button().click();
+    }
+
+    @Then("User should see that this function is only available for PAYD card")
+    public void userShouldSeeThatThisFunctionIsOnlyAvailableForPAYDCard() throws InterruptedException {
+        Thread.sleep(4000);
+    }
 }

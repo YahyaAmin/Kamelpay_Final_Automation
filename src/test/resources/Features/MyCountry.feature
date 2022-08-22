@@ -416,3 +416,19 @@ Feature: My Country Tests
     And User enters a reference number at financial services
     And User clicks on next button
     Then User should see invalid reference
+
+
+  @MyCountryTest @MyCountryTest24
+  Scenario: User pays bill through My Beneficiary but through Centiv Card
+
+    When User clicks on MY country button
+    And User clicks on My Beneficiaries Button
+    Then User should see that this function is only available for PAYD card
+
+
+  @MyCountryTest @MyCountryTest25
+  Scenario: User pays bill through My Beneficiary by PAYD Card
+
+    When User clicks on MY country button
+    And User scrolls to the right
+    And User clicks on My Beneficiaries Button
