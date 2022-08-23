@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 )
 
 //Example of logical tags:     tags = "@smoketest or @regression"
-//@Signuptest or @Logintest or @CardManagement or @MobileTopUpCase or @PayBillTest or @Sendmoney or @Settingstest or @MyCountryTest
+//@Signuptest or @Logintest or @CardManagement or @MobileTopUpCase or @PayBillTest or @Sendmoney or @Settingstest or @MyCountryTest or @Discountstest
 
 //@Logintest @Signuptest @CardManagement @MobileTopUpCase
 //@PayBillTest @Settingstest @Sendmoney
