@@ -2,7 +2,7 @@ JDK version used = 18.0.0.1
 
 All config is in Base Class
 
-
+Appium Version = 1.22.3
 
 ================================================LOCATORS=============================================
 
