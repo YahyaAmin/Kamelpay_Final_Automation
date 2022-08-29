@@ -5,6 +5,7 @@ All config is in Base Class
 Appium Version = 1.22.3
 
 ================================================LOCATORS=============================================
+(//option[text()='1.3'])[1]
 
 //tagname[@class='value']
 
