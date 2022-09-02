@@ -2,9 +2,12 @@ JDK version used = 18.0.0.1
 
 All config is in Base Class
 
-
+Appium Version = 1.22.3
 
 ================================================LOCATORS=============================================
+(//option[text()='1.3'])[1]
+
+//div[@class='sc-db8c1937-0 eGmDjE sc-80d4314-3 iBtAhY']//span[@class='sc-7ab21ed2-1 jGRxWM']
 
 //tagname[@class='value']
 
