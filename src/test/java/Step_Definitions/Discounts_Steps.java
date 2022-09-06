@@ -7,6 +7,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -151,5 +154,29 @@ public class Discounts_Steps {
     @Then("User should see successfully avail the offer")
     public void userShouldSeeSuccessfullyAvailTheOffer() throws InterruptedException {
         Thread.sleep(4000);
+    }
+
+
+    @And("User scrolls down to their desired deal")
+    public void userScrollsDownToTheirDesiredDeal() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(offers_wait)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_offer)));
+
+//        Actions actions = new Actions(driver);
+//        actions.moveToElement(get_mr_and_miss_gym_package());
+//        actions.perform();
+
+//        TouchActions action = new TouchActions(driver);
+//        action.scroll(get_offers_wait(), 10, 100);
+//        action.perform();
+
+
+
+    }
+
+    @And("User clicks on the desired deal")
+    public void userClicksOnTheDesiredDeal() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mr_and_miss_gym_package)));
+        DiscountsPage.get_mr_and_miss_gym_package().click();
     }
 }

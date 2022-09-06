@@ -93,9 +93,10 @@ Feature: Discounts Tests
     Given User clicks on the discounts button at home page
     And User selects category "Personal Care"
     When User selects their sub-category "Gym"
-    And User searches for the desired vendor "Mr and Mrs Fitness"
-    When User clicks on the desired vendor "Mr and Mrs Fitness"
-    And User clicks on the second offer available
+    And User searches for the desired vendor "Mr & Mrs Fitness"
+    When User clicks on the desired vendor "Mr & Mrs Fitness"
+    And User scrolls down to their desired deal
+    And User clicks on the desired deal
     When User enters a valid six digit merchant pin for UAT
     And User clicks on verify button after signup
     When User enters the amount they want

@@ -4,19 +4,12 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidElement;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-
 
 import java.net.URL;
 import java.io.File;
-
-import static Hooks.RunnerForGoodWindows.mvnCleanVerify;
-import static Hooks.RunnerForGoodWindows.mvnCommandRunner;
 
 
 public class Base_Class {
@@ -45,7 +38,7 @@ public class Base_Class {
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
         caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi");
         caps.setCapability(MobileCapabilityType.UDID, "7664beac0820");
-        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "30");
+        caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "20");
         caps.setCapability(MobileCapabilityType.APP,finalpath);
         caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 

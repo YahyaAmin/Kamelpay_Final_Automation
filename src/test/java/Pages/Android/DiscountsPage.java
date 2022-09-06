@@ -18,6 +18,8 @@ public class DiscountsPage {
     public static String merchant_pin_field = "//android.view.ViewGroup[1]/android.widget.EditText";
     public static String pharmacy_button = "//android.widget.TextView[@text='Pharmacy']";
 
+    public static String mr_and_miss_gym_package = "//android.widget.TextView[@text='Ncjjfng']";
+
     public static String travel_agency_button = "//android.widget.TextView[@text='Travel Agency']";
 
     public static String offers_wait = "//android.widget.TextView[@text='Offers']";
@@ -68,5 +70,7 @@ public class DiscountsPage {
     public static AndroidElement get_submit_button(){return driver.findElement(By.xpath(submit_button));}
 
     public static AndroidElement get_redeem_button(){return driver.findElement(By.xpath(redeem_button));}
+
+    public static AndroidElement get_mr_and_miss_gym_package(){return driver.findElement(By.xpath(mr_and_miss_gym_package));}
 
 }
