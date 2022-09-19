@@ -19,14 +19,14 @@ public class LoginPage{
 
     public static String phone_no_on_mainscreen = "//android.view.ViewGroup[1]/android.widget.EditText";
 
-    private static String password_on_mainscreen_xpath = "//android.widget.EditText[@text='Enter your Password']";
+    private static String password_on_mainscreen_xpath = "(//android.widget.EditText)[2]";
 
     public static String eid_field_forgot_pass = "//android.widget.EditText[@index='1']";
     public static String dont_allow_biometric_button_xpath = "//android.widget.TextView[@text='No, Only Password Access']";
 
     public static String three_lines_home_button_at_homescreen = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
 
-    public static String my_profile_button = "//android.view.ViewGroup[2]/android.view.ViewGroup[4]";
+    public static String my_profile_button = "//android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.widget.TextView";
 
     public static String settings_button_sidebar = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]";
 
@@ -67,28 +67,28 @@ public class LoginPage{
 
     public static String forgot_password_at_login_screen = "//android.widget.TextView[@text='Forgot Password?']";
 
-    public static String back_button_top_left = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView";
+    public static String back_button_top_left = "(//android.widget.TextView)[1]";
 
     public static String e_id_field_at_forgot_password_screen = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText";
 
-    public static String phone_number_field_at_forgot_password_screen = "//android.widget.EditText[@index='1']";
+    public static String phone_number_field_at_forgot_password_screen = "//android.widget.EditText";
 
     private static String next_button_at_forgot_password_screen = "//android.widget.TextView[@text='Next']";
 
-    private static String eye_button_to_view_password_login_screen = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]";
+    private static String eye_button_to_view_password_login_screen = "//android.view.ViewGroup[2]/android.widget.TextView";
 
     public static String change_password_button_settings = "//android.widget.TextView[@text='Change Password']";
 
     public static String cant_login_button_on_pin_login_screen = "//android.widget.TextView[@text='Login']";
 
-    public static String otp_1st_digit_at_forgot_password_flow = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText";
+    public static String otp_1st_digit_at_forgot_password_flow = "//android.view.ViewGroup[1]/android.widget.EditText";
 
     public static String enter_new_password_forgot_password_flow = "//android.widget.EditText[@text='Enter your New password']";
 
     private static String confirm_new_password_forgot_password_flow = "//android.widget.EditText[@text='Enter your new confirm password']";
 
 
-    private static String view_password_button_forgot_password_flow = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.widget.TextView";
+    private static String view_password_button_forgot_password_flow = "(//android.view.ViewGroup[2]/android.widget.TextView)[1]";
 
     private static String change_button_forgot_password_flow = "//android.widget.TextView[@text='Change']";
 

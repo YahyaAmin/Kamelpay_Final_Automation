@@ -261,7 +261,7 @@ public class SignupSteps {
     @When("User enters email with spaces")
     public void userEntersEmailWithSpaces() throws InterruptedException {
         Thread.sleep(1000);
-        SignupPage.get_email_field_at_signup().sendKeys(getRandomString(true,true,true,true,false,10)+" "+"gmail.com");
+        SignupPage.get_email_field_at_signup().sendKeys(getRandomString(true,true,true,true,false,10)+" "+"@gmail.com");
     }
 
     @And("User enters invalid OTP at register yourself")

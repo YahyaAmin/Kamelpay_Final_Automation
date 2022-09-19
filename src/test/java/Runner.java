@@ -10,14 +10,17 @@ import org.junit.runner.RunWith;
                   "pretty", "json:target/Reports/JSONReport/report.json",
                   "pretty", "junit:target/Reports/XMLReports/report.xml",
                   "json:target/cucumber.json" },
-        tags = "@Signuptest"
+        tags = "@MobileTopUpCase"
 )
 
 //Example of logical tags:     tags = "@smoketest or @regression"
 //@Signuptest or @Logintest or @CardManagement or @MobileTopUpCase or @PayBillTest or @Sendmoney or @Settingstest or @MyCountryTest or @Discountstest
 
-//@Signuptest
+//@Signuptest  @Logintest @CardManagement @MobileTopUpCase @PayBillTest
+//@Sendmoney @Settingstest @MyCountryTest
 
 public class Runner  {
 
 }
+
+

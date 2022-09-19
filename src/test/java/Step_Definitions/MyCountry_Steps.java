@@ -273,8 +273,9 @@ public class MyCountry_Steps {
     }
 
     @And("User clicks on the first existing beneficiary at My Country")
-    public void userClicksOnTheFirstExistingBeneficiaryAtMyCountry() {
+    public void userClicksOnTheFirstExistingBeneficiaryAtMyCountry() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(first_beneficiary_at_my_country)));
+        Thread.sleep(1000);
         MyCountry.get_first_beneficiary_at_my_country().click();
     }
 }

@@ -42,12 +42,14 @@ public class LoginSteps {
     @When("User enters correct phone number")
     public void userEntersUsernameAndPassword() {
          wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_no_on_mainscreen)));
+        LoginPage.getphone_no_mainscreen().clear();
          LoginPage.getphone_no_mainscreen().sendKeys("505636092");
     }
 
 
     @And("User enters correct password")
     public void userEntersCorrectPassword() throws InterruptedException {
+        LoginPage.getpassword_mainscreen().clear();
         LoginPage.getpassword_mainscreen().sendKeys("Password123!");
         LoginPage.get_viewpassword_mainscreen().click();
         Thread.sleep(2000);
@@ -157,7 +159,8 @@ public class LoginSteps {
     }
 
     @And("User enters a valid phone number")
-    public void userEntersAValidPhoneNumber() {
+    public void userEntersAValidPhoneNumber() throws InterruptedException {
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(phone_number_field_at_forgot_password_screen)));
         LoginPage.getphonenumberfield_forgotpassword().clear();
         LoginPage.getphonenumberfield_forgotpassword().sendKeys("505636092");
@@ -169,8 +172,10 @@ public class LoginSteps {
         LoginPage.getnextbutton_forgotpasswordfield().click();
     }
 
+
     @And("User enters valid OTP")
-    public void userEntersValidOTP() {
+    public void userEntersValidOTP() throws InterruptedException {
+        Thread.sleep(1000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(otp_1st_digit_at_forgot_password_flow)));
         LoginPage.getotp1stdigit_forgotpasswordflow().sendKeys("666666");
     }
@@ -283,6 +288,7 @@ public class LoginSteps {
 
     @Then("User resets password to original password")
     public void userResetsPasswordToOriginalPassword() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(my_profile_button)));
         LoginPage.getmyprofilebutton().click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(passwords_and_biometrics_button)));
         LoginPage.getpasswordsandbiomterics().click();
@@ -311,3 +317,4 @@ public class LoginSteps {
         LoginPage.get_eid_field_forgot_pass().sendKeys("784197848020307");
     }
 }
+

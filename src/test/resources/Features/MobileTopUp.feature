@@ -109,67 +109,67 @@ Feature: Mobile Top Up
     Then User shouldnt be able to proceed
 
 
-  @MobileTopUpCase @MobileTopUpCase09
-  Scenario: User clicks on Du Prepaid button at Centiv Card and topup successfully
+  #@MobileTopUpCase @MobileTopUpCase09
+  #Scenario: User clicks on Du Prepaid button at Centiv Card and topup successfully
 
-    When User clicks on Du Prepaid button
-    When User enters a valid phone number at topup
-    And User clicks on next button at recharge page
-    And User selects the first service provider
-    When User selects a recharge package
-    And User clicks on next button at recharge page
-    When User clicks on I agree terms and conditions checkbox at Mobile Top Up
-    And User clicks on pay now button
-    When User enters valid OTP at send money flow
-    And User clicks on next button at OTP screen
-    Then User should be able to topup successfully
-
-
-  @MobileTopUpCase @MobileTopUpCase10
-  Scenario: User clicks on Etisalat button at Centiv Card and topup successfully
-
-    When User clicks on Top up Etisalat button
-    When User enters a valid phone number at topup
-    And User clicks on next button at recharge page
-    And User selects the second service provider
-    When User selects a recharge package
-    And User clicks on next button at recharge page
-    When User clicks on I agree terms and conditions checkbox at Mobile Top Up
-    And User clicks on pay now button
-    When User enters valid OTP at send money flow
-    And User clicks on next button at OTP screen
-    Then User should be able to topup successfully
+    #When User clicks on Du Prepaid button
+    #When User enters a valid phone number at topup
+    #And User clicks on next button at recharge page
+    #And User selects the first service provider
+    #When User selects a recharge package
+    #And User clicks on next button at recharge page
+    #When User clicks on I agree terms and conditions checkbox at Mobile Top Up
+    #And User clicks on pay now button
+    #When User enters valid OTP at send money flow
+    #And User clicks on next button at OTP screen
+    #Then User should be able to topup successfully
 
 
-  @MobileTopUpCase @MobileTopUpCase11
-  Scenario: User clicks on Du Prepaid button at Payd Card and topup successfully
+  #@MobileTopUpCase @MobileTopUpCase10
+  #Scenario: User clicks on Etisalat button at Centiv Card and topup successfully
 
-    Given User scrolls to the right
-    When User clicks on Du Prepaid button
-    When User enters a valid phone number at topup
-    And User clicks on next button at recharge page
-    And User selects the first service provider
-    When User selects a recharge package
-    And User clicks on next button at recharge page
-    When User clicks on I agree terms and conditions checkbox at Mobile Top Up
-    And User clicks on pay now button
-    When User enters valid OTP at send money flow
-    And User clicks on next button at OTP screen
-    Then User should be able to topup successfully
+   # When User clicks on Top up Etisalat button
+   # When User enters a valid phone number at topup
+    #And User clicks on next button at recharge page
+    #And User selects the second service provider
+  #  When User selects a recharge package
+   # And User clicks on next button at recharge page
+    #When User clicks on I agree terms and conditions checkbox at Mobile Top Up
+    #And User clicks on pay now button
+  #  When User enters valid OTP at send money flow
+   # And User clicks on next button at OTP screen
+    #Then User should be able to topup successfully
 
 
-  @MobileTopUpCase @MobileTopUpCase12
-  Scenario: User clicks on Etisalat button at PAYD card and topup successfully
+  #@MobileTopUpCase @MobileTopUpCase11
+  #Scenario: User clicks on Du Prepaid button at Payd Card and topup successfully
 
-    Given User scrolls to the right
-    When User clicks on Top up Etisalat button
-    When User enters a valid phone number at topup
-    And User clicks on next button at recharge page
-    And User selects the second service provider
-    When User selects a recharge package
-    And User clicks on next button at recharge page
-    When User clicks on I agree terms and conditions checkbox at Mobile Top Up
-    And User clicks on pay now button
-    When User enters valid OTP at send money flow
-    And User clicks on next button at OTP screen
-    Then User should be able to topup successfully
+  #  Given User scrolls to the right
+   # When User clicks on Du Prepaid button
+    #When User enters a valid phone number at topup
+  #  And User clicks on next button at recharge page
+   # And User selects the first service provider
+    #When User selects a recharge package
+  #  And User clicks on next button at recharge page
+   # When User clicks on I agree terms and conditions checkbox at Mobile Top Up
+    #And User clicks on pay now button
+  #  When User enters valid OTP at send money flow
+   # And User clicks on next button at OTP screen
+    #Then User should be able to topup successfully
+
+
+  #@MobileTopUpCase @MobileTopUpCase12
+  #Scenario: User clicks on Etisalat button at PAYD card and topup successfully
+
+  #  Given User scrolls to the right
+   # When User clicks on Top up Etisalat button
+    #When User enters a valid phone number at topup
+  #  And User clicks on next button at recharge page
+   # And User selects the second service provider
+    #When User selects a recharge package
+  #  And User clicks on next button at recharge page
+   # When User clicks on I agree terms and conditions checkbox at Mobile Top Up
+    #And User clicks on pay now button
+  #  When User enters valid OTP at send money flow
+   # And User clicks on next button at OTP screen
+    #Then User should be able to topup successfully

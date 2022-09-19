@@ -11,7 +11,7 @@ public class MyCountry {
 
     public static WebDriverWait wait = new WebDriverWait(driver, 30);
 
-    public static String first_beneficiary_at_my_country = "//android.view.ViewGroup[3]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup";
+    public static String first_beneficiary_at_my_country = "(//android.view.ViewGroup[2]/android.view.ViewGroup)[2]";
 
     public static String my_beneficiaries_button = "//android.widget.TextView[@text='My Beneficiaries']";
 

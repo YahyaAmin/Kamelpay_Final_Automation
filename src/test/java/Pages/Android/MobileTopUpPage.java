@@ -23,16 +23,16 @@ public class MobileTopUpPage {
 
     public static String add_topup_button = "//android.widget.TextView[@text='Add Topup']";
 
-    public static String existing_beneficary = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup";
+    public static String existing_beneficary = "(//android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.ImageView)[3]";
 
     public static String recharge_package_for_existing_beneficiary = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.TextView";
     public static String second_recharge_package = "//android.view.ViewGroup[3]/android.widget.TextView";
 
     public static String phone_number_field_at_mobile_topup = "//android.view.ViewGroup[1]/android.widget.EditText";
 
-    public static String agree_terms_checkbox = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]";
+    public static String agree_terms_checkbox = "//android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]";
 
-    public static String save_account_to_beneficary = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]";
+    public static String save_account_to_beneficary = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]";
 
     public static String country_selector_function(String user_defined_country) {return "//android.widget.TextView[@text='"+user_defined_country + "']";}
 

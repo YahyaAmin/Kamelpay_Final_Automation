@@ -144,10 +144,10 @@ public class MobileTopUp_Steps {
     public void userSearchesForExistingBeneficiaries() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(existing_beneficary)));
         Thread.sleep(1000);
-        MobileTopUpPage.get_search_existing_beneficiaries().sendKeys("khizer");
+        MobileTopUpPage.get_search_existing_beneficiaries().sendKeys("talha");
         Thread.sleep(3000);
         MobileTopUpPage.get_search_existing_beneficiaries().clear();
-        MobileTopUpPage.get_search_existing_beneficiaries().sendKeys("wasif");
+        MobileTopUpPage.get_search_existing_beneficiaries().sendKeys("aizaz");
         Thread.sleep(3000);
         MobileTopUpPage.get_search_existing_beneficiaries().clear();
         MobileTopUpPage.get_search_existing_beneficiaries().sendKeys("yahya");
