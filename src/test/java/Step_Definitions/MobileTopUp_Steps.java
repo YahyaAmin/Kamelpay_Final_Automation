@@ -25,8 +25,9 @@ public class MobileTopUp_Steps {
     }
 
     @And("User clicks on Add Topup button")
-    public void userClicksOnAddTopupButton() {
+    public void userClicksOnAddTopupButton() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(add_topup_button)));
+        Thread.sleep(1000);
         MobileTopUpPage.get_add_topup_button().click();
     }
 
