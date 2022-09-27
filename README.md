@@ -64,4 +64,14 @@ git push origin master
 
 For pulling:
 git fetch origin other-branch && git merge other-branch
+
+For updating other branch:
+
+git checkout b1
+Then merge:
+
+git merge origin/master
+Then push:
+
+git push origin b1
 ============================
