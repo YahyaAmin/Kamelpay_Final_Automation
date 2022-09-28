@@ -6,10 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Kamelpay_Final_Automation" />
         <module name="untitled" />
-        <module name="KAMELPAY_FINAL" />
-        <module name="Test" />
-        <module name="KamelPay Final Automation" />
       </profile>
     </annotationProcessing>
   </component>

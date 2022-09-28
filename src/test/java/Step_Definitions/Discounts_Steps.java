@@ -41,15 +41,15 @@ public class Discounts_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popular_sub_category_wait)));
         Thread.sleep(500);
 
-        if (get_pharmacy_button().isDisplayed() == true) {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(pharmacy_button)));
-            DiscountsPage.get_pharmacy_button().click();
-        }
-        else {
+        //System.out.println("Pharmacy Button INVISIBLE?: " + ExpectedConditions.invisibilityOfElementLocated(By.xpath(pharmacy_button)));
+
+        if (driver.findElements(By.xpath(pharmacy_button)).isEmpty()){
             scrollRightDiscounts();
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(pharmacy_button)));
-            DiscountsPage.get_pharmacy_button().click();
+            System.out.println("IiNF conidition is working fine");
         }
+
+        Thread.sleep(500);
+        get_pharmacy_button().click();
     }
 
 
@@ -94,16 +94,17 @@ public class Discounts_Steps {
     public void userClicksOnTravelAgencyButtonAtHomePage() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popular_sub_category_wait)));
         Thread.sleep(500);
+        //System.out.println("Travel Agency Invisible?: "+ ExpectedConditions.invisibilityOfElementLocated(By.xpath(travel_agency_button)));
 
-        if (get_travel_agency_button().isDisplayed() == true) {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(travel_agency_button)));
-            DiscountsPage.get_travel_agency_button().click();
-        }
-        else {
+
+        if (driver.findElements(By.xpath(travel_agency_button)).isEmpty()){
             scrollRightDiscounts();
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(travel_agency_button)));
-            DiscountsPage.get_travel_agency_button().click();
+            System.out.println("INf conidition is working fine");
         }
+
+        Thread.sleep(500);
+        DiscountsPage.get_travel_agency_button().click();
+
     }
 
     @When("User enters an invalid merchant pin with special characters")
@@ -123,15 +124,15 @@ public class Discounts_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popular_sub_category_wait)));
         Thread.sleep(500);
 
-        if (get_cafeteria_button().isDisplayed() == true) {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cafeteria_button)));
-            DiscountsPage.get_cafeteria_button().click();
-        }
-        else {
+       // System.out.println("Cafeteria button INVISIBLE?: " + ExpectedConditions.invisibilityOfElementLocated(By.xpath(cafeteria_button)));
+
+        if (driver.findElements(By.xpath(cafeteria_button)).isEmpty()){
             scrollRightDiscounts();
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cafeteria_button)));
-            DiscountsPage.get_cafeteria_button().click();
+            System.out.println("INf conidition is working fine");
         }
+        Thread.sleep(500);
+        DiscountsPage.get_cafeteria_button().click();
+
     }
 
     @Given("User clicks on the discounts button at home page")
@@ -245,9 +246,3 @@ public class Discounts_Steps {
         Thread.sleep(1000);
     }
 }
-
-
-
-
-
-

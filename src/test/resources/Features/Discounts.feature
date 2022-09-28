@@ -137,3 +137,8 @@ Feature: Discounts Tests
     Then User should see successfully avail the offer
 
 
+ # @Discountstest @Discountstest09
+ # Scenario: Check Scroll
+
+  #  And User clicks on the discounts button at home page
+  #  When User scrolls to the right at discounts page

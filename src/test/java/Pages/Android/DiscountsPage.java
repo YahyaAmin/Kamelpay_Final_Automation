@@ -85,4 +85,5 @@ public class DiscountsPage {
 
     public static AndroidElement get_wait_deals_gym(){return driver.findElement(By.xpath(wait_deals_gym));}
 
+
 }
