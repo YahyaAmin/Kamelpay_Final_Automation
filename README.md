@@ -47,3 +47,31 @@ Appium Inspector Properties
 }
 
 ===========================================================================
+git checkout master
+Now pull the latest changes in master,
+
+git pull origin master
+Merge with the testBranch
+
+git add . (if applicable)
+
+git merge testBranch
+Push the changes to master
+
+git push origin master
+
+
+
+For pulling:
+git fetch origin other-branch && git merge other-branch
+
+For updating other branch:
+
+git checkout b1
+Then merge:
+
+git merge origin/master
+Then push:
+
+git push origin b1
+============================
