@@ -15,6 +15,7 @@ Feature: Discounts Tests
   @Discountstest @Discountstest01
   Scenario: User clicks on Pharmacy at Centiv Card and enters six digits merchant pin
 
+    Given User clicks on the discounts button at home page
     Given User clicks on the pharmacy button at home page
     And User searches for the desired vendor "Golden Falcon Pharmacy"
     When User clicks on the desired vendor "Golden Falcon Pharmacy"
@@ -28,6 +29,7 @@ Feature: Discounts Tests
   Scenario: User clicks on Pharmacy at Payd Card and enters merchant pin with spaces
 
     Given User scrolls to the right
+    Given User clicks on the discounts button at home page
     Given User clicks on the pharmacy button at home page
     And User searches for the desired vendor "Golden Falcon Pharmacy"
     When User clicks on the desired vendor "Golden Falcon Pharmacy"
@@ -40,6 +42,7 @@ Feature: Discounts Tests
   @Discountstest @Discountstest03
   Scenario: User clicks on Travel Agency at Centiv Card and enters merchant pin with special characters
 
+    Given User clicks on the discounts button at home page
     Given User clicks on Travel Agency button at home page
     And User searches for the desired vendor "Flymode Travel & Tourism"
     When User clicks on the desired vendor "Flymode Travel & Tourism"
@@ -53,6 +56,7 @@ Feature: Discounts Tests
   Scenario: User clicks on Travel Agency at PAYD Card and leaves merchant pin empty
 
     Given User scrolls to the right
+    Given User clicks on the discounts button at home page
     And User clicks on Travel Agency button at home page
     And User searches for the desired vendor "Flymode Travel & Tourism"
     When User clicks on the desired vendor "Flymode Travel & Tourism"
@@ -65,6 +69,7 @@ Feature: Discounts Tests
   @Discountstest @Discountstest05
   Scenario: User clicks on Cafeteria at Centiv card and enters six digits merchant pin
 
+    Given User clicks on the discounts button at home page
     Given User clicks on the cafeteria button at home page
     And User searches for the desired vendor "Chaya Kada Cafeteria"
     When User clicks on the desired vendor "Chaya Kada Cafeteria"
@@ -78,6 +83,7 @@ Feature: Discounts Tests
   Scenario: User clicks on Cafeteria at Payd card and enters six digits merchant pin
 
     Given User scrolls to the right
+    Given User clicks on the discounts button at home page
     And User clicks on the cafeteria button at home page
     And User searches for the desired vendor "Chaya Kada Cafeteria"
     When User clicks on the desired vendor "Chaya Kada Cafeteria"
@@ -91,11 +97,13 @@ Feature: Discounts Tests
   Scenario: Successful Discount Flow at UAT from Centiv Card
 
     Given User clicks on the discounts button at home page
+    #The step below is not dynamic
+    When User scrolls down to category "Personal Care"
     And User selects category "Personal Care"
     When User selects their sub-category "Gym"
     And User searches for the desired vendor "Mr & Mrs Fitness"
     When User clicks on the desired vendor "Mr & Mrs Fitness"
-    And User scrolls down to their desired deal
+    And User scrolls down
     And User clicks on the desired deal
     When User enters a valid six digit merchant pin for UAT
     And User clicks on verify button after signup
@@ -112,10 +120,12 @@ Feature: Discounts Tests
 
     Given User scrolls to the right
     And User clicks on the discounts button at home page
+    When User scrolls down to category "Personal Care"
     And User selects category "Personal Care"
     When User selects their sub-category "Gym"
     And User searches for the desired vendor "Mr and Mrs Fitness"
     When User clicks on the desired vendor "Mr and Mrs Fitness"
+    And User scrolls down
     And User clicks on the second offer available
     When User enters a valid six digit merchant pin for UAT
     And User clicks on verify button after signup
@@ -124,3 +134,5 @@ Feature: Discounts Tests
     And User clicks I agree terms and conditions box
     And User clicks on redeem button
     Then User should see successfully avail the offer
+
+

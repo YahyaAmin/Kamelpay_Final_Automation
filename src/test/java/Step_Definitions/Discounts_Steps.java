@@ -2,6 +2,7 @@ package Step_Definitions;
 
 import Pages.Android.DiscountsPage;
 import Tests.Password_Builder;
+import io.appium.java_client.MobileBy;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static Hooks.Base_Class.driver;
 import static Pages.Android.DiscountsPage.*;
 import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
+import static Tests.Useful_functions.scrollRightDiscounts;
 
 public class Discounts_Steps {
 
@@ -36,15 +38,26 @@ public class Discounts_Steps {
     public WebDriverWait wait = new WebDriverWait(driver, 30);
 
     @Given("User clicks on the pharmacy button at home page")
-    public void userClicksOnThePharmacyButtonAtHomePage() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(pharmacy_button)));
-        DiscountsPage.get_pharmacy_button().click();
+    public void userClicksOnThePharmacyButtonAtHomePage() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popular_sub_category_wait)));
+        Thread.sleep(500);
+
+        if (get_pharmacy_button().isDisplayed() == true) {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(pharmacy_button)));
+            DiscountsPage.get_pharmacy_button().click();
+        }
+        else {
+            scrollRightDiscounts();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(pharmacy_button)));
+            DiscountsPage.get_pharmacy_button().click();
+        }
     }
 
 
     @And("User searches for the desired vendor {string}")
-    public void userSearchesForTheDesiredVendor(String vendor) {
+    public void userSearchesForTheDesiredVendor(String vendor) throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(search_vendors_field)));
+        Thread.sleep(1000);
         DiscountsPage.get_search_vendors_field().sendKeys(vendor);
     }
 
@@ -79,9 +92,19 @@ public class Discounts_Steps {
     }
 
     @Given("User clicks on Travel Agency button at home page")
-    public void userClicksOnTravelAgencyButtonAtHomePage() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(travel_agency_button)));
-        DiscountsPage.get_travel_agency_button().click();
+    public void userClicksOnTravelAgencyButtonAtHomePage() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popular_sub_category_wait)));
+        Thread.sleep(500);
+
+        if (get_travel_agency_button().isDisplayed() == true) {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(travel_agency_button)));
+            DiscountsPage.get_travel_agency_button().click();
+        }
+        else {
+            scrollRightDiscounts();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(travel_agency_button)));
+            DiscountsPage.get_travel_agency_button().click();
+        }
     }
 
     @When("User enters an invalid merchant pin with special characters")
@@ -97,15 +120,30 @@ public class Discounts_Steps {
     }
 
     @Given("User clicks on the cafeteria button at home page")
-    public void userClicksOnTheCafeteriaButtonAtHomePage() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cafeteria_button)));
-        DiscountsPage.get_cafeteria_button().click();
+    public void userClicksOnTheCafeteriaButtonAtHomePage() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popular_sub_category_wait)));
+        Thread.sleep(500);
+
+        if (get_cafeteria_button().isDisplayed() == true) {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cafeteria_button)));
+            DiscountsPage.get_cafeteria_button().click();
+        }
+        else {
+            scrollRightDiscounts();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cafeteria_button)));
+            DiscountsPage.get_cafeteria_button().click();
+        }
     }
 
     @Given("User clicks on the discounts button at home page")
     public void userClicksOnTheDiscountsButtonAtHomePage() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(discounts_button)));
         DiscountsPage.get_discounts_button().click();
+        //allow location while using app
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(while_using_app_button_id)));
+        DiscountsPage.get_while_using_app_button_id().click();
+
+
     }
 
     @And("User selects category {string}")
@@ -179,4 +217,31 @@ public class Discounts_Steps {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mr_and_miss_gym_package)));
         DiscountsPage.get_mr_and_miss_gym_package().click();
     }
+
+
+    @When("User scrolls to the right at discounts page")
+    public void userScrollsToTheRightAtDiscountsPage() throws InterruptedException {
+        Thread.sleep(5000);
+        scrollRightDiscounts();
+        Thread.sleep(4000);
+
+    }
+
+    @When("User scrolls down to category {string}")
+    public void userScrollsDownToCategory(String category) throws InterruptedException {
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(popular_sub_category_wait)));
+
+        driver.findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true))" +
+                        ".scrollIntoView(new UiSelector().text(\"Personal Care\"))"));
+
+        Thread.sleep(500);
+    }
 }
+
+
+
+
+
+

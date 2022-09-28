@@ -14,11 +14,13 @@ public class DiscountsPage {
     public static String amount_field = "//android.widget.EditText";
     public static String cafeteria_button = "//android.widget.TextView[@text='Cafeteria']";
 
-    public static String discounts_button = "//android.widget.TextView[@text='Discounts']";
+    public static String discounts_button = "//android.widget.TextView[@text='Kamel Savings']";
     public static String merchant_pin_field = "//android.view.ViewGroup[1]/android.widget.EditText";
     public static String pharmacy_button = "//android.widget.TextView[@text='Pharmacy']";
 
-    public static String mr_and_miss_gym_package = "//android.widget.TextView[@text='Ncjjfng']";
+    public static String popular_sub_category_wait = "//android.widget.TextView[@text='Popular Sub Categories']";
+
+    public static String mr_and_miss_gym_package = "//android.widget.TextView[@text='Flat 10 AED off']";
 
     public static String travel_agency_button = "//android.widget.TextView[@text='Travel Agency']";
 
@@ -28,6 +30,8 @@ public class DiscountsPage {
     public static String second_offer = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup";
 
     public static String search_vendors_field = "//android.widget.EditText";
+
+    public static String while_using_app_button_id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button";
 
     public static String enter_amount_field_wait = "//android.widget.TextView[@text='Enter Amount']";
 
@@ -73,4 +77,7 @@ public class DiscountsPage {
 
     public static AndroidElement get_mr_and_miss_gym_package(){return driver.findElement(By.xpath(mr_and_miss_gym_package));}
 
+    public static AndroidElement get_while_using_app_button_id(){return driver.findElement(By.id(while_using_app_button_id));}
+
+    public static AndroidElement get_popular_sub_category_wait(){return driver.findElement(By.xpath(popular_sub_category_wait));}
 }

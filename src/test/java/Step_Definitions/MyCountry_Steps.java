@@ -4,6 +4,7 @@ import Pages.Android.MyCountry;
 import Pages.Android.PayBill;
 import Pages.Android.SendMoneyPage;
 import Tests.Password_Builder;
+import io.appium.java_client.MobileBy;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -258,7 +259,9 @@ public class MyCountry_Steps {
     @And("User scrolls down at My country page again")
     public void userScrollsDownAtMyCountryPageAgain() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HESCO_button)));
-        scrollDown();
+        driver.findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true))" +
+                        ".scrollIntoView(new UiSelector().text(\"Askari Investments\"))"));
     }
 
     @And("User clicks on My Beneficiaries Button")
