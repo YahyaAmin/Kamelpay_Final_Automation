@@ -31,6 +31,8 @@ public class DiscountsPage {
 
     public static String search_vendors_field = "//android.widget.EditText";
 
+    public static String wait_deals_gym = "//android.widget.TextView[@text='15% Off']";
+
     public static String while_using_app_button_id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button";
 
     public static String enter_amount_field_wait = "//android.widget.TextView[@text='Enter Amount']";
@@ -80,4 +82,7 @@ public class DiscountsPage {
     public static AndroidElement get_while_using_app_button_id(){return driver.findElement(By.id(while_using_app_button_id));}
 
     public static AndroidElement get_popular_sub_category_wait(){return driver.findElement(By.xpath(popular_sub_category_wait));}
+
+    public static AndroidElement get_wait_deals_gym(){return driver.findElement(By.xpath(wait_deals_gym));}
+
 }

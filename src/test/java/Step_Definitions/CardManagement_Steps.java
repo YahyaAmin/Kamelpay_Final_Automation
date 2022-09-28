@@ -65,6 +65,12 @@ public class CardManagement_Steps {
         Thread.sleep(2000);
     }
 
+    @When("User scrolls down")
+    public void userScrollsDown() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(centiv_card_at_homescreen)));
+        scrollDown_CardManagement();
+    }
+
     @When("User scrolls to the right")
     public void userScrollsToTheRight() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(card_management_button)));
@@ -89,11 +95,7 @@ public class CardManagement_Steps {
         CardManagementPage.get_changepin_cardmanagement().click();
     }
 
-    @When("User scrolls down")
-    public void userScrollsDown() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(centiv_card_at_homescreen)));
-        scrollDown_CardManagement();
-    }
+
 
     String pin_for_card_1st = getRandomNumberLowerAndUpperBound(1,2);
     String pin_for_card_2nd = getRandomNumberLowerAndUpperBound(1,2);

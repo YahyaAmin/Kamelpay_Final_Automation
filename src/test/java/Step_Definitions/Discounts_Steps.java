@@ -16,8 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static Hooks.Base_Class.driver;
 import static Pages.Android.DiscountsPage.*;
-import static Tests.Useful_functions.getRandomNumberLowerAndUpperBound;
-import static Tests.Useful_functions.scrollRightDiscounts;
+import static Tests.Useful_functions.*;
 
 public class Discounts_Steps {
 
@@ -237,6 +236,13 @@ public class Discounts_Steps {
                         ".scrollIntoView(new UiSelector().text(\"Personal Care\"))"));
 
         Thread.sleep(500);
+    }
+
+    @And("User scrolls down at the Mr and Mrs fitness page")
+    public void userScrollsDownAtTheMrAndMrsFitnessPage() throws InterruptedException {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(wait_deals_gym)));
+        scrollDownMrandMrs();
+        Thread.sleep(1000);
     }
 }
 
