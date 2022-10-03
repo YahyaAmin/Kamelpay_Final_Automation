@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                   "pretty", "json:target/Reports/JSONReport/report.json",
                   "pretty", "junit:target/Reports/XMLReports/report.xml",
                   "json:target/cucumber.json" },
-        tags = "@MyCountryTest4 or @MyCountryTest12 or @MyCountryTest17 or @MyCountryTest18 or @MyCountryTest19 or @MyCountryTest20 or @PayBillTest03 or @PayBillTest04 or @PayBillTest07 or @PayBillTest08 or @PayBillTest15 or @PayBillTest17 or @PayBillTest27 or @PayBillTest31 or @PayBillTest32 or @Sendmoney01 or @Sendmoney04 or @Sendmoney05 or @Sendmoney13 or @Sendmoney16 or @Signuptest19"
+        tags = "@Sendmoney01 or @Sendmoney04 or @Sendmoney05 or @Sendmoney13 or @Sendmoney16 or @Signuptest19"
 )
 
 //Example of logical tags:     tags = "@smoketest or @regression"

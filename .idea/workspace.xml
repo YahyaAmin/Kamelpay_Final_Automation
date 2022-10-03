@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="082441cc-145c-4a8b-8333-9af8874fba65" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Android/MobileTopUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/Android/MobileTopUpPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Android/PayBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/Android/PayBill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Android/SendMoneyPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/Android/SendMoneyPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Android/SignupPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/Android/SignupPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Step_Definitions/MyCountry_Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Step_Definitions/MyCountry_Steps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
