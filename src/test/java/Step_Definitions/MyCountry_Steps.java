@@ -67,9 +67,10 @@ public class MyCountry_Steps {
     }
 
     @And("User scrolls down at My country page")
-    public void userScrollsDownAtMyCountryPage() {
+    public void userScrollsDownAtMyCountryPage() throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(wait_my_country_page)));
         scrollDown();
+
     }
 
     @And("User scrolls to the right at my country page")
@@ -258,10 +259,7 @@ public class MyCountry_Steps {
 
     @And("User scrolls down at My country page again")
     public void userScrollsDownAtMyCountryPageAgain() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HESCO_button)));
-        driver.findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true))" +
-                        ".scrollIntoView(new UiSelector().text(\"Askari Investments\"))"));
+        scrollDown();
     }
 
     @And("User clicks on My Beneficiaries Button")

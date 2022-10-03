@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="082441cc-145c-4a8b-8333-9af8874fba65" name="Changes" comment="" />
+    <list default="true" id="082441cc-145c-4a8b-8333-9af8874fba65" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Android/MobileTopUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/Android/MobileTopUpPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Android/PayBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/Android/PayBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Android/SendMoneyPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/Android/SendMoneyPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Pages/Android/SignupPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Pages/Android/SignupPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Step_Definitions/MyCountry_Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Step_Definitions/MyCountry_Steps.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,18 +36,96 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/abc/Documents/GitHub/Kamelpay_Final_Automation",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abc/Documents/GitHub/Kamelpay_Final_Automation&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="JUnit.Runner">
+    <configuration name="Feature: Discounts" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/Discounts.feature" />
+      <option name="GLUE" value="Step_Definitions Hooks" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Kamelpay_Final_Automation" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: Discounts" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: MyCountry" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/MyCountry.feature" />
+      <option name="GLUE" value="Step_Definitions Hooks" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Kamelpay_Final_Automation" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: MyCountry" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Successful Mobile Top Up Case" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/MobileTopUp.feature" />
+      <option name="GLUE" value="Step_Definitions Hooks" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Kamelpay_Final_Automation" />
+      <option name="NAME_FILTER" value="^Successful Mobile Top Up Case$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Successful Mobile Top Up Case$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Successful Mobile Top Up Case" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: User Forgot Password, Sets new password and logs in with new password" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/login.feature" />
+      <option name="GLUE" value="Step_Definitions Hooks" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Kamelpay_Final_Automation" />
+      <option name="NAME_FILTER" value="^User Forgot Password\, Sets new password and logs in with new password$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User Forgot Password\, Sets new password and logs in with new password$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User Forgot Password, Sets new password and logs in with new password" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Runner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Kamelpay_Final_Automation" />
       <option name="PACKAGE_NAME" value="" />
@@ -52,6 +138,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Runner" />
+        <item itemvalue="Cucumber Java.Scenario: Successful Mobile Top Up Case" />
+        <item itemvalue="Cucumber Java.Scenario: User Forgot Password, Sets new password and logs in with new password" />
+        <item itemvalue="Cucumber Java.Feature: Discounts" />
+        <item itemvalue="Cucumber Java.Feature: MyCountry" />
       </list>
     </recent_temporary>
   </component>

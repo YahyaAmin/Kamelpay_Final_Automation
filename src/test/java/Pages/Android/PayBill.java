@@ -24,7 +24,7 @@ public class PayBill {
     public static String pampanga_button = "//android.widget.TextView[@text='Pampanga I Electric Cooperative Inc.']";
     public static String cignal_tv_button = "//android.widget.TextView[@text='Cignal TV']";
     public static String otp_first_digit_pay_bill = "//android.view.ViewGroup[1]/android.widget.EditText";
-    public static String agree_terms_and_conditions_cignal_tv = "//android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[1]";
+    public static String agree_terms_and_conditions_cignal_tv = "//android.view.ViewGroup[2]/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup[1]";
 
     public static String enter_amount_field_cignal_tv = "//android.view.ViewGroup[2]/android.widget.EditText";
     public static String account_number_field_cignal_tv = "//android.view.ViewGroup[3]/android.widget.EditText";
