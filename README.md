@@ -50,7 +50,7 @@ Appium Inspector Properties
 git checkout master
 Now pull the latest changes in master,
 
-git pull origin master
+git pull origin master OR git fetch origin master
 Merge with the testBranch
 
 git add . (if applicable)
