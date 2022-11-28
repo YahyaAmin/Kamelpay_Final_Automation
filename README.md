@@ -33,6 +33,7 @@ By.xpath("//android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGr
 RUNNING CUCUMBER JSON REPORT 
 mvn clean verify
 mvn verify -DskipTests
+mvn clean test
 =====================================================================================================
 
 
